@@ -1,0 +1,992 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap'); */
+
+body {
+    margin-left: 60px;
+    background-image: url("../images/motif-bg.svg");
+    /* background-size: 100%; */
+    background-position: right;
+    background-position-y: -80px;
+    /* background-position-x: 1150px; */
+    background-repeat: repeat-y;
+}
+
+.bg-box-story {
+    background-image: url("../images/motif-bg.svg");
+    background-position: right;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg-box-story-human {
+    background-image: url("../images/motif-bg.svg");
+    /* background-position: right; */
+    /* background-position-y: 80px; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.bg-box-scorecard {
+    background-image: url("../images/motif-bg.svg");
+    background-position: right;
+    background-position-y: 20px;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+
+/* Component Color */
+.bg-color-bluedark {
+    background-color: #19486a;
+}
+
+.bg-color-bluelight {
+    background-color: #1794D1;
+}
+
+.bg-color-red {
+    background-color: #df243b;
+}
+
+.bg-color-yellow {
+    background-color: #f6bd0b;
+}
+
+.bg-color-orange {
+    background-color: #f79724;
+}
+
+.bg-color-greenlight {
+    background-color: #56ba2b;
+}
+
+.bg-color-greendark {
+    background-color: #3f7e44;
+}
+/* End Component Color */
+
+/* Component Motif */
+.motif-title {
+    width: 120px;
+}
+/* End Component Motif */
+
+/* Conponent Font */
+.text-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #19486a;
+    margin-bottom: 40px;
+    background-image: url('../images/motif-title.svg');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.text-content {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 2;
+}
+
+.text-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.text-name-box {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.text-occupation {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.text-occupation-box {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.read-more {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 13px;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-nav-footer {
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-card-carousel {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    /* line-height: 2; */
+}
+
+.text-card-story {
+    padding-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #19486a;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.text-modal-story {
+    color: #19486a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.text-submodal-story {
+    color: #19486a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 0px;
+}
+
+.list-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #19486a;
+    float: left;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Lato', sans-serif;
+}
+
+/* .text-card-story:hover {
+    color: #19486a;
+    font-weight: 700;
+    transform: scale(1.1);
+} */
+
+.read-more:hover {
+    color: #fff;
+    font-weight: 500;
+    transform: scale(1.2);
+}
+
+
+.text-nav-footer:hover {
+    color: #fff;
+    font-size: 15px;
+}
+
+.text-footer {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+/* End Conponent Font */
+
+/* Component Menus */
+
+
+.menus {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: -12px;
+    right: -12px;
+    bottom: 0;
+    padding-left: 10px;
+    padding-top: 15px;
+    background-image: url('../images/nav-motif-1.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    text-decoration: none;
+    background-size: 70%;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    justify-items: center;
+    margin: auto;
+    align-content: center;
+}
+
+.menus:hover {
+    padding-top: 25px;
+    height: 120px;
+    background-size: 70%;
+    /* font-weight: 600; */
+    color: #fff;
+    transition: all 0.4s ease-out;
+}
+
+.menus.active {
+    padding-top: 25px;
+    height: 120px;
+    background-size: 70%;
+    /* font-weight: 600; */
+    color: #fff;
+    
+}
+/* End Component Menus */
+
+/* Component Button */
+.btn-motif {
+    color: #fff;
+    background-color: #1794D1;
+    padding: 10px 50px;
+    text-decoration: none;
+    background-image: url(../images/motif-information.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-motif:hover {
+    color: #fff;
+    font-size: 12px;
+}
+/* End Component Button */
+
+/* Navigation Bar */
+header .navbar {
+    background-color: #fff;
+    background-image: url('../images/nav-motif.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+/* End Navigation Bar */
+
+
+.img-logo {
+    width: 70%;
+}
+
+/* Jumbotron */
+section .jumbotron {
+    height: 650px;
+    background-image: url('../images/img-hero-1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .jumbotron1 {
+    height: 650px;
+    background-image: url('../images/img-hero-2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .jumbotron2 {
+    height: 650px;
+    background-image: url('../images/economic-transformation/foto/img-hero-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .jumbotron4 {
+    height: 650px;
+    background-image: url('../images/green-development/foto/img-hero-4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .jumbotron5 {
+    height: 650px;
+    background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .jumbotron6 {
+    height: 650px;
+    background-image: url('../images/un-reform/img-hero-6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section .text-jumbotron {
+    padding-top: 300px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section .text-jumbotron span {
+    font-weight: 700;
+}
+/* End Jumbotron */
+
+/* Read Info */
+.read-info-img {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.read-info-img:hover{
+    transform: scale(1.06);
+}
+/* End Read Info */
+
+/* About */
+section.about {
+    margin-top: 40px;
+}
+
+section.about span {
+    display: flex;
+    display: inline-block;
+    justify-items: right;
+    justify-content: end;
+}
+/* End About */
+
+/* Section Carousel IHD */
+section.carousel-ihd .card {
+    border: none;
+    border-radius: 0px;
+}
+/* End Section Carousel IHD */
+
+/* Foreword */
+section.foreword .card {
+    border: 1;
+    max-height: 100%;
+}
+
+section.foreword .card:hover {
+    transform: scale(1.07);
+}
+
+section.foreword .img-card-ihd {
+    width: 100%;
+}
+
+section.foreword .card-body {
+    height: 100%;
+    background-image: url('../images/motif-card-foreword.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    background-color: #19486a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+/* End Foreword */
+
+/* inclusive Human */
+section.story-ihd .card {
+    border: 1;
+    max-height: 100%;
+}
+
+section.story-ihd .card:hover {
+    transform: scale(1.05);
+}
+
+section.story-ihd .img-card-ihd {
+    width: 100%;
+}
+
+section.story-ihd .card-body {
+    height: 100%;
+    background-image: url('../images/motif-card.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+/* End inclusive Human */
+
+/* UN Reform */
+.btn-back {
+    float: left;
+    border: 2px solid #19486a;
+    padding: 10px 20px 10px 20px;
+    font-family: 14px;
+    color: #19486a;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-color: #19486a;
+}
+
+.btn-back:hover {
+    transform: scale(1.03);
+    color: #19486a;
+    font-weight: 600;
+    border-color: #19486a;
+}
+
+.btn-next {
+    float: right;
+    border: 2px solid #19486a;
+    padding: 10px 20px 10px 20px;
+    font-family: 14px;
+    color: #19486a;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-color: #19486a;
+}
+
+.btn-next:hover {
+    transform: scale(1.03);
+    color: #19486a;
+    font-weight: 600;
+    border-color: #19486a;
+}
+
+.accordion-body {
+    background-image: url('../images/motif-card.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+.menus-reform{
+    background-color: #fff;
+    color: #19486a;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px darkgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-image: url('../images/nav-motif-2.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    font-family: 'Montserrat', sans-serif;
+    background-size: 40%;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.menus-reform:hover{
+    color: #fff;
+    background-color: #1794D1;
+    background-image: url('../images/nav-motif-3.svg');
+    transform: scale(1.05);
+}
+
+.story-card-box {
+    background-color: #1794D1;
+    color: #19486a;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.story-card-box .card {
+    background-image: url('../images/motif-btn-menu-1.svg');
+    background-size: 100%;
+    background-repeat: no-repeat ;
+    background-position: right;
+
+}
+
+.list-motif {
+    list-style: none;
+    background-image: url('../images/motif-title-story.svg');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    padding: 0px 0px 0px 60px;
+    margin-bottom: 40px;
+}
+
+/* Data Infografis */
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 310px;
+  max-width: 800px;
+  margin: 1em auto;
+}
+
+#chart-funding {
+  height: 400px;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+/* End Data Infografis */
+
+/* End UN Reform */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Owl Carousel Infografis */
+.carousel-infografis {
+    /* background:#fff; */
+    display:none;
+    width:100%;
+    z-index:1;
+}
+    
+.carousel-infografis .owl-stage {
+    position:relative;
+    -ms-touch-action:pan-Y;
+    touch-action:manipulation;
+    /* -moz-backface-visibility:hidden; */
+}
+
+.carousel-infografis .owl-stage:after {
+    content:'.';
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0;
+}
+
+.carousel-infografis .owl-stage-outer {
+    position:relative; 
+    /* overflow:hidden; */
+    width:100%;
+    transform:scale(1.7);
+    padding:80px 0;
+}
+
+.carousel-infografis .owl-item {
+    min-height:1px;
+    float:left;
+    /* height: 10px; */
+    /* -webkit-backface-visibility:hidden; */
+    /* -webkit-touch-callout:none; */
+    transition:all .4s ease-in-out;
+}
+
+.carousel-infografis .owl-item img {
+    background:#eee;
+    display:block;
+    width:100%;
+    /* border-radius:5px; */
+    /* height:240px; */
+    object-fit:contain;
+}
+
+.owl-item.active {
+    transform:scale(1);
+    opacity:1;
+}
+
+.carousel-infografis .owl-item.active {
+    opacity:1;
+    /* display: inline-block; */
+}
+
+.carousel-infografis .owl-item.active.center {
+    opacity:1;
+    transform: scale(1.8);
+}
+
+.carousel-infografis .owl-nav{
+    position:absolute;
+    z-index:1;
+    width:100%;
+    font-size:30px;
+    top:40%;
+}
+
+.carousel-infografis .owl-nav button.owl-next, .carousel-infografis .owl-nav button.owl-prev {
+    box-shadow:0 8px 8px rgb(0 0 0 / 30%);
+    background-color:#000;
+    line-height:0;
+    border-radius:100%;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-infografis .owl-nav button.owl-next{ 
+    right:26%;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-infografis .owl-nav button.owl-next:hover{ 
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+
+.carousel-infografis .owl-nav button.owl-prev {
+    left:26%;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-infografis .owl-nav button.owl-prev:hover {
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+/* End Carousel Infografis */
+
+/* Carousel Card */
+.carousel-card .owl-nav{
+    position: absolute;
+    z-index:1;
+    width:100%;
+    font-size:30px;
+    top:40%;
+}
+
+.carousel-card .owl-nav button.owl-next, .carousel-card .owl-nav button.owl-prev {
+    box-shadow:0 8px 8px rgb(0 0 0 / 30%);
+    background-color:#000;
+    line-height:0;
+    border-radius:100%;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-card .owl-nav button.owl-next{ 
+    right: 0px;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-card .owl-nav button.owl-next:hover{ 
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+
+.carousel-card .owl-nav button.owl-prev {
+    left: -20px;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-card .owl-nav button.owl-prev:hover {
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+/* End Carousel Card */
+
+/* Carousel Card Infografis */
+.carousel-card-infografis .owl-nav{
+    position: absolute;
+    z-index:1;
+    width:100%;
+    font-size:30px;
+    top:40%;
+}
+
+.carousel-card-infografis .owl-nav button.owl-next, .carousel-card-infografis .owl-nav button.owl-prev {
+    box-shadow:0 8px 8px rgb(0 0 0 / 30%);
+    background-color:#000;
+    line-height:0;
+    border-radius:100%;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-card-infografis .owl-nav button.owl-next{ 
+    top: -18px;
+    right: -10px;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-card-infografis .owl-nav button.owl-next:hover{ 
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+
+.carousel-card-infografis .owl-nav button.owl-prev {
+    top: -18px;
+    left: -35px;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-card-infografis .owl-nav button.owl-prev:hover {
+    /* background-color: #19486a; */
+    color: #fff;
+    transform: scale(0.9);
+}
+/* End Carousel Card */
+
+
+@media screen and (max-width:980px){.carousel-card-infografis .owl-stage-outer{transform:scale(1.5)}}
+@media screen and (max-width:768px){.carousel-card-infografis .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
+@media screen and (max-width:980px){.carousel-card .owl-stage-outer{transform:scale(1.5)}}
+@media screen and (max-width:768px){.carousel-card .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
+@media screen and (max-width:980px){.carousel-infografis .owl-stage-outer{transform:scale(1.5)}}
+@media screen and (max-width:768px){.carousel-infografis .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
+/* End Owl Carousel */
+
+/* Scroll Up */
+#scroll-up {
+    display: inline-block;
+    background-color: #FFF;
+    width: 30px;
+    height: 45px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #19486a;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    text-decoration: none;
+  }
+  /* #scroll-up::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  } */
+  #scroll-up:hover {
+    cursor: pointer;
+    background-color:#19486a;
+    color: #fff;
+}
+#scroll-up:active {
+    background-color:#19486a;
+    color: #fff;
+}
+#scroll-up.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+/* End Scroll Up */
+
+/* Floating menu */
+.action  {
+    position: fixed;
+    bottom: 30px;
+    left: -70px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.3s ease-out;
+    transform: rotate(0);
+    /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 1); */
+}
+
+.action.show {
+    left: 20px;
+    transform: rotate(180);
+}
+
+.action .toggle-menu {
+    background-image: url(../images/bg-toggle.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    transition: 0.3s ease-in-out;
+}
+
+.action .text-menu {
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.action.active .toggle-menu {
+    transform: rotate(180deg);
+}
+
+.action ul {
+    position: absolute;
+    bottom: 55px;
+    background: #fff;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.action.active ul {
+    bottom: 65px;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+
+.action.active ul li a{
+    color: black;
+}
+
+.action.active ul li {
+    color: black;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 10px 0px; */
+    transition: 0.3s;
+}
+
+.action ul li:hover {
+    font-weight: 600;
+}
+
+.action ul li:not(:last-child){
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+/* END Floating menu */
+
+/* Footer */
+section.footer {
+    background-image: url('../images/motif-footer.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #1794D1;
+    color: #fff;
+}
+/* End Footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
