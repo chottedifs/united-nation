@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');
+    Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController');
+    Route::resource('/story', '\App\Http\Controllers\Admin\StoryController');
+    Route::resource('/content', '\App\Http\Controllers\Admin\ContentController');
+    Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController');
+    Route::resource('/report', '\App\Http\Controllers\Admin\ReportController');
 });
 
 // Route::get('/dashboard', function () {
