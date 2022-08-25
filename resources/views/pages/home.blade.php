@@ -130,21 +130,22 @@
                     <h3 class="text-title">Foreword</h3>
                 </div>
                 <div class="row mb-4">
+                @foreach ($story as $stories)
                     <div class="col-sm-6">
-                        <a data-bs-toggle="modal" data-bs-target="#story-1" style="cursor: pointer;">
+                        <a data-bs-toggle="modal" data-bs-target="#story-{{ $stories->id }}" style="cursor: pointer;">
                             <div class="card" data-aos="fade-right">
                                 <div class="card-body p-0">
-                                    <img src="{{ asset('template/united-nation/assets/images/vallerie.webp') }}" class="img-card-ihd me-3" alt="vallerie" style="float: left; width: 49%;">
+                                    <img src="{{ Storage::url($stories->image) }}" class="img-card-ihd me-3" alt="vallerie" style="float: left; width: 49%;">
                                     <p class="text-card-story">
-                                        <span class="text-name">Valerie Julliand</span>
-                                    <p class="text-occupation">United Nations Resident Coordinator in Indonesia</p>
-                                    <span class="read-more"><img src="assets/images/motif-read.svg" alt="motif-read" class="me-2" width="20">Read more</span>
+                                        <span class="text-name">{{ ($stories->name) }}</span>
+                                    <p class="text-occupation">{{($stories->position)}}</p>
+                                    <span class="read-more"><img src="{{ asset('template/united-nation/assets/images/motif-read.svg')}}" alt="motif-read" class="me-2" width="20">Read more</span>
                                     </p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6">
+                    {{-- <div class="col-sm-6">
                         <a  data-bs-toggle="modal" data-bs-target="#story-2" style="cursor: pointer;">
                             <div class="card" data-aos="fade-left">
                                 <div class="card-body p-0">
@@ -157,7 +158,8 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> --}}
+                @endforeach
                 </div>
             </div>
         </section>
@@ -180,26 +182,21 @@
         </section>
 
         <!-- Modal Story -->
-        <div class="modal fade" id="story-1" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+        @foreach ($story as $stories)
+        <div class="modal fade" id="story-{{$stories->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
             <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-body pt-0 pb-0">
                     <div class="row">
                             <div class="col-lg-5 p-0">
-                                <img src="assets/images/story-valerie.jpg" class="img-responsive me-3" alt="valerie" width="100%" height="100%">
+                                <img src="{{ Storage::url($stories->image) }}" class="img-responsive me-3" alt="valerie" width="100%" height="100%">
                             </div>
                         <div class="col-lg-7 bg-color-bluedark bg-box-story">
                             <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
                             <p class="text-content text-white" style="font-size: 13px; padding: 40px 20px 40px 20px">
-                                <span class="text-name-box">Valerie Julliand</span><br>
-                                <span class="text-occupation-box">United Nations Resident Coordinator in Indonesia</span> <br><br>
-                                Before I took up my post as Resident Coordinator in October 2020, I had looked forward to visiting a vast array of UN programmes across Indonesia and understanding the archipelago’s people and culture through the discovery of its diversity. What I did not envisage was spending so much of 2021 working from a Jakarta apartment. <br><br>
-                                The year 2021 was when the socioeconomic fallout of COVID-19 became truly apparent in parallel with a resurgent health crisis. It was a year that uniquely tested our personal and professional resolve. Who among us can forget the horrifyingly frequent wail of ambulance sirens on July nights as the COVID-19 caseload skyrocketed in Indonesia? <br><br>
-                                Yet, as this report shows, COVID-19 did not halt the urgent work of the UN. Our country team built on its 76-year-old partnership with the government to further strengthen public health and social-economic response and recovery efforts, while at the same time ensuring continued progress towards the Sustainable Development Goals. This report—for the first time co-produced with the Ministry of National Development Planning (BAPPENAS) -details our joint achievements under the Sustainable Development Cooperation Framework 2021–2025. Those achievements owe to the flexibility of a government that expanded social protection, passed tax reforms to mobilize recovery funds, and followed 2020’s negative –2.07% GDP contraction, with a year of 3.7% GDP growth. They also speak to the unbreakable resolve of UN actors and donor partners who continued to chart a course towards the SDGs even as we navigated our way through a once-in-a-generation health crisis. <br><br>
-                                Even more, our results are a testament to the resilience of Indonesian people. In 2021, Indonesians held firm through not only the pandemic, but a litany of disasters bookended by the West Sulawesi earthquake in January and the eruption of Mount Semeru in December. The fortitude of Indonesians—who make up most of our 1966 UN staff members—was a constant source of inspiration throughout the year. <br><br>
-                                I note with pride that as President of the G20, Indonesia has resolved to serve as a voice for less-developed nations, manifesting the UN’s commitment to leave no one behind on the world stage. In parallel, the UN in Indonesia has commissioned a study on who is being left behind at a local level, to ensure that we remain true to this foundational promise across every aspect of our work. Its results will be available in 2022.
-                                My deepest thanks go to the Government for their excellent collaboration through 2021. I would also like to thank all donor nations and UN partners who made our work possible. Finally, I would like to thank the people of Indonesia for their courage and steadfastness. <br><br>
-                                Woven through this report is a motif inspired by Tenun Ulap Doyo, a centuries-old plant fibre weaving technique that originated with the Dayak Benuak people of East Kalimantan. The Ulap Doyo-style lima, or boat, that decorates these pages symbolises our cooperation with the government, partners, and Indonesian people, and how that cooperation kept us afloat in the stormiest of seas. <br>
+                                <span class="text-name-box">{{ ($stories->name) }}</span><br>
+                                <span class="text-occupation-box">{{ ($stories->position) }}</span> <br><br>
+                                {{ ($stories->description) }}
                             </p>
                         </div>
                     </div>
@@ -207,7 +204,9 @@
             </div>
             </div>
         </div>
-        <div class="modal fade" id="story-2" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+        @endforeach
+
+        {{-- <div class="modal fade" id="story-2" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
             <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-body pt-0 pb-0">
@@ -218,7 +217,7 @@
                         <div class="col-lg-7 bg-color-bluedark bg-box-story">
                             <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
                             <p class="text-content text-white" style="font-size: 13px; padding: 40px 20px 40px 20px">
-                                <span class="text-name-box">Suharso Monoarfa</span><br>
+                                <span class="text-name-box"></span><br>
                                 <span class="text-occupation-box">Minister of National Development Planning/Head of National Development Planning Agency (Bappenas)
                                 </span> <br><br>
                                 I would first like to compliment the UN Agencies in Indonesia for the United Nations Sustainable Development Cooperation Framework (UNSDCF) Results Report 2021. This report highlights the cordial relationship between the Government of Indonesia and the United Nations System and this report affirms that relationship as we work together to advance Indonesia’s development agenda and priorities, particularly the Sustainable Development Goals (SDGs) 2030 and Indonesia’s National Medium- Term Development Plan (RPJMN) 2020-2024. The Report includes the progress and accomplishments to deliver four outcomes of UNSDCF 2021-2025: (i) Inclusive Human Development; (ii) Economic Transformation; (iii) Green Development, Climate Change and Natural Disasters; and (iv) Innovation to Accelerate Progress towards the SDGs. <br><br>
@@ -233,7 +232,7 @@
                 </div>
             </div>
             </div>
-        </div>
+        </div> --}}
         <!-- end modals -->
 
     @include('components.frontend.footer')
