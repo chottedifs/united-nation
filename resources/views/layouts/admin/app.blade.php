@@ -11,21 +11,20 @@
 
 </head>
 
-<body>
-    <div id="app">
-        @include('components.admin.sidebar')
+    <body>
+        <div id="app">
+            @include('components.admin.sidebar')
 
-        <div id="main">
-            @include('components.admin.header')
+            <div id="main">
+                @include('components.admin.header')
 
-            @yield('content')
+                @yield('content')
 
-            @include('components.admin.footer')
+                @include('components.admin.footer')
+            </div>
         </div>
-    </div>
 
-    @include('components.admin.script')
-
-</body>
+        @include('components.admin.script')
+    </body>
 
 </html>

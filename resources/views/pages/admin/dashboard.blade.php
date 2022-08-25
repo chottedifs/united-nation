@@ -1,6 +1,6 @@
-@include('layouts.admin.app')
+@extends('layouts.admin.app')
 
-@section('conten')
+@section('content')
     <div class="page-heading">
         <h3>Profile Statistics</h3>
     </div>
