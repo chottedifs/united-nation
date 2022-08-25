@@ -12,11 +12,6 @@ class StoryController extends Controller
         return view('pages.admin.story.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //

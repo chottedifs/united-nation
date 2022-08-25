@@ -9,6 +9,8 @@
 
     @include('components.admin.style')
 
+    @stack('style')
+
 </head>
 
     <body>
@@ -25,6 +27,8 @@
         </div>
 
         @include('components.admin.script')
+
+        @stack('script')
     </body>
 
 </html>
