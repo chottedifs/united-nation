@@ -34,7 +34,7 @@ class StoryController extends Controller
             'image' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
-        $data['image'] = $request->file('image')->store('images/story');
+        $data['image'] = $request->file('image')->store('public/images/story');
 
         Story::create($data);
         return redirect(route('story.index'));
@@ -79,7 +79,7 @@ class StoryController extends Controller
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $data['image'] = $request->file('image')->store('images/story');
+            $data['image'] = $request->file('image')->store('public/images/story');
         }
 
 
