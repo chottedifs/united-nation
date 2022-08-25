@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
@@ -15,4 +16,9 @@ class Report extends Model
         'image',
         'deskripsi',
     ];
+
+    public function RelasiReportPages(): HasOne
+    {
+        return $this->hasOne(RelasiReportPages::class, 'report_id', 'id');
+    }
 }

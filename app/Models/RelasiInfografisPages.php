@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RelasiInfografisPages extends Model
 {
@@ -14,4 +15,9 @@ class RelasiInfografisPages extends Model
         'infografis_id',
         'pages_id',
     ];
+
+    public function Infografis(): BelongsTo
+    {
+        return $this->belongsTo(Infografis::class, 'infografis_id');
+    }
 }
