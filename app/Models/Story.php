@@ -15,7 +15,9 @@ class Story extends Model
         'name',
         'position',
         'image',
-        'deskripsi',
+        'title',
+        'sub_title',
+        'description',
     ];
 
     public function RelasiStoryPages(): HasOne
