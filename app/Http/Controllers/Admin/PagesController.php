@@ -10,11 +10,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $page = Pages::all();
-
-        return view('pages.admin.pages.index',[
-            'page' => $page
-        ]);
+        return view('pages.admin.pages.index');
     }
 
     public function create()
@@ -24,7 +20,18 @@ class PagesController extends Controller
 
     public function store(Request $request)
     {
-        //
+        // echo "yoloooo";
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'image_cover' => 'image|required|mimes:jpg,jpeg,png|file|max:1024',
+        ]);
+
+        $validatedData['image_cover'] = $request->file('image_cover')->store(
+            'images',
+            'public'
+        );
+        Pages::create($validatedData);
+        return redirect(route('pages.index'));
     }
 
     /**
