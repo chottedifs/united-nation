@@ -18,7 +18,9 @@ class CreateStoriesTable extends Migration
             $table->string('name');
             $table->string('position');
             $table->string('image');
-            $table->string('deskripsi');
+            $table->string('title')->nullable();
+            $table->string('sub_title')->nullable();
+            $table->text('description');
             $table->timestamps();
             $table->softDeletes();
         });
