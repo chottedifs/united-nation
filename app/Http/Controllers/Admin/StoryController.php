@@ -28,13 +28,13 @@ class StoryController extends Controller
         $data = $request->validate([
             'name' => 'required|max:255',
             'position' => 'required',
-            'title' => 'max:255',
-            'sub_title' => 'max:255',
             'description' => 'required',
-            'image' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
-        $data['image'] = $request->file('image')->store('public/images/story');
+        $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
+        $data['image_box'] = $request->file('image_box')->store('public/images/story');
 
         Story::create($data);
         return redirect(route('story.index'));
@@ -64,30 +64,23 @@ class StoryController extends Controller
     {
         $story = Story::findOrFail($id);
 
-        // ddd($story->image);
-
         $data = $request->validate([
             'name' => 'required|max:255',
             'position' => 'required',
-            'title' => 'max:255',
-            'sub_title' => 'max:255',
             'description' => 'required',
-            'image' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' =>'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
-        if($request->file('image')){
-            if($request->oldImage){
-                Storage::delete($request->oldImage);
+
+        if($request->file('image_box') && $request->file('image_cover')){
+            if($request->oldImageBox && $request->oldImageCover){
+                Storage::delete($request->oldImageBox);
+                Storage::delete($request->oldImageCover);
             }
-            $data['image'] = $request->file('image')->store('public/images/story');
+            $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
+            $data['image_box'] = $request->file('image_box')->store('public/images/story');
         }
-
-
-        // $image = public_path('images/story'. $story->image);
-
-        // if(Storage::exists($story->image)){
-        //     Storage::delete($image);
-        // }
 
         $story->update($data);
         return redirect(route('story.index'));
@@ -96,6 +89,8 @@ class StoryController extends Controller
     public function destroy($id)
     {
         $story = Story::findOrFail($id);
+        Storage::disk('local')->delete($story->image_cover);
+        Storage::disk('local')->delete($story->image_box);
         $story->delete();
 
         return redirect(route('story.index'));

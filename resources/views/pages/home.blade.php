@@ -135,7 +135,7 @@
                         <a data-bs-toggle="modal" data-bs-target="#story-{{ $stories->id }}" style="cursor: pointer;">
                             <div class="card" data-aos="fade-right">
                                 <div class="card-body p-0">
-                                    <img src="{{ Storage::url($stories->image) }}" class="img-card-ihd me-3" alt="vallerie" style="float: left; width: 49%;">
+                                    <img src="{{ Storage::url($stories->image_cover) }}" class="img-card-ihd me-3" alt="vallerie" style="float: left; width: 49%;">
                                     <p class="text-card-story">
                                         <span class="text-name">{{ ($stories->name) }}</span>
                                     <p class="text-occupation">{{($stories->position)}}</p>
@@ -189,14 +189,14 @@
                 <div class="modal-body pt-0 pb-0">
                     <div class="row">
                             <div class="col-lg-5 p-0">
-                                <img src="{{ Storage::url($stories->image) }}" class="img-responsive me-3" alt="valerie" width="100%" height="100%">
+                                <img src="{{ Storage::url($stories->image_box) }}" class="img-responsive me-3" alt="valerie" width="100%" height="100%">
                             </div>
                         <div class="col-lg-7 bg-color-bluedark bg-box-story">
                             <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
                             <p class="text-content text-white" style="font-size: 13px; padding: 40px 20px 40px 20px">
                                 <span class="text-name-box">{{ ($stories->name) }}</span><br>
                                 <span class="text-occupation-box">{{ ($stories->position) }}</span> <br><br>
-                                {{ ($stories->description) }}
+                                {!!$stories->description!!}
                             </p>
                         </div>
                     </div>
