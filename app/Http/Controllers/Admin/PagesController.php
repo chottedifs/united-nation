@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.pages.index');
+        $pages = Pages::all();
+        return view('pages.admin.pages.index', [
+            'pages' => $pages
+        ]);
     }
 
     /**
@@ -19,7 +23,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.pages.create');
     }
 
     /**
@@ -30,7 +34,18 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // echo "yoloooo";
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'image_cover' => 'image|required|mimes:jpg,jpeg,png|file|max:1024',
+        ]);
+
+        $validatedData['image_cover'] = $request->file('image_cover')->store(
+            'images',
+            'public'
+        );
+        Pages::create($validatedData);
+        return redirect(route('pages.index'));
     }
 
     /**
