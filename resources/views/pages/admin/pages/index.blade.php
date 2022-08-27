@@ -37,6 +37,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $page->title }}</td>
+<<<<<<< HEAD
                                 <td><img src="{{ Storage::url($page->image_cover) }}" alt="" style="width: 150px;"></td>
                                 <td>
                                     <div class="d-flex">
@@ -47,6 +48,16 @@
                                             <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
                                         </form>
                                     </div>
+=======
+                                <td><img src="{{ Storage::url($page->image_cover) }}" alt="image" width="150"></td>
+                                <td>
+                                    <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('pages.destroy', $page->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
+                                    </form>
+>>>>>>> ece694cc7e6c719c11ef704d9b6d27851865aa35
                                 </td>
                             </tr>
                             @endforeach

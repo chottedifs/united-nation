@@ -20,4 +20,9 @@ class RelasiReportPages extends Model
     {
         return $this->belongsTo(Report::class, 'report_id');
     }
+
+    public function Pages(): BelongsTo
+    {
+        return $this->belongsTo(Pages::class, 'pages_id');
+    }
 }

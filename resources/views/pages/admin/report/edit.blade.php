@@ -37,9 +37,27 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group has-icon-left">
+                                                        <div class="position-relative">
+                                                            <fieldset class="form-group">
+                                                                <label for="pages_id" class="form-label">Select Page</label>
+                                                                <select name="pages_id" class="form-select" id="basicSelect">
+                                                                    @foreach ($pages as $page)
+                                                                        @if(old('pages_id') == $page->id || $report->Pages->id == $page->id)
+                                                                            <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
+                                                                        @else
+                                                                            <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">Title</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="first-name-icon" name="title" value="{{ old("title", $report->title) }}">
+                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="first-name-icon" name="title" value="{{ old("title", $report->Report->title) }}">
                                                             @error('title')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -55,7 +73,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $report->description) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $report->Report->description) }}</textarea>
                                                             @error('description')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -80,8 +98,13 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image Cover</label>
                                                         <div class="position-relative">
+<<<<<<< HEAD
                                                         <input type="hidden" name="oldImageCover" value="{{ $report->image_cover }}">
                                                         <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="imgInp" name="image_cover" value="{{ old("image_cover", $report->image_cover) }}">
+=======
+                                                        <input type="hidden" name="oldImageCover" value="{{ $report->Report->image_cover }}">
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover", $report->Report->image_cover) }}">
+>>>>>>> ece694cc7e6c719c11ef704d9b6d27851865aa35
                                                         @error('image_cover')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}

@@ -36,6 +36,24 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group has-icon-left">
+                                                        <div class="position-relative">
+                                                            <fieldset class="form-group">
+                                                                <label for="pages_id" class="form-label">Select Page</label>
+                                                                <select name="pages_id" class="form-select" id="basicSelect">
+                                                                    @foreach ($pages as $page)
+                                                                        @if(old('pages_id') == $page->id)
+                                                                            <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
+                                                                        @else
+                                                                            <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">Title</label>
                                                         <div class="position-relative">
                                                             <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="first-name-icon" name="title" value="{{ old("title") }}">

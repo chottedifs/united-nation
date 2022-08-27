@@ -26,6 +26,7 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
+                                <th>For Page</th>
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th>Image Cover</th>
@@ -35,22 +36,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($story as $stories)
+                            @foreach ($stories as $story)
                             <tr>
                                 <td>{{ $stories->name }}</td>
                                 <td>{{ $stories->position }}</td>
                                 <td><img src="{{ Storage::url($stories->image_cover) }}" alt="image" width="90"></td>
                                 <td><img src="{{ Storage::url($stories->image_box) }}" alt="image" width="90"></td>
-                                <td>{!! Str::limit($stories->description,100)!!}</td>
+                                <td>{!!$stories->description!!}</td>
                                 <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('story.edit', $stories->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('story.destroy', $stories->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
+                                    <a href="{{ route('story.edit', $stories->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('story.destroy', $stories->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

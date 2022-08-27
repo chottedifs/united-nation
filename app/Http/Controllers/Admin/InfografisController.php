@@ -49,7 +49,7 @@ class InfografisController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
         ]);
 
-        $validatedData2['image'] = $request->file('image')->store('public/images/story');
+        $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
         RelasiInfografisPages::create($validatedData1);
@@ -105,7 +105,7 @@ class InfografisController extends Controller
                 'image' => 'image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
             ]);
             Storage::delete($infografis->image);
-            $validatedData['image'] = $request->file('image')->store('public/images/story');
+            $validatedData['image'] = $request->file('image')->store('public/images/infografis');
             $relasiInfografis->update($validatedData1);
             $infografis->update($validatedData);
         } else {

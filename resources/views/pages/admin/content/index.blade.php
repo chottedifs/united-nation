@@ -26,6 +26,7 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
+                                <th>For Page</th>
                                 <th>Content 1</th>
                                 <th>Content 2</th>
                                 <th>Content 3</th>
@@ -34,15 +35,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($content as $contents)
+                            @foreach ($contents as $content)
                             <tr>
-                                <td>{!!$contents->content_1!!}</td>
-                                <td>{!!$contents->content_2!!}</td>
-                                <td>{!!$contents->content_3!!}</td>
-                                <td>{!!$contents->content_4!!}</td>
+                                <td>{$content->Page->title}</td>
+                                <td>{!!$content->content_1!!}</td>
+                                <td>{!!$content->content_2!!}</td>
+                                <td>{!!$content->content_3!!}</td>
+                                <td>{!!$content->content_4!!}</td>
                                 <td>
-                                    <a href="{{ route('content.edit', $contents->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('content.destroy', $contents->id) }}" method="POST">
+                                    <a href="{{ route('content.edit', $content->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('content.destroy', $content->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
