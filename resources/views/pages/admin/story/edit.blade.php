@@ -39,7 +39,26 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">Name</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" id="first-name-icon" name="name" value="{{ old("name", $story->name) }}">
+                                                            <fieldset class="form-group">
+                                                                <label for="pages_id" class="form-label">Select Page</label>
+                                                                <select name="pages_id" class="form-select" id="basicSelect">
+                                                                    @foreach ($pages as $page)
+                                                                        @if(old('pages_id') == $page->id || $story->Pages->id == $page->id)
+                                                                            <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
+                                                                        @else
+                                                                            <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
+                                                        <label for="first-name-icon">Name</label>
+                                                        <div class="position-relative">
+                                                            <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" id="first-name-icon" name="name" value="{{ old("name", $story->Story->name) }}">
                                                             @error('name')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -55,7 +74,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="position-id-icon">Position</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control @error('position') is-invalid @enderror" placeholder="position" placeholder="position" id="position-id-icon" name="position" value="{{ old("position", $story->position) }}">
+                                                            <input type="text" class="form-control @error('position') is-invalid @enderror" placeholder="position" placeholder="position" id="position-id-icon" name="position" value="{{ old("position", $story->Story->position) }}">
                                                             @error('position')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -71,7 +90,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $story->description) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $story->Story->description) }}</textarea>
                                                             @error('description')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -84,8 +103,8 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image Cover</label>
                                                         <div class="position-relative">
-                                                        <input type="hidden" name="oldImageCover" value="{{ $story->image_cover }}">
-                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover", $story->image_cover) }}">
+                                                        <input type="hidden" name="oldImageCover" value="{{ $story->Story->image_cover }}">
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover", $story->Story->image_cover) }}">
                                                         @error('image_cover')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -98,8 +117,8 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image Box</label>
                                                         <div class="position-relative">
-                                                        <input type="hidden" name="oldImageBox" value="{{ $story->image_box }}">
-                                                        <input type="file" class="form-control @error('image_box') is-invalid @enderror" placeholder="image_box" id="image_box-id-icon" name="image_box" value="{{ old("image_box", $story->image_box) }}">
+                                                        <input type="hidden" name="oldImageBox" value="{{ $story->Story->image_box }}">
+                                                        <input type="file" class="form-control @error('image_box') is-invalid @enderror" placeholder="image_box" id="image_box-id-icon" name="image_box" value="{{ old("image_box", $story->Story->image_box) }}">
                                                         @error('image_box')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}

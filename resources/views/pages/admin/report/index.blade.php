@@ -26,6 +26,7 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
+                                <th>For Page</th>
                                 <th>Title</th>
                                 <th>Image Cover</th>
                                 <th>Description</th>
@@ -33,14 +34,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($report as $reports)
+                            @foreach ($reports as $report)
                             <tr>
-                                <td>{{ $reports->title }}</td>
-                                <td><img src="{{ Storage::url($reports->image_cover) }}" alt="image" width="90"></td>
-                                <td>{!!$reports->description!!}</td>
+                                <td>{{ $report->Pages->title }}</td>
+                                <td>{{ $report->Report->title }}</td>
+                                <td><img src="{{ Storage::url($report->Report->image_cover) }}" alt="image" width="90"></td>
+                                <td>{!!$report->Report->description!!}</td>
                                 <td>
-                                    <a href="{{ route('report.edit', $reports->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $reports->id) }}" method="POST">
+                                    <a href="{{ route('report.edit', $report->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $report->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>

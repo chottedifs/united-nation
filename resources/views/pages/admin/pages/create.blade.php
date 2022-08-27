@@ -44,7 +44,7 @@
                                                     </div>
                                                     <label class="first-name-icon" for="image_cover">Image Cover</label>
                                                     <div class="position-relative">
-                                                        <input class="form-control @error('title') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" multiple>
+                                                        <input class="form-control @error('image_cover') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" multiple>
                                                         @error('image_cover')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}

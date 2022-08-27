@@ -25,27 +25,27 @@
                     Jquery Datatable
                 </div>
                 <div class="card-header">
-                    <a href="{{ route('pages.create') }}" class="btn btn-primary text-right" style="border-radius: 10px;">Add Page</a>
+                    <a href="{{ route('infografis.create') }}" class="btn btn-primary text-right" style="border-radius: 10px;">Add Infografis</a>
                 </div>
                 <div class="card-body">
                     <table class="table" id="table1">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Title</th>
+                                <th>For Page</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pages as $page)
+                            @foreach ($infografis as $infog)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $page->title }}</td>
-                                <td><img src="{{ Storage::url($page->image_cover) }}" alt="image" width="150"></td>
+                                <td>{{ $infog->Pages->title }}</td>
+                                <td><img src="{{ Storage::url($infog->Infografis->image) }}" alt="image" width="150"></td>
                                 <td>
-                                    <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('pages.destroy', $page->id) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('infografis.edit', $infog->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('infografis.destroy', $infog->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>

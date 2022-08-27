@@ -36,6 +36,24 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-group has-icon-left">
+                                                        <div class="position-relative">
+                                                            <fieldset class="form-group">
+                                                                <label for="pages_id" class="form-label">Select Page</label>
+                                                                <select name="pages_id" class="form-select" id="basicSelect">
+                                                                    @foreach ($pages as $page)
+                                                                        @if(old('pages_id') == $page->id)
+                                                                            <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
+                                                                        @else
+                                                                            <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Content 1</label>
                                                         <div class="position-relative">
                                                             <textarea type="text" class="form-control @error('content_1') is-invalid @enderror" cols="10" rows="10" placeholder="content_1" id="summernote1" name="content_1">{{ old("content_1") }}</textarea>

@@ -11,7 +11,10 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.pages.index');
+        $pages = Pages::all();
+        return view('pages.admin.pages.index', [
+            'pages' => $pages
+        ]);
     }
 
     public function create()
@@ -24,10 +27,10 @@ class PagesController extends Controller
         // echo "yoloooo";
         $validatedData = $request->validate([
             'title' => 'required',
-            'image_cover' => 'image|required|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
+            'image_cover' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
         ]);
 
-        $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/story');
+        $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
         Pages::create($validatedData);
         return redirect(route('pages.index'));
     }
@@ -75,7 +78,7 @@ class PagesController extends Controller
 
         if ($request->file('image_cover')) {
             Storage::delete($page->image_cover);
-            $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/story');
+            $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
             $page->update($validatedData);
         } else {
             $validatedData['image_cover'] = $page->image_cover;

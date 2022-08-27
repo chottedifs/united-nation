@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pages;
+use App\Models\RelasiStoryPages;
 use App\Models\Story;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -11,31 +13,43 @@ class StoryController extends Controller
 {
     public function index()
     {
-        $story = Story::all();
+        $stories = RelasiStoryPages::with('Pages', 'Story')->get();
 
         return view('pages.admin.story.index', [
-            'story' => $story
+            'stories' => $stories
         ]);
     }
 
     public function create()
     {
-        return view('pages.admin.story.create');
+        $pages = Pages::all();
+        return view('pages.admin.story.create', [
+            'pages' => $pages
+        ]);
     }
 
     public function store(Request $request)
     {
+        $validatedData1 = $request->validate([
+            'pages_id' => 'required',
+        ]);
+
         $data = $request->validate([
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
+        // ddd('yoloooo');
 
         $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
         $data['image_box'] = $request->file('image_box')->store('public/images/story');
 
-        Story::create($data);
+        $story = Story::create($data);
+        $validatedData1['story_id'] = $story->id;
+        RelasiStoryPages::create($validatedData1);
+
         return redirect(route('story.index'));
     }
 
@@ -52,22 +66,29 @@ class StoryController extends Controller
 
     public function edit($id)
     {
-        $story = Story::findOrFail($id);
+        $story = RelasiStoryPages::with('Pages', 'Story')->findOrFail($id);
+        $pages = Pages::all();
 
         return view('pages.admin.story.edit', [
-            'story' => $story
+            'story' => $story,
+            'pages' => $pages
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        $story = Story::findOrFail($id);
+        $relasiStory = RelasiStoryPages::with('Story')->findOrFail($id);
+        $story = Story::findOrFail($relasiStory->Story->id);
+        $validatedData1 = $request->validate([
+            'pages_id' => 'required',
+        ]);
 
         $data = $request->validate([
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'nullable',
+            'image_box' => 'nullable',
         ]);
 
         if ($request->file('image')) {
@@ -76,25 +97,22 @@ class StoryController extends Controller
             }
             $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
             $data['image_box'] = $request->file('image_box')->store('public/images/story');
+            $relasiStory->update($validatedData1);
         }
 
-
-        // $image = public_path('images/story'. $story->image);
-
-        // if(Storage::exists($story->image)){
-        //     Storage::delete($image);
-        // }
-
         $story->update($data);
+        $relasiStory->update($validatedData1);
         return redirect(route('story.index'));
     }
 
     public function destroy($id)
     {
-        $story = Story::findOrFail($id);
+        $relasiStory = RelasiStoryPages::findOrFail($id);
+        $story = Story::findOrFail($relasiStory->story_id);
         Storage::disk('local')->delete($story->image_cover);
         Storage::disk('local')->delete($story->image_box);
-        $story->delete();
+        Story::destroy($story->id);
+        RelasiStoryPages::destroy($relasiStory->id);
 
         return redirect(route('story.index'));
     }
