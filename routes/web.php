@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,11 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('dashboard');
+
+// Route::get('/', function () {
+//     return view('pages.home');
+// });
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');

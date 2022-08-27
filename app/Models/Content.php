@@ -12,7 +12,10 @@ class Content extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'content',
+        'content_1',
+        'content_2',
+        'content_3',
+        'content_4',
     ];
     public function RelasiContentPages(): HasOne
     {

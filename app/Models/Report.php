@@ -13,8 +13,8 @@ class Report extends Model
 
     protected $fillable = [
         'title',
-        'image',
-        'deskripsi',
+        'image_cover',
+        'description',
     ];
 
     public function RelasiReportPages(): HasOne

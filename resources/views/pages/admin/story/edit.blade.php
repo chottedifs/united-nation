@@ -23,7 +23,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-body">
-                    <div class="col-md-6 col-12">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Form Create Story</h3>
@@ -69,59 +69,38 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="title-id-icon">Title</label>
-                                                        <div class="position-relative">
-                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="title-id-icon" name="title" value="{{ old("title", $story->title) }}">
-                                                            @error('title')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                            @enderror
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-textarea-t"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group has-icon-left">
-                                                        <label for="sub_title-id-icon">Sub Title</label>
-                                                        <div class="position-relative">
-                                                            <input type="text" class="form-control @error('sub_title') is-invalid @enderror" placeholder="sub_title" id="sub_title-id-icon" name="sub_title" value="{{ old("sub_title", $story->sub_title) }}">
-                                                            @error('sub_title')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                            @enderror
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-textarea-t"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" rows="5" placeholder="description" id="description-id-icon" name="description">{{ old("description", $story->description) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $story->description) }}</textarea>
                                                             @error('description')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
-                                                            <div class="form-control-icon">
-                                                                <i class="bi bi-body-text"></i>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="images-id-icon">Images</label>
+                                                        <label for="images-id-icon">Image Cover</label>
                                                         <div class="position-relative">
-                                                        <input type="hidden" name="oldImage" value="{{ $story->image }}">
-                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image" id="image-id-icon" name="image" value="{{ old("image", $story->image) }}">
-                                                        @error('image')
+                                                        <input type="hidden" name="oldImageCover" value="{{ $story->image_cover }}">
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover", $story->image_cover) }}">
+                                                        @error('image_cover')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image Box</label>
+                                                        <div class="position-relative">
+                                                        <input type="hidden" name="oldImageBox" value="{{ $story->image_box }}">
+                                                        <input type="file" class="form-control @error('image_box') is-invalid @enderror" placeholder="image_box" id="image_box-id-icon" name="image_box" value="{{ old("image_box", $story->image_box) }}">
+                                                        @error('image_box')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
                                                             </div>
@@ -150,12 +129,15 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}">
 @endpush
 
 @push('script')
     <script src="{{ asset('template/admin/dist/assets/extensions/jquery/jquery.min.js') }}"></script>
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="{{ asset('template/admin/dist/assets/js/pages/datatables.js') }}"></script>
+    <script src="{{ asset('library/summernote/summernote.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 @endpush

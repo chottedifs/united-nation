@@ -23,14 +23,13 @@
         <section class="section">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-responsive" id="table1">
+                    <table class="table" id="table1">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Position</th>
-                                <th>Image</th>
-                                <th>Title</th>
-                                <th>Sub Title</th>
+                                <th>Image Cover</th>
+                                <th>Image Box</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             </tr>
@@ -40,22 +39,23 @@
                             <tr>
                                 <td>{{ $stories->name }}</td>
                                 <td>{{ $stories->position }}</td>
-                                <td><img src="{{ Storage::url($stories->image) }}" alt="image" width="90"></td>
-                                <td>{{ $stories->title }}</td>
-                                <td>{{ $stories->sub_title }}</td>
-                                <td>{{ $stories->description }}</td>
+                                <td><img src="{{ Storage::url($stories->image_cover) }}" alt="image" width="90"></td>
+                                <td><img src="{{ Storage::url($stories->image_box) }}" alt="image" width="90"></td>
+                                <td>{!!$stories->description!!}</td>
                                 <td>
                                     <a href="{{ route('story.edit', $stories->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <a href="{{ route('story.destroy', $stories->id) }}" class="btn btn-outline-danger .icon-left">Delete</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('story.destroy', $stories->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
+                                    </form>
                                 </td>
-                                <td></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </section>
         <!-- Basic Tables end -->
     </div>
