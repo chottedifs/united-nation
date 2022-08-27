@@ -141,8 +141,7 @@
                                                 </div>
                                                 <div class="col-12 d-flex justify-content mt-3">
                                                     <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                    <button type="reset"
-                                                        class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -153,7 +152,6 @@
                     </div>
                 </div>
             </div>
-
         </section>
         <!-- Basic Tables end -->
     </div>

@@ -68,36 +68,24 @@
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
-                                                        <div class="form-control-icon">
-                                                            <i class="bi bi-image"></i>
                                                         </div>
                                                     </div>
-                                                    <label class="first-name-icon" for="image_cover">Image Cover</label>
-                                                    <div class="position-relative">
-                                                        <input class="form-control @error('image_cover') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" multiple>
-                                                        @error('image_cover')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
+                                                </div>
+                                                <div class="col-12 d-flex justify-content mt-3">
+                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <img id="blah"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                            </div>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 @endsection
 
 @push('style')

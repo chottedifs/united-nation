@@ -46,7 +46,7 @@ class InfografisController extends Controller
         ]);
 
         $validatedData2 = $request->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
         ]);
 
         $validatedData2['image'] = $request->file('image')->store('public/images/infografis');

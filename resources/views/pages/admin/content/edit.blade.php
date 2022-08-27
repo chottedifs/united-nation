@@ -57,7 +57,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Content 1</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('content_1') is-invalid @enderror" cols="10" rows="10" placeholder="content_1" id="summernote1" name="content_1">{{ old("content_1", $content->content_1) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('content_1') is-invalid @enderror" cols="10" rows="10" placeholder="content_1" id="summernote1" name="content_1">{{ old("content_1", $content->Content->content_1) }}</textarea>
                                                             @error('content_1')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -70,7 +70,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Content 2</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('content_2') is-invalid @enderror" cols="10" rows="10" placeholder="content_2" id="summernote2" name="content_2">{{ old("content_2", $content->content_2) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('content_2') is-invalid @enderror" cols="10" rows="10" placeholder="content_2" id="summernote2" name="content_2">{{ old("content_2", $content->Content->content_2) }}</textarea>
                                                             @error('content_2')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -83,7 +83,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Content 3</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('content_3') is-invalid @enderror" cols="10" rows="10" placeholder="content_3" id="summernote3" name="content_3">{{ old("content_3", $content->content_3) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('content_3') is-invalid @enderror" cols="10" rows="10" placeholder="content_3" id="summernote3" name="content_3">{{ old("content_3", $content->Content->content_3) }}</textarea>
                                                             @error('content_3')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -96,7 +96,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="description-id-icon">Content 4</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('content_4') is-invalid @enderror" cols="10" rows="10" placeholder="content_4" id="summernote4" name="content_4">{{ old("content_4", $content->content_4) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('content_4') is-invalid @enderror" cols="10" rows="10" placeholder="content_4" id="summernote4" name="content_4">{{ old("content_4", $content->Content->content_4) }}</textarea>
                                                             @error('content_4')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}

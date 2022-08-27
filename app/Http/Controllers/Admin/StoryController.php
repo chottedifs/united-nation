@@ -99,19 +99,21 @@ class StoryController extends Controller
             $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
             $data['image_box'] = $request->file('image_box')->store('public/images/story');
             $relasiStory->update($validatedData1);
+            $story->update($data);
         }
 
-        $story->update($data);
-        $relasiStory->update($validatedData1);
+        // $relasiStory->update($validatedData1);
         return redirect(route('story.index'));
     }
 
     public function destroy($id)
     {
         $relasiStory = RelasiStoryPages::findOrFail($id);
-        $story = Story::findOrFail($relasiStory->story_id);
+        $story = Story::findOrFail($id);
+
         Storage::disk('local')->delete($story->image_cover);
         Storage::disk('local')->delete($story->image_box);
+
         Story::destroy($story->id);
         RelasiStoryPages::destroy($relasiStory->id);
 

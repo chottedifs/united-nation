@@ -37,18 +37,20 @@
                         <tbody>
                             @foreach ($contents as $content)
                             <tr>
-                                <td>{$content->Page->title}</td>
-                                <td>{!!$content->content_1!!}</td>
-                                <td>{!!$content->content_2!!}</td>
-                                <td>{!!$content->content_3!!}</td>
-                                <td>{!!$content->content_4!!}</td>
+                                <td>{{$content->Pages->title}}</td>
+                                <td>{!! Str::limit($content->Content->content_1,100) !!}</td>
+                                <td>{!! Str::limit($content->Content->content_2,100) !!}</td>
+                                <td>{!! Str::limit($content->Content->content_3,100) !!}</td>
+                                <td>{!! Str::limit($content->Content->content_4,100) !!}</td>
                                 <td>
-                                    <a href="{{ route('content.edit', $content->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('content.destroy', $content->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
-                                    </form>
+                                    <div class="d-flex">
+                                        <a href="{{ route('content.edit', $content->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
+                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('content.destroy', $content->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
