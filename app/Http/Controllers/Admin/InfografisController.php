@@ -14,6 +14,7 @@ class InfografisController extends Controller
     public function index()
     {
         $infografis = RelasiInfografisPages::with('Pages', 'Infografis')->get();
+
         return view('pages.admin.infografis.index', [
             'infografis' => $infografis
         ]);

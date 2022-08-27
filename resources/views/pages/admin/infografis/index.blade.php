@@ -5,14 +5,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Page</h3>
-                    <a href="{{ route('pages.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Story</a>
+                    <h3>Infographic</h3>
+                    <a href="{{ route('infografis.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Story</a>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Page</li>
+                            <li class="breadcrumb-item active" aria-current="page">Infographic</li>
                         </ol>
                     </nav>
                 </div>
@@ -26,27 +26,21 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Title</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pages as $page)
+                            @foreach ($infografis as $infographics)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $page->title }}</td>
-                                <td><img src="{{ Storage::url($page->image_cover) }}" alt="" style="width: 150px;"></td>
+                                <td><img src="{{ Storage::url($infographics->image) }}" alt="image" width="90"></td>
                                 <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('pages.destroy', $page->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
+                                    <a href="{{ route('story.edit', $infographics->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('story.destroy', $infographics->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

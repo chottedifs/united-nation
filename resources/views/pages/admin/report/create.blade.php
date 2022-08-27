@@ -63,11 +63,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Cover Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Images</label>
                                                         <div class="position-relative">
-                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover") }}">
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="imgInp" name="image_cover" value="{{ old("image_cover") }}">
                                                         @error('image_cover')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -107,5 +115,13 @@
         $(document).ready(function() {
             $('#summernote').summernote();
         });
+    </script>
+    <script>
+        imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
     </script>
 @endpush

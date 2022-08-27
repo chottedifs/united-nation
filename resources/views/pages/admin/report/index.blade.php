@@ -37,14 +37,16 @@
                             <tr>
                                 <td>{{ $reports->title }}</td>
                                 <td><img src="{{ Storage::url($reports->image_cover) }}" alt="image" width="90"></td>
-                                <td>{!!$reports->description!!}</td>
+                                <td>{!! Str::limit($reports->description,100) !!}</td>
                                 <td>
-                                    <a href="{{ route('report.edit', $reports->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $reports->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
-                                    </form>
+                                    <div class="d-flex">
+                                        <a href="{{ route('report.edit', $reports->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
+                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $reports->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach

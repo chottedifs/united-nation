@@ -29,7 +29,8 @@ class StoryController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
         $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
@@ -67,12 +68,14 @@ class StoryController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
         if ($request->file('image')) {
-            if ($request->oldImage) {
-                Storage::delete($request->oldImage);
+            if ($request->oldImageCover && $request->oldImageBox) {
+                Storage::delete($request->oldImageBox);
+                Storage::delete($request->oldImageCover);
             }
             $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
             $data['image_box'] = $request->file('image_box')->store('public/images/story');

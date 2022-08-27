@@ -79,11 +79,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Cover Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah1"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="images-id-icon">Images</label>
+                                                        <label for="images-id-icon">Image Cover</label>
                                                         <div class="position-relative">
-                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover") }}">
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover"  id="imgInp1" name="image_cover" value="{{ old("image_cover") }}">
                                                         @error('image_cover')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -92,11 +100,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Box Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah2"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="images-id-icon">Images</label>
+                                                        <label for="images-id-icon">Image Box</label>
                                                         <div class="position-relative">
-                                                        <input type="file" class="form-control @error('image_box') is-invalid @enderror" placeholder="image_box" id="image_box-id-icon" name="image_box" value="{{ old("image_box") }}">
+                                                        <input type="file" class="form-control @error('image_box') is-invalid @enderror" placeholder="image_box"  id="imgInp2" name="image_box" value="{{ old("image_box") }}">
                                                         @error('image_box')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -136,5 +152,19 @@
         $(document).ready(function() {
             $('#summernote').summernote();
         });
+    </script>
+    <script>
+        imgInp1.onchange = evt => {
+        const [file] = imgInp1.files
+        if (file) {
+            blah1.src = URL.createObjectURL(file)
+        }
+    }
+        imgInp2.onchange = evt => {
+        const [file] = imgInp2.files
+        if (file) {
+            blah2.src = URL.createObjectURL(file)
+        }
+    }
     </script>
 @endpush
