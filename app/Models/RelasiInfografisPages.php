@@ -20,4 +20,9 @@ class RelasiInfografisPages extends Model
     {
         return $this->belongsTo(Infografis::class, 'infografis_id');
     }
+
+    public function Pages(): BelongsTo
+    {
+        return $this->belongsTo(Pages::class, 'pages_id');
+    }
 }

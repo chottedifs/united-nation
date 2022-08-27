@@ -6,11 +6,12 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Pages</h3>
+                    <a href="{{ route('pages.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Page</a>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Pages</li>
                         </ol>
                     </nav>
@@ -23,9 +24,6 @@
             <div class="card">
                 <div class="card-header">
                     Jquery Datatable
-                </div>
-                <div class="card-header">
-                    <a href="{{ route('pages.create') }}" class="btn btn-primary text-right" style="border-radius: 10px;">Add Page</a>
                 </div>
                 <div class="card-body">
                     <table class="table" id="table1">
@@ -42,9 +40,14 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $page->title }}</td>
-                                <td><img src="{{ asset('storage/images/'. $page->image_cover) }}" alt="" style="width: 150px;"></td>
+                                <td><img src="{{ Storage::url($page->image_cover) }}" alt="image" width="90"></td>
                                 <td>
-                                    <span class="badge bg-success">Active</span>
+                                    <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
+                                    <form action="{{ route('pages.destroy', $page->id) }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-outline-danger .icon-left">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

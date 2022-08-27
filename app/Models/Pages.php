@@ -19,21 +19,21 @@ class Pages extends Model
 
     public function RelasiStoryPages(): HasMany
     {
-        return $this->HasMany(RelasiKios::class, 'pages_id', 'id');
+        return $this->HasMany(RelasiStoryPages::class, 'pages_id', 'id');
     }
 
     public function RelasiReportPages(): HasMany
     {
-        return $this->HasMany(RelasiKios::class, 'pages_id', 'id');
+        return $this->HasMany(RelasiReportPages::class, 'pages_id', 'id');
     }
 
     public function RelasiContentPages(): HasOne
     {
-        return $this->HasOne(RelasiKios::class, 'pages_id', 'id');
+        return $this->HasOne(RelasiContentPages::class, 'pages_id', 'id');
     }
 
     public function RelasiInfografisPages(): HasMany
     {
-        return $this->HasMany(RelasiKios::class, 'pages_id', 'id');
+        return $this->HasMany(RelasiInfografisPages::class, 'pages_id', 'id');
     }
 }

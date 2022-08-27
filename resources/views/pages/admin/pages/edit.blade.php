@@ -24,7 +24,8 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" action="{{ route('pages.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="form form-vertical" action="{{ route('pages.update', $page->id) }}" method="post" enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
@@ -32,7 +33,7 @@
                                                 <div class="form-group has-icon-left">
                                                     <label for="first-name-icon" for="title">Title</label>
                                                     <div class="position-relative">
-                                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Add Title">
+                                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Add Title" value="{{ old("title", $page->title) }}">
                                                             @error('title')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -44,7 +45,7 @@
                                                     </div>
                                                     <label class="first-name-icon" for="image_cover">Image Cover</label>
                                                     <div class="position-relative">
-                                                        <input class="form-control @error('title') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" multiple>
+                                                        <input class="form-control @error('image_cover') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" value="{{ old("image_cover", $page->image_cover) }}">
                                                         @error('image_cover')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -58,7 +59,11 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="card">
-                                                    <img id="blah"/>
+                                                    @if($page->image_cover)
+                                                        <img id="blah" src="{{ Storage::url($page->image_cover) }}"/>
+                                                    @else
+                                                        <img id="blah"/>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex justify-content-end">

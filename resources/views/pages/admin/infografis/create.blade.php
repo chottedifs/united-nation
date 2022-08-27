@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" action="{{ route('pages.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="form form-vertical" action="{{ route('infografis.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
@@ -32,20 +32,23 @@
                                                 <div class="form-group has-icon-left">
                                                     <label for="first-name-icon" for="title">Title</label>
                                                     <div class="position-relative">
-                                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Add Title">
-                                                            @error('title')
-                                                                <div class="invalid-feedback">
-                                                                    {{ $message }}
-                                                                </div>
-                                                            @enderror
-                                                        <div class="form-control-icon">
-                                                            <i class="bi bi-textarea-t"></i>
-                                                        </div>
+                                                        <fieldset class="form-group">
+                                                            <label for="pages_id" class="form-label">Select Page</label>
+                                                            <select name="pages_id" class="form-select" id="basicSelect">
+                                                                @foreach ($pages as $page)
+                                                                    @if(old('pages_id') == $page->id)
+                                                                        <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
+                                                                    @else
+                                                                        <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                        </fieldset>
                                                     </div>
-                                                    <label class="first-name-icon" for="image_cover">Image Cover</label>
+                                                    <label class="first-name-icon" for="image">Image Cover</label>
                                                     <div class="position-relative">
-                                                        <input class="form-control @error('title') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" multiple>
-                                                        @error('image_cover')
+                                                        <input class="form-control @error('image') is-invalid @enderror" id="imgInp" name="image" type="file" id="formFileMultiple" multiple>
+                                                        @error('image')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
                                                                 </div>
@@ -77,8 +80,9 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
+    {{--  <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">  --}}
+    <link rel="stylesheet" href="{{ asset('template/admin/dist/assetsassets/extensions/choices.js/public/assets/styles/choices.css') }}">
 @endpush
 
 @push('script')

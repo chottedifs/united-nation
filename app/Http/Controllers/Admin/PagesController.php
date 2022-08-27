@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Pages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PagesController extends Controller
 {
@@ -37,13 +38,10 @@ class PagesController extends Controller
         // echo "yoloooo";
         $validatedData = $request->validate([
             'title' => 'required',
-            'image_cover' => 'image|required|mimes:jpg,jpeg,png|file|max:1024',
+            'image_cover' => 'image|required|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
         ]);
 
-        $validatedData['image_cover'] = $request->file('image_cover')->store(
-            'images',
-            'public'
-        );
+        $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/story');
         Pages::create($validatedData);
         return redirect(route('pages.index'));
     }
@@ -67,7 +65,11 @@ class PagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page = Pages::findOrFail($id);
+
+        return view('pages.admin.pages.edit', [
+            'page' => $page
+        ]);
     }
 
     /**
@@ -79,7 +81,22 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Pages::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+        ]);
+
+        if ($request->file('image_cover')) {
+            Storage::delete($page->image_cover);
+            $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/story');
+            $page->update($validatedData);
+        } else {
+            $validatedData['image_cover'] = $page->image_cover;
+            $page->update($validatedData);
+        }
+
+        return redirect(route('pages.index'));
     }
 
     /**
@@ -90,6 +107,9 @@ class PagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pages = Pages::findOrFail($id);
+        Storage::delete($pages->image_cover);
+        Pages::destroy($id);
+        return redirect(route('pages.index'));
     }
 }
