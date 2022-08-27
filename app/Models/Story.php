@@ -15,6 +15,7 @@ class Story extends Model
         'name',
         'position',
         'image_cover',
+        'image',
         'image_box',
         'description',
     ];
