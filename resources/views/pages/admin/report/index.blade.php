@@ -36,32 +36,19 @@
                         <tbody>
                             @foreach ($reports as $report)
                             <tr>
-<<<<<<< HEAD
-                                <td>{{ $reports->title }}</td>
-                                <td><img src="{{ Storage::url($reports->image_cover) }}" alt="image" width="90"></td>
-                                <td>{!! Str::limit($reports->description,100) !!}</td>
+                                <td>{{ $report->Pages->title }}</td>
+                                <td>{{ $report->Report->title }}</td>
+                                <td><img src="{{ Storage::url($report->Report->image_cover) }}" alt="image" width="90"></td>
+                                <td>{!! Str::limit($report->Report->description,100) !!}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{ route('report.edit', $reports->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $reports->id) }}" method="POST">
+                                        <a href="{{ route('report.edit', $report->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
+                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $report->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
                                         </form>
                                     </div>
-=======
-                                <td>{{ $report->Pages->title }}</td>
-                                <td>{{ $report->Report->title }}</td>
-                                <td><img src="{{ Storage::url($report->Report->image_cover) }}" alt="image" width="90"></td>
-                                <td>{!!$report->Report->description!!}</td>
-                                <td>
-                                    <a href="{{ route('report.edit', $report->id) }}" class="btn btn-outline-warning .icon-left">Edit</a>
-                                    <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $report->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger .icon-left">Delete</button>
-                                    </form>
->>>>>>> ece694cc7e6c719c11ef704d9b6d27851865aa35
                                 </td>
                             </tr>
                             @endforeach

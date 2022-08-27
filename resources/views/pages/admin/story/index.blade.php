@@ -40,10 +40,10 @@
                             <tr>
                                 <td>{{ $story->Pages->title }}</td>
                                 <td>{{ $story->Story->name }}</td>
-                                <td>{{ $story->Story->position }}</td>
+                                <td>{{ Str::limit($story->Story->position, 20) }}</td>
                                 <td><img src="{{ Storage::url($story->Story->image_cover) }}" alt="image" width="90"></td>
                                 <td><img src="{{ Storage::url($story->Story->image_box) }}" alt="image" width="90"></td>
-                                <td>{!! Str::limit($story->Story->description,100) !!}</td>
+                                <td>{{ Str::limit($story->Story->description,100) }}</td>
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('story.edit', $story->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>

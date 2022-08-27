@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-// use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\inReviewController;
+use App\Http\Controllers\inclusiveHumanController;
+use App\Http\Controllers\reportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('dashboard');
-
-// Route::get('/', function () {
-//     return view('pages.home');
-// });
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/a-year-in-review', [inReviewController::class, 'index'])->name('inReview');
+Route::get('/inclusive-human-development', [inclusiveHumanController::class, 'index'])->name('inclusiveHuman');
+Route::get('/inclusive-human-development/{id}/reports', [reportController::class, 'index'])->name('report');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');

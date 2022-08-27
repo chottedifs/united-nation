@@ -70,10 +70,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <div class="form-group has-icon-left">
+                                                    <div class="form-group">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $report->Report->description) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="description" name="description">{{ old("description", $report->Report->description) }}</textarea>
                                                             @error('description')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -86,8 +86,8 @@
                                                     <div class="form-group">
                                                         <label for="first-name-icon" for="title">Image Cover Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
-                                                            @if($report->image_cover)
-                                                                <img class="img-responsive" id="blah" src="{{ Storage::url($report->image_cover) }}"/>
+                                                            @if($report->Report->image_cover)
+                                                                <img class="img-responsive" id="blah" src="{{ Storage::url($report->Report->image_cover) }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah"/>
                                                             @endif
@@ -98,13 +98,8 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image Cover</label>
                                                         <div class="position-relative">
-<<<<<<< HEAD
-                                                        <input type="hidden" name="oldImageCover" value="{{ $report->image_cover }}">
-                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="imgInp" name="image_cover" value="{{ old("image_cover", $report->image_cover) }}">
-=======
                                                         <input type="hidden" name="oldImageCover" value="{{ $report->Report->image_cover }}">
-                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="image_cover-id-icon" name="image_cover" value="{{ old("image_cover", $report->Report->image_cover) }}">
->>>>>>> ece694cc7e6c719c11ef704d9b6d27851865aa35
+                                                        <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="imgInp" name="image_cover" value="{{ old("image_cover", $report->Report->image_cover) }}">
                                                         @error('image_cover')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -134,17 +129,11 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}"> --}}
 @endpush
 
 @push('script')
     <script src="{{ asset('template/admin/dist/assets/extensions/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('library/summernote/summernote.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote();
-        });
-    </script>
     <script>
         imgInp.onchange = evt => {
         const [file] = imgInp.files

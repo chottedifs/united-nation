@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\relasiContentPages;
 use App\Models\relasiStoryPages;
 
-class HomeController extends Controller
+class inReviewController extends Controller
 {
     public function index()
     {
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 7)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 7)->get();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 1)->get();
+        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 1)->get();
 
         // ddd($content);
 
-        return view('pages.home',[
+        return view('pages.inReview',[
             'content' => $content,
             'story' => $story,
         ]);

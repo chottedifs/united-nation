@@ -247,7 +247,7 @@ body {
     background-size: 70%;
     /* font-weight: 600; */
     color: #fff;
-    
+
 }
 /* End Component Menus */
 
@@ -609,7 +609,7 @@ section.story-ihd .card-body {
     width:100%;
     z-index:1;
 }
-    
+
 .carousel-infografis .owl-stage {
     position:relative;
     -ms-touch-action:pan-Y;
@@ -627,7 +627,7 @@ section.story-ihd .card-body {
 }
 
 .carousel-infografis .owl-stage-outer {
-    position:relative; 
+    position:relative;
     /* overflow:hidden; */
     width:100%;
     transform:scale(1.7);
@@ -685,13 +685,13 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-infografis .owl-nav button.owl-next{ 
+.carousel-infografis .owl-nav button.owl-next{
     right:26%;
     height: 40px;
     width: 40px;
 }
 
-.carousel-infografis .owl-nav button.owl-next:hover{ 
+.carousel-infografis .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -729,13 +729,13 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-card .owl-nav button.owl-next{ 
+.carousel-card .owl-nav button.owl-next{
     right: 0px;
     height: 40px;
     width: 40px;
 }
 
-.carousel-card .owl-nav button.owl-next:hover{ 
+.carousel-card .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -773,14 +773,14 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-card-infografis .owl-nav button.owl-next{ 
+.carousel-card-infografis .owl-nav button.owl-next{
     top: -18px;
     right: -10px;
     height: 40px;
     width: 40px;
 }
 
-.carousel-card-infografis .owl-nav button.owl-next:hover{ 
+.carousel-card-infografis .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -823,7 +823,7 @@ section.story-ihd .card-body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    transition: background-color .3s, 
+    transition: background-color .3s,
       opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
@@ -852,7 +852,7 @@ section.story-ihd .card-body {
     opacity: 1;
     visibility: visible;
   }
-  
+
 /* End Scroll Up */
 
 /* Floating menu */

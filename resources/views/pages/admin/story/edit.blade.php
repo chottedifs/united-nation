@@ -87,10 +87,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <div class="form-group has-icon-left">
+                                                    <div class="form-group">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
-                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="summernote" name="description">{{ old("description", $story->Story->description) }}</textarea>
+                                                            <textarea type="text" class="form-control @error('description') is-invalid @enderror" cols="10" rows="10" placeholder="description" id="description" name="description">{{ old("description", $story->Story->description) }}</textarea>
                                                             @error('description')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -172,17 +172,11 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}"> --}}
 @endpush
 
 @push('script')
     <script src="{{ asset('template/admin/dist/assets/extensions/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('library/summernote/summernote.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote();
-        });
-    </script>
     <script>
     imgInp1.onchange = evt => {
         const [file] = imgInp1.files

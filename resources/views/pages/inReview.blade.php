@@ -1,0 +1,131 @@
+@extends('layouts.master-app')
+
+@section('content')
+    @foreach ($content as $contents)
+        <section class="about">
+            <div class="container">
+                <div class="row">
+                    <h3 class="text-title">{{($contents->Pages->title)}}</h3>
+                </div>
+                <div class="row mb-4">
+                    <p class="text-content">
+                        <img src="assets/images/img-content-1.webp" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
+                        {!!$contents->Content->content_1!!}
+                    </p>
+                </div>
+                <div class="row mb-2">
+                    <p class="text-content">
+                        <img src="assets/images/img-content-2.webp" class="img-fluid ms-4" style="float: right; width: 40%;" alt="img-conten-2">
+                        {!!$contents->Content->content_2!!}
+                    </p>
+                </div>
+                <div class="row mb-4">
+                    <p class="text-content">
+                        {!!$contents->Content->content_3!!}
+                    </p>
+                </div>
+                <div class="row justify-content-center mb-4">
+                    <div class="card w-50 p-3 shadow-sm border-0">
+                        <div id="chart-review" style="width:100%; height:400px;"></div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <p class="text-content">
+                        {!!$contents->Content->content_4!!}
+                    </p>
+                </div>
+            </div>
+        </section>
+    @endforeach
+@endsection
+
+@push('script')
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+    function actionToggle() {
+        var action = document.querySelector('.action');
+        action.classList.toggle('active')
+    }
+
+    var action = document.querySelector('.action');
+    window.onscroll = function(){
+        action.classList.toggle('show', window.scrollY >= 600);
+    }
+</script>
+<script>
+    Highcharts.chart('chart-review', {
+
+    chart: {
+        style: {
+            fontFamily: 'Montserrat, bold, sans-serif'
+        }
+    },
+
+    title: {
+        text: 'Indonesia Economic Growth',
+    },
+
+    subtitle: {
+            text: 'Source: BPS (Constant Price)',
+    },
+
+    xAxis: {
+    accessibility: {
+        rangeDescription: 'Range: 2010 to 2017'
+    }
+    },
+
+    plotOptions: {
+        series: {
+                label: {
+                connectorAllowed: false
+                },
+                pointStart: 2015
+        },
+        line : {
+                dataLabels : {
+                    enabled : true,
+                    // formatter : function() {
+                    //     return this.y + '%';
+                    // }
+                }
+        }
+    },
+
+    series: [{
+        name: 'Per Capita Income Growth (%)',
+        data: [7.64, 6.21, 8.35, 7.90, 5.89, -3.37, 9.28],
+        marker: {
+            symbol: 'url(assets/images/motif-red.svg)'
+        },
+        color: '#ED4328'
+    },
+    {
+            name: 'GDP Growth (%)',
+            data: [4.88, 5.03, 5.07, 5.17, 5.02,-2.07, 3.69],
+            marker: {
+                symbol: 'url(assets/images/motif-blue.svg)'
+            },
+            color: '#278DE1'
+        },
+    ],
+
+    responsive: {
+    rules: [{
+        condition: {
+        maxWidth: 500
+        }
+    }]
+    },
+
+    yAxis: {
+        visible: false,
+    },
+
+    credits: {
+        enabled: false
+    },
+
+    });
+</script>
+@endpush

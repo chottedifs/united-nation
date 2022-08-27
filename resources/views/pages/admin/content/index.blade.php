@@ -38,10 +38,10 @@
                             @foreach ($contents as $content)
                             <tr>
                                 <td>{{$content->Pages->title}}</td>
-                                <td>{!! Str::limit($content->Content->content_1,100) !!}</td>
-                                <td>{!! Str::limit($content->Content->content_2,100) !!}</td>
-                                <td>{!! Str::limit($content->Content->content_3,100) !!}</td>
-                                <td>{!! Str::limit($content->Content->content_4,100) !!}</td>
+                                <td>{{ Str::limit($content->Content->content_1,100) }}</td>
+                                <td>{{ Str::limit($content->Content->content_2,100) }}</td>
+                                <td>{{ Str::limit($content->Content->content_3,100) }}</td>
+                                <td>{{ Str::limit($content->Content->content_4,100) }}</td>
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('content.edit', $content->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
