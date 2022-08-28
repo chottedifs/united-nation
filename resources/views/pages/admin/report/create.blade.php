@@ -68,7 +68,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-12">
+                                                {{-- <div class="col-12">
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">Slug</label>
                                                         <div class="position-relative">
@@ -83,7 +83,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="description-id-icon">Description</label>

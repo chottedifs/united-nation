@@ -28,7 +28,7 @@ Route::get('/economic-transformation', [economicTransformationController::class,
 Route::get('/green-development-and-natural-disasters', [greenDevelopmentController::class, 'index'])->name('greenDevelopment');
 Route::get('/innovation-to-accelerate-progress-towards', [innovationAccelerateController::class, 'index'])->name('innovationAccelerate');
 Route::get('/un-reforms-in-indonesia', [unReformsController::class, 'index'])->name('unReforms');
-Route::get('/reports/{id}', [reportController::class, 'index'])->name('report');
+Route::get('/reports/{slug}', [reportController::class, 'index'])->name('report');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController');
     Route::resource('/story', '\App\Http\Controllers\Admin\StoryController');
     Route::resource('/storyUp', '\App\Http\Controllers\Admin\StoryUpController');
+    Route::resource('/storyDown', '\App\Http\Controllers\Admin\StoryDownController');
     Route::resource('/content', '\App\Http\Controllers\Admin\ContentController');
     Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController');
     Route::resource('/report', '\App\Http\Controllers\Admin\ReportController');

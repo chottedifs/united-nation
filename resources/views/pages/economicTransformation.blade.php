@@ -41,7 +41,7 @@
                 <div class="owl-carousel carousel-card">
                     @foreach ($report as $reports)
                     <div class="item">
-                        <a href="{{ route('report', $reports->Report->id) }}#title">
+                        <a href="{{ route('report', $reports->Report->slug) }}#title">
                             <div class="card bg-dark text-white">
                                 <img class="card-img" src="{{ Storage::url($reports->Report->image_cover)}}" alt="Card image">
                             </div>

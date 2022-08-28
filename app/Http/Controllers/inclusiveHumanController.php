@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\relasiContentPages;
-use App\Models\relasiStoryPages;
+use App\Models\relasiStoryUpPages;
+use App\Models\relasiStoryDownPages;
 use App\Models\relasiInfografisPages;
 use App\Models\relasiReportPages;
 
@@ -13,18 +14,20 @@ class inclusiveHumanController extends Controller
 {
     public function index()
     {
-        $page = Pages::where('id', 2)->first();
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
+        $page = Pages::where('id', 3)->first();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->first();
+        $storyUp = relasiStoryUpPages::with('Pages' , 'StoryUp')->where('pages_id', $page->id)->get();
+        $storyDown = relasiStoryDownPages::with('Pages' , 'StoryDown')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
 
-        // ddd($content);
+        // ddd($storyUp);
 
         return view('pages.inclusiveHuman',[
             'page' => $page,
             'content' => $content,
-            'story' => $story,
+            'storyUp' => $storyUp,
+            'storyDown' => $storyDown,
             'infografis' => $infografis,
             'report' => $report,
         ]);

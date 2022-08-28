@@ -41,9 +41,9 @@
                 <div class="owl-carousel carousel-card">
                     @foreach ($report as $reports)
                     <div class="item">
-                        <a href="{{ route('report', $reports->Report->id) }}#title">
+                        <a href="{{ route('report', $reports->Report->slug) }}#title">
                             <div class="card bg-dark text-white">
-                                <img class="card-img" src="{{ Storage::url($reports->Report->image_cover)}}" alt="Card image">
+                                <img class="card-img" src="{{ Storage::url($reports->Report->image_cover) }}" alt="Card image">
                             </div>
                         </a>
                     </div>
@@ -53,12 +53,12 @@
         </div>
     </section>
 
-    @foreach ($content as $contents)
+    {{-- @foreach ($content as $contents) --}}
     <section class="content-ihd">
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_1!!}
+                    {!!$content->Content->content_1!!}
                 </p>
             </div>
         </div>
@@ -67,30 +67,43 @@
     <section class="story-ihd">
         <div class="container">
             <div class="row mb-5">
+                @foreach ($storyUp as $storyUps)
                 <div class="col-sm-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-1" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#story-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
-                                <img src="assets/images/story-1.webp" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
+                                <img src="{{ Storage::url($storyUps->StoryUp->image_cover) }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
                                 <p class="text-card-story mt-5">
-                                    <img src="assets/images/motif-read-blue.svg" alt="motif-read" class="me-2" width="40">Eni's Story
+                                    <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyUps->StoryUp->name }}
                                 </p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-sm-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-2" style="cursor: pointer;">
-                        <div class="card" data-aos="fade-left">
-                            <div class="card-body p-0">
-                                <img src="assets/images/story-2.webp" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
-                                <p class="text-card-story mt-5">
-                                    <img src="assets/images/motif-read-blue.svg" alt="motif-read" class="me-2" width="40">Nia's Story
-                                </p>
+                {{-- Modal --}}
+                <div class="modal fade" id="story-{{$storyUps->StoryUp->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                    <div class="modal-dialog modal-fullscreen">
+                      <div class="modal-content">
+                        <div class="modal-body pt-0 pb-0">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <img src="{{ Storage::url($storyUps->StoryUp->image_box) }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
+                                </div>
+                                <div class="col-lg-7">
+                                    <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
+                                    <p class="text-content" style="font-size: 18px; padding: 40px 20px 40px 20px;">
+                                        <span class="text-modal-story"><img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{$storyUps->StoryUp->name}}</span> <br>
+                                        <span class="text-submodal-story">{{$storyUps->StoryUp->position}}</span><br><br>
+                                        {!!$storyUps->StoryUp->description!!}
+                                     </p>
+                                </div>
                             </div>
                         </div>
-                    </a>
+                      </div>
+                    </div>
                 </div>
+                {{-- End Modal --}}
+                @endforeach
             </div>
         </div>
     </section>
@@ -99,7 +112,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_2!!}
+                    {!!$content->Content->content_2!!}
                 </p>
             </div>
         </div>
@@ -140,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_3!!}
+                    {!!$content->Content->content_3!!}
                 </p>
             </div>
         </div>
@@ -149,18 +162,43 @@
     <section class="story-ihd">
         <div class="container">
             <div class="row mb-5 justify-content-center">
+                @foreach ($storyDown as $storyDowns)
                 <div class="col-sm-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-5" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#story-{{$storyDowns->StoryDown->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
-                                <img src="assets/images/story-5.jpg" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
+                                <img src="{{ Storage::url($storyDowns->StoryDown->image_cover) }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
                                 <p class="text-card-story mt-5">
-                                    <img src="assets/images/motif-read-blue.svg" alt="motif-read" class="me-2" width="40">Helwana’s Story
+                                    <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyDowns->StoryDown->name }}
                                 </p>
                             </div>
                         </div>
                     </a>
                 </div>
+                {{-- Modal --}}
+                <div class="modal fade" id="story-{{$storyDowns->StoryDown->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                    <div class="modal-dialog modal-fullscreen">
+                      <div class="modal-content">
+                        <div class="modal-body pt-0 pb-0">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <img src="{{ Storage::url($storyDowns->StoryDown->image_box) }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
+                                </div>
+                                <div class="col-lg-7">
+                                    <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
+                                    <p class="text-content" style="font-size: 18px; padding: 40px 20px 40px 20px;">
+                                        <span class="text-modal-story"><img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{$storyDowns->StoryDown->name}}</span> <br>
+                                        <span class="text-submodal-story">{{$storyDowns->StoryDown->position}}</span><br><br>
+                                        {!!$storyDowns->StoryDown->description!!}
+                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                {{-- End Modal --}}
+                @endforeach
             </div>
         </div>
     </section>
@@ -169,12 +207,12 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_4!!}
+                    {!!$content->Content->content_4!!}
                 </p>
             </div>
         </div>
     </section>
-    @endforeach
+    {{-- @endforeach --}}
 @endsection
 
 @push('style')

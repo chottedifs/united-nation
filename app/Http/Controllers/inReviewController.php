@@ -10,8 +10,9 @@ class inReviewController extends Controller
 {
     public function index()
     {
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 1)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 1)->get();
+        $page = Pages::where('id', 2)->first();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
+        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
 
         // ddd($content);
 

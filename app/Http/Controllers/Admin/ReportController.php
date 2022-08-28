@@ -8,8 +8,9 @@ use App\Models\RelasiReportPages;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Path\To\DOMDocument;
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Str;
+// use Path\To\DOMDocument;
+// use Intervention\Image\ImageManagerStatic as Image;
 
 class ReportController extends Controller
 {
@@ -38,12 +39,13 @@ class ReportController extends Controller
 
         $data = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|max:255',
+            // 'slug' => 'required|max:255',
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
         ]);
 
+        $data['slug'] = Str::slug($request->title);
         $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
         $data['image'] = $request->file('image')->store('public/images/report');
 
@@ -93,23 +95,24 @@ class ReportController extends Controller
         ]);
         $data = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|max:255',
+            // 'slug' => 'required|max:255',
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
         ]);
+
 
         if ($request->file('image_cover')) {
             Storage::delete($request->oldImageCover);
             $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
         }
         if ($request->file('image')) {
-            Storage::delete($request->oldImageCover);
+            Storage::delete($request->oldImage);
             $data['image'] = $request->file('image')->store('public/images/report');
         }
 
         // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
-
+        $data['slug'] = Str::slug($request->title);
         $report->update($data);
         $relasiReport->update($validatedData1);
         return redirect(route('report.index'));

@@ -13,7 +13,7 @@ class unReformsController extends Controller
 {
     public function index()
     {
-        $page = Pages::where('id', 6)->first();
+        $page = Pages::where('id', 7)->first();
         $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
         $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();

@@ -7,9 +7,9 @@ use App\Models\Report;
 
 class reportController extends Controller
 {
-    public function index(Request $request, $id)
+    public function index(Request $request, $slug)
     {
-        $report = Report::findOrFail($id);
+        $report = Report::where('slug',$slug)->firstOrFail();
 
         return view('pages.report',[
             'report' => $report

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReportsTable extends Migration
+class CreateRelasiStoryDownPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('relasi_story_down_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image_cover');
-            $table->text('description');
+            $table->foreignId('story_down_id')->constrained();
+            $table->foreignId('pages_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('relasi_story_down_pages');
     }
 }

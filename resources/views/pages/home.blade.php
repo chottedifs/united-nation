@@ -9,6 +9,7 @@
                 </div>
                 <div class="row mb-4">
                     <p class="text-content" style="font-size: 18px;">
+                        <img src="{{ Storage::url($contens->Content->image_1) }}" alt="" class="img-responsive me-4" style="float: left;" width="50%">
                         {!!$contens->Content->content_1!!}
                     </p>
                 </div>

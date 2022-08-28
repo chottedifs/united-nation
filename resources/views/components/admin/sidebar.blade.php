@@ -43,10 +43,16 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="{{ route('story.index') }}" class='sidebar-link'>Story</a>
+                            <a href="{{ route('story.index') }}" class='sidebar-link'>Story Foreword</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="{{ route('storyUp.index') }}" class='sidebar-link'>Story 1</a>
+                            <a href="{{ route('storyUp.index') }}" class='sidebar-link'>Story Up</a>
+                        </li>
+                        <li class="submenu-item ">
+                            {{-- <a href="{{ route('storyMiddle.index') }}" class='sidebar-link'>Story 2</a> --}}
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('storyDown.index') }}" class='sidebar-link'>Story Down</a>
                         </li>
                     </ul>
                 </li>

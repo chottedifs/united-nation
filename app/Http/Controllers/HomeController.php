@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 7)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 7)->get();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 1)->get();
+        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 1)->get();
 
         // ddd($content);
 

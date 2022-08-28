@@ -13,7 +13,7 @@ class greenDevelopmentController extends Controller
 {
     public function index()
     {
-        $page = Pages::where('id', 4)->first();
+        $page = Pages::where('id', 5)->first();
         $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
         $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
