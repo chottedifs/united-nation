@@ -69,6 +69,22 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
+                                                    <div class="form-group has-icon-left">
+                                                        <label for="first-name-icon">Slug</label>
+                                                        <div class="position-relative">
+                                                            <input type="text" class="form-control @error('slug') is-invalid @enderror" placeholder="slug" id="first-name-icon" name="slug" value="{{ old("slug") }}">
+                                                            @error('slug')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            <div class="form-control-icon">
+                                                                <i class="bi bi-textarea-t"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="description-id-icon">Description</label>
                                                         <div class="position-relative">
@@ -91,10 +107,31 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="images-id-icon">Images</label>
+                                                        <label for="images-id-icon">Images Cover</label>
                                                         <div class="position-relative">
                                                         <input type="file" class="form-control @error('image_cover') is-invalid @enderror" placeholder="image_cover" id="imgInp" name="image_cover" value="{{ old("image_cover") }}">
                                                         @error('image_cover')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah3"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image"  id="imgInp3" name="image" value="{{ old("image") }}">
+                                                        @error('image')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
                                                             </div>
@@ -133,6 +170,12 @@
         const [file] = imgInp.files
         if (file) {
             blah.src = URL.createObjectURL(file)
+        }
+    }
+        imgInp3.onchange = evt => {
+        const [file] = imgInp3.files
+        if (file) {
+            blah3.src = URL.createObjectURL(file)
         }
     }
     </script>

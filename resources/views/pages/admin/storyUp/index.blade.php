@@ -5,14 +5,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Report</h3>
-                    <a href="{{ route('report.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Report</a>
+                    <h3>Story Top</h3>
+                    <a href="{{ route('storyUp.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Story Top</a>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Story</li>
+                            <li class="breadcrumb-item active" aria-current="page">Story Top</li>
                         </ol>
                     </nav>
                 </div>
@@ -27,25 +27,27 @@
                         <thead>
                             <tr>
                                 <th>For Page</th>
-                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Position</th>
                                 <th>Image Cover</th>
-                                <th>Image</th>
+                                <th>Image Box</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($reports as $report)
+                            @foreach ($stories as $story)
                             <tr>
-                                <td>{{ $report->Pages->title }}</td>
-                                <td>{{ $report->Report->title }}</td>
-                                <td><img src="{{ Storage::url($report->Report->image_cover) }}" alt="image" width="90"></td>
-                                <td><img src="{{ Storage::url($report->Report->image) }}" alt="image" width="90"></td>
-                                <td>{!! Str::limit($report->Report->description,100) !!}</td>
+                                <td>{{ $story->Pages->title }}</td>
+                                <td>{{ $story->StoryUp->name }}</td>
+                                <td>{{ Str::limit($story->StoryUp->position, 20) }}</td>
+                                <td><img src="{{ Storage::url($story->StoryUp->image_cover) }}" alt="image" width="90"></td>
+                                <td><img src="{{ Storage::url($story->StoryUp->image_box) }}" alt="image" width="90"></td>
+                                <td>{{ Str::limit($story->StoryUp->description,100) }}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="{{ route('report.edit', $report->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('report.destroy', $report->id) }}" method="POST">
+                                        <a href="{{ route('storyUp.edit', $story->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
+                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('storyUp.destroy', $story->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>

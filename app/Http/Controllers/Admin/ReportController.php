@@ -38,11 +38,14 @@ class ReportController extends Controller
 
         $data = $request->validate([
             'title' => 'required|max:255',
+            'slug' => 'required|max:255',
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
         ]);
 
         $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
+        $data['image'] = $request->file('image')->store('public/images/report');
 
         $report = Report::create($data);
         $validatedData1['report_id'] = $report->id;
@@ -90,15 +93,19 @@ class ReportController extends Controller
         ]);
         $data = $request->validate([
             'title' => 'required|max:255',
+            'slug' => 'required|max:255',
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
         ]);
 
         if ($request->file('image_cover')) {
-            if ($request->oldImageCover) {
-                Storage::delete($request->oldImageCover);
-            }
+            Storage::delete($request->oldImageCover);
             $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
+        }
+        if ($request->file('image')) {
+            Storage::delete($request->oldImageCover);
+            $data['image'] = $request->file('image')->store('public/images/report');
         }
 
         // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
@@ -119,6 +126,7 @@ class ReportController extends Controller
         $relasiReport = RelasiReportPages::findOrFail($id);
         $report = Report::findOrFail($relasiReport->report_id);
         Storage::disk('local')->delete($report->image_cover);
+        Storage::disk('local')->delete($report->image);
         Report::destroy($report->id);
         RelasiReportPages::destroy($relasiReport->id);
 

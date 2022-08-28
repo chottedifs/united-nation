@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Story extends Model
+class StoryUp extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -19,8 +19,8 @@ class Story extends Model
         'description',
     ];
 
-    public function RelasiStoryPages(): HasOne
+    public function RelasiStoryUpPages(): HasOne
     {
-        return $this->hasOne(RelasiStoryPages::class, 'story_id', 'id');
+        return $this->hasOne(RelasiStoryUpPages::class, 'story_up_id', 'id');
     }
 }

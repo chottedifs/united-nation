@@ -13,7 +13,9 @@ class Report extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'image_cover',
+        'image',
         'description',
     ];
 

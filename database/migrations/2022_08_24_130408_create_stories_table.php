@@ -18,7 +18,6 @@ class CreateStoriesTable extends Migration
             $table->string('name');
             $table->string('position');
             $table->string('image_cover');
-            $table->string('image');
             $table->string('image_box');
             $table->text('description');
             $table->timestamps();

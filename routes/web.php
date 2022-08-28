@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');
     Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController');
     Route::resource('/story', '\App\Http\Controllers\Admin\StoryController');
+    Route::resource('/storyUp', '\App\Http\Controllers\Admin\StoryUpController');
     Route::resource('/content', '\App\Http\Controllers\Admin\ContentController');
     Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController');
     Route::resource('/report', '\App\Http\Controllers\Admin\ReportController');
@@ -37,4 +38,4 @@ Route::middleware(['auth'])->group(function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
