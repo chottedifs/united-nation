@@ -4,18 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pages;
-use App\Models\RelasiStoryUpPages;
-use App\Models\StoryUp;
+use App\Models\RelasiStoryMiddlePages;
+use App\Models\StoryMiddle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class StoryUpController extends Controller
+class StoryMiddleController extends Controller
 {
     public function index()
     {
-        $stories = RelasiStoryUpPages::with('Pages', 'StoryUp')->get();
+        $stories = RelasiStoryMiddlePages::with('Pages', 'StoryMiddle')->get();
 
-        return view('pages.admin.storyUp.index', [
+        return view('pages.admin.storyMiddle.index', [
             'stories' => $stories
         ]);
     }
@@ -23,7 +23,7 @@ class StoryUpController extends Controller
     public function create()
     {
         $pages = Pages::all();
-        return view('pages.admin.storyUp.create', [
+        return view('pages.admin.storyMiddle.create', [
             'pages' => $pages
         ]);
     }
@@ -43,14 +43,14 @@ class StoryUpController extends Controller
         ]);
         // ddd('yoloooo');
 
-        $data['image_cover'] = $request->file('image_cover')->store('public/images/storyUp');
-        $data['image_box'] = $request->file('image_box')->store('public/images/storyUp');
+        $data['image_cover'] = $request->file('image_cover')->store('public/images/storyMiddle');
+        $data['image_box'] = $request->file('image_box')->store('public/images/storyMiddle');
 
-        $story = StoryUp::create($data);
-        $validatedData1['story_up_id'] = $story->id;
-        RelasiStoryUpPages::create($validatedData1);
+        $story = StoryMiddle::create($data);
+        $validatedData1['story_middle_id'] = $story->id;
+        RelasiStoryMiddlePages::create($validatedData1);
 
-        return redirect(route('storyUp.index'));
+        return redirect(route('storyMiddle.index'));
     }
 
     /**
@@ -66,10 +66,10 @@ class StoryUpController extends Controller
 
     public function edit($id)
     {
-        $story = RelasiStoryUpPages::with('Pages', 'StoryUp')->findOrFail($id);
+        $story = RelasiStoryMiddlePages::with('Pages', 'StoryMiddle')->findOrFail($id);
         $pages = Pages::all();
 
-        return view('pages.admin.storyUp.edit', [
+        return view('pages.admin.storyMiddle.edit', [
             'story' => $story,
             'pages' => $pages
         ]);
@@ -77,8 +77,8 @@ class StoryUpController extends Controller
 
     public function update(Request $request, $id)
     {
-        $relasiStory = RelasiStoryUpPages::with('StoryUp')->findOrFail($id);
-        $story = StoryUp::findOrFail($relasiStory->StoryUp->id);
+        $relasiStory = RelasiStoryMiddlePages::with('StoryMiddle')->findOrFail($id);
+        $story = StoryMiddle::findOrFail($relasiStory->StoryMiddle->id);
         $validatedData1 = $request->validate([
             'pages_id' => 'required',
         ]);
@@ -93,30 +93,30 @@ class StoryUpController extends Controller
 
         if ($request->file('image_cover')) {
             Storage::delete($request->oldImageCover);
-            $data['image_cover'] = $request->file('image_cover')->store('public/images/storyUp');
+            $data['image_cover'] = $request->file('image_cover')->store('public/images/storyMiddle');
         }
         if ($request->file('image_box')) {
             Storage::delete($request->oldImageBox);
-            $data['image_box'] = $request->file('image_box')->store('public/images/storyUp');
+            $data['image_box'] = $request->file('image_box')->store('public/images/storyMiddle');
         }
         $relasiStory->update($validatedData1);
         $story->update($data);
 
         // $relasiStory->update($validatedData1);
-        return redirect(route('storyUp.index'));
+        return redirect(route('storyMiddle.index'));
     }
 
     public function destroy($id)
     {
-        $relasiStory = RelasiStoryUpPages::findOrFail($id);
-        $story = StoryUp::findOrFail($id);
+        $relasiStory = RelasiStoryMiddlePages::findOrFail($id);
+        $story = StoryMiddle::findOrFail($id);
 
         Storage::disk('local')->delete($story->image_cover);
         Storage::disk('local')->delete($story->image_box);
 
-        StoryUp::destroy($story->id);
-        RelasiStoryUpPages::destroy($relasiStory->id);
+        StoryMiddle::destroy($story->id);
+        RelasiStoryMiddlePages::destroy($relasiStory->id);
 
-        return redirect(route('storyUp.index'));
+        return redirect(route('storyMiddle.index'));
     }
 }

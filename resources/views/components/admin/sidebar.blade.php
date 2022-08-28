@@ -54,6 +54,9 @@
                         <li class="submenu-item ">
                             <a href="{{ route('storyDown.index') }}" class='sidebar-link'>Story Down</a>
                         </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('storyMiddle.index') }}" class='sidebar-link'>Story Middle</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -64,11 +67,19 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="{{ route('infografis.index') }}" class='sidebar-link'>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>Infografis</span>
+                        <span>Infographic</span>
                     </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{ route('infografis.index') }}" class='sidebar-link'>Infographic</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('reportInfografis.index') }}" class='sidebar-link'>Report Infographic</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="sidebar-item">
@@ -77,61 +88,6 @@
                         <span>Report</span>
                     </a>
                 </li>
-
-                {{-- <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-stack"></i>
-                        <span>Pages</span>
-                    </a>
-                    <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="component-alert.html">Alert</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-badge.html">Badge</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-breadcrumb.html">Breadcrumb</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-button.html">Button</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-card.html">Card</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-carousel.html">Carousel</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-collapse.html">Collapse</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-dropdown.html">Dropdown</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-list-group.html">List Group</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-modal.html">Modal</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-navs.html">Navs</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-pagination.html">Pagination</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-progress.html">Progress</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-spinner.html">Spinner</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="component-tooltip.html">Tooltip</a>
-                        </li>
-                    </ul>
-                </li> --}}
-
             </ul>
         </div>
     </div>
