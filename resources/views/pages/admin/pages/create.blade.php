@@ -38,7 +38,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon" for="title">Title</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Add Title">
+                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old("title") }}" id="title" placeholder="Add Title">
                                                                 @error('title')
                                                                     <div class="invalid-feedback">
                                                                         {{ $message }}

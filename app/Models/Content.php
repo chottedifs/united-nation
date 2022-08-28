@@ -12,6 +12,10 @@ class Content extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'image_1',
+        'image_2',
+        'image_3',
+        'image_4',
         'content_1',
         'content_2',
         'content_3',

@@ -39,11 +39,13 @@ class StoryController extends Controller
             'position' => 'required',
             'description' => 'required',
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_box' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
         // ddd('yoloooo');
 
         $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
+        $data['image'] = $request->file('image')->store('public/images/story');
         $data['image_box'] = $request->file('image_box')->store('public/images/story');
 
         $story = Story::create($data);
@@ -87,20 +89,25 @@ class StoryController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
-            'image_box' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' => 'mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
-        if ($request->file('image')) {
-            if ($request->oldImageCover && $request->oldImageBox) {
-                Storage::delete($request->oldImageBox);
-                Storage::delete($request->oldImageCover);
-            }
+        if ($request->file('image_cover')) {
+            Storage::delete($request->oldImageCover);
             $data['image_cover'] = $request->file('image_cover')->store('public/images/story');
-            $data['image_box'] = $request->file('image_box')->store('public/images/story');
-            $relasiStory->update($validatedData1);
-            $story->update($data);
         }
+        if ($request->file('image')) {
+            Storage::delete($request->oldImage);
+            $data['image'] = $request->file('image')->store('public/images/story');
+        }
+        if ($request->file('image_box')) {
+            Storage::delete($request->oldImageBox);
+            $data['image_box'] = $request->file('image_box')->store('public/images/story');
+        }
+        $relasiStory->update($validatedData1);
+        $story->update($data);
 
         // $relasiStory->update($validatedData1);
         return redirect(route('story.index'));

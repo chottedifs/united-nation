@@ -54,6 +54,19 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
+                                                        <label for="images-id-icon">Image 1</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image_1') is-invalid @enderror" placeholder="image_1"  id="imgInp1" name="image_1" value="{{ old("image_1") }}">
+                                                        @error('image_1')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
                                                         <label for="description-id-icon">Paragraph 1</label>
                                                         <div class="position-relative">
                                                             <textarea type="text" class="form-control @error('content_1') is-invalid @enderror" cols="10" rows="10" placeholder="Create a sentence in this text area..." id="content_1" name="content_1">{{ old("content_1") }}</textarea>
@@ -62,6 +75,19 @@
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image 2</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image_2') is-invalid @enderror" placeholder="image_2"  id="imgInp1" name="image_2" value="{{ old("image_2") }}">
+                                                        @error('image_2')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -80,6 +106,19 @@
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
+                                                        <label for="images-id-icon">Image 3</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image_3') is-invalid @enderror" placeholder="image_3"  id="imgInp1" name="image_3" value="{{ old("image_3") }}">
+                                                        @error('image_3')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
                                                         <label for="description-id-icon">Paragraph 3</label>
                                                         <div class="position-relative">
                                                             <textarea type="text" class="form-control @error('content_3') is-invalid @enderror" cols="10" rows="10" placeholder="Create a sentence in this text area..." id="content_3" name="content_3">{{ old("content_3") }}</textarea>
@@ -88,6 +127,19 @@
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image 4</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image_4') is-invalid @enderror" placeholder="image_4"  id="imgInp1" name="image_4" value="{{ old("image_4") }}">
+                                                        @error('image_4')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                         </div>
                                                     </div>
                                                 </div>
