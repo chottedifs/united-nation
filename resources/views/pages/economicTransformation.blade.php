@@ -53,12 +53,12 @@
         </div>
     </section>
 
-    @foreach ($content as $contents)
+    {{-- @foreach ($content as $contents) --}}
     <section class="content-ihd">
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_1!!}
+                    {!!$content->Content->content_1!!}
                 </p>
             </div>
         </div>
@@ -99,7 +99,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_2!!}
+                    {!!$content->Content->content_2!!}
                 </p>
             </div>
         </div>
@@ -140,27 +140,8 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_3!!}
+                    {!!$content->Content->content_3!!}
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-ihd">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-sm-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-5" style="cursor: pointer;">
-                        <div class="card" data-aos="fade-right">
-                            <div class="card-body p-0">
-                                <img src="assets/images/story-5.jpg" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
-                                <p class="text-card-story mt-5">
-                                    <img src="assets/images/motif-read-blue.svg" alt="motif-read" class="me-2" width="40">Helwana’s Story
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -169,12 +150,12 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_4!!}
+                    {!!$content->Content->content_4!!}
                 </p>
             </div>
         </div>
     </section>
-    @endforeach
+    {{-- @endforeach --}}
 @endsection
 
 @push('style')

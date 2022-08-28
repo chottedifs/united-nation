@@ -39,9 +39,9 @@ class ContentController extends Controller
 
         $data = $request->validate([
             'content_1' => 'required|min:100',
-            'content_2' => 'required|min:100',
-            // 'content_3' => 'required|min:100',
-            // 'content_4' => 'required|min:100',
+            'content_2' => '',
+            'content_3' => '',
+            'content_4' => '',
         ]);
 
         $content = Content::create($data);
@@ -83,7 +83,7 @@ class ContentController extends Controller
 
         $data = $request->validate([
             'content_1' => 'required|min:100',
-            'content_2' => 'required|min:100',
+            'content_2' => '',
             'content_3' => '',
             'content_4' => '',
         ]);
