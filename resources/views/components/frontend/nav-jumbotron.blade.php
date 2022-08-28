@@ -21,22 +21,22 @@
             </div>
             <div class="col-md-12 col-lg-2"  style="position: relative;">
                 <div>
-                    <a href="economic-transformation.html" class="menus bg-color-yellow">Economic Transformation</a>
+                    <a href="{{ route('economicTransformation') }}" class="menus bg-color-yellow">Economic Transformation</a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-2"  style="position: relative;">
                 <div>
-                    <a href="review-year.html" class="menus bg-color-orange">Green Development, Climate Change, and Natural Disasters</a>
+                    <a href="{{ route('greenDevelopment') }}" class="menus bg-color-orange">Green Development, Climate Change, and Natural Disasters</a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-2"  style="position: relative;">
                 <div>
-                    <a href="review-year.html" class="menus bg-color-greenlight">Innovation to Accelerate Progress Towards the SDGs</a>
+                    <a href="{{ route('innovationAccelerate') }}" class="menus bg-color-greenlight">Innovation to Accelerate Progress Towards the SDGs</a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-2"  style="position: relative;">
                 <div>
-                    <a href="un-reform.html" class="menus bg-color-greendark">UN Reform in Indonesia</a>
+                    <a href="{{ route('unReforms') }}" class="menus bg-color-greendark">UN Reform in Indonesia</a>
                 </div>
             </div>
         </div>

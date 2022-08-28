@@ -5,26 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\relasiContentPages;
-use App\Models\relasiStoryPages;
 use App\Models\relasiInfografisPages;
 use App\Models\relasiReportPages;
 
-class inclusiveHumanController extends Controller
+class economicTransformationController extends Controller
 {
     public function index()
     {
-        $page = Pages::where('id', 2)->first();
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
+        $page = Pages::where('id', 3)->first();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->first();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
 
-        // ddd($content);
+        // ddd($report);
 
-        return view('pages.inclusiveHuman',[
+        return view('pages.economicTransformation',[
             'page' => $page,
             'content' => $content,
-            'story' => $story,
+            // 'story' => $story,
             'infografis' => $infografis,
             'report' => $report,
         ]);

@@ -9,11 +9,11 @@ use App\Models\relasiStoryPages;
 use App\Models\relasiInfografisPages;
 use App\Models\relasiReportPages;
 
-class inclusiveHumanController extends Controller
+class innovationAccelerateController extends Controller
 {
     public function index()
     {
-        $page = Pages::where('id', 2)->first();
+        $page = Pages::where('id', 5)->first();
         $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
         $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
@@ -21,7 +21,7 @@ class inclusiveHumanController extends Controller
 
         // ddd($content);
 
-        return view('pages.inclusiveHuman',[
+        return view('pages.innovationAccelerate',[
             'page' => $page,
             'content' => $content,
             'story' => $story,
