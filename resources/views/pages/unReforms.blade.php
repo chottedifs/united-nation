@@ -9,19 +9,15 @@
         </div>
     </section>
 
-    @foreach ($content as $contents)
     <section class="content-ihd">
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$contents->Content->content_1!!}
+                    {!!$content->Content->content_1!!}
                 </p>
             </div>
         </div>
     </section>
-
-
-    @endforeach
 @endsection
 
 @push('style')

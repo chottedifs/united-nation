@@ -44,22 +44,52 @@
     <section class="read-info">
         <div class="container">
             <div class="row mb-5">
+                @foreach ($subReport as $subReports)
                 <div class="col-lg-4">
-                    <a href="food-protection.html#title" class="read-info-card" data-aos="fade-in">
-                        <img src="../assets/images/sub-report-2.svg" alt="" class="read-info-img shadow-sm">
+                    <a href="{{ route('report',$subReports->slug) }}#title" class="read-info-card" data-aos="fade-in">
+                        <div class="card">
+                            <img src="{{ Storage::url($subReports->subMenu_image) }}" alt="" class="read-info-img shadow-sm">
+                        </div>
                     </a>
                 </div>
-                <div class="col-lg-4">
-                    <a href="strong-health.html#title" class="read-info-card" data-aos="fade-in">
-                        <img src="../assets/images/sub-report-3.svg" alt="" class="read-info-img shadow-sm">
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="better-newborn.html#title" class="read-info-card" data-aos="fade-in">
-                        <img src="../assets/images/sub-report-4.svg" alt="" class="read-info-img shadow-sm">
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 @endsection
+
+@push('style')
+<link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.theme.default.min.css') }}">
+@endpush
+
+@push('script')
+<script src="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/js/owl.carousel.js')}}"></script>
+<script>
+    $('.carousel-card-infografis').owlCarousel({
+            loop: true,
+            center: false,
+            items: 3,
+            margin: 15,
+            // autoplay: true,
+            // dots:true,
+            nav:true,
+            navText: [
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/prev-btn.svg') }}'/>",
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/next-btn.svg') }}'/>"],
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1170: {
+                    items: 2
+                }
+            }
+        });
+</script>
+@endpush

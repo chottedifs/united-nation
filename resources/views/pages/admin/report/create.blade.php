@@ -122,7 +122,7 @@
                                                     <div class="form-group">
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
-                                                            <img class="img-responsive" id="blah3"/>
+                                                            <img class="img-responsive" id="blah2"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -130,8 +130,29 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image</label>
                                                         <div class="position-relative">
-                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image"  id="imgInp3" name="image" value="{{ old("image") }}">
+                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image"  id="imgInp2" name="image" value="{{ old("image") }}">
                                                         @error('image')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah3"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">SubMenu Image</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('subMenu_image') is-invalid @enderror" placeholder="subMenu_image"  id="imgInp3" name="subMenu_image" value="{{ old("subMenu_image") }}">
+                                                        @error('subMenu_image')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
                                                             </div>
@@ -170,13 +191,19 @@
         const [file] = imgInp.files
         if (file) {
             blah.src = URL.createObjectURL(file)
+            }
         }
-    }
+        imgInp2.onchange = evt => {
+        const [file] = imgInp2.files
+        if (file) {
+            blah2.src = URL.createObjectURL(file)
+            }
+        }
         imgInp3.onchange = evt => {
         const [file] = imgInp3.files
         if (file) {
             blah3.src = URL.createObjectURL(file)
+            }
         }
-    }
     </script>
 @endpush

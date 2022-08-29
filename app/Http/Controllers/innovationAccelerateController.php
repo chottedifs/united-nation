@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\relasiContentPages;
-use App\Models\relasiStoryPages;
-use App\Models\relasiInfografisPages;
+use App\Models\relasiStoryUpPages;
+// use App\Models\relasiStoryMiddlePages;
+// use App\Models\relasiInfografisPages;
 use App\Models\relasiReportPages;
 
 class innovationAccelerateController extends Controller
@@ -14,9 +15,10 @@ class innovationAccelerateController extends Controller
     public function index()
     {
         $page = Pages::where('id', 6)->first();
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
-        $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->first();
+        $storyUp = relasiStoryUpPages::with('Pages' , 'StoryUp')->where('pages_id', $page->id)->get();
+        // $storyMiddle = relasiStoryMiddlePages::with('Pages' , 'StoryMiddle')->where('pages_id', $page->id)->get();
+        // $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
 
         // ddd($content);
@@ -24,8 +26,9 @@ class innovationAccelerateController extends Controller
         return view('pages.innovationAccelerate',[
             'page' => $page,
             'content' => $content,
-            'story' => $story,
-            'infografis' => $infografis,
+            'storyUp' => $storyUp,
+            // 'storyMiddle' => $storyMiddle,
+            // 'infografis' => $infografis,
             'report' => $report,
         ]);
     }

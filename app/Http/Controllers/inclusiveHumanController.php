@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\relasiContentPages;
 use App\Models\relasiStoryUpPages;
+use App\Models\relasiStoryMiddlePages;
 use App\Models\relasiStoryDownPages;
 use App\Models\relasiInfografisPages;
 use App\Models\relasiReportPages;
@@ -17,16 +18,18 @@ class inclusiveHumanController extends Controller
         $page = Pages::where('id', 3)->first();
         $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->first();
         $storyUp = relasiStoryUpPages::with('Pages' , 'StoryUp')->where('pages_id', $page->id)->get();
+        $storyMiddle = relasiStoryMiddlePages::with('Pages' , 'StoryMiddle')->where('pages_id', $page->id)->get();
         $storyDown = relasiStoryDownPages::with('Pages' , 'StoryDown')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
 
-        // ddd($storyUp);
+        // ddd($infografis);
 
         return view('pages.inclusiveHuman',[
             'page' => $page,
             'content' => $content,
             'storyUp' => $storyUp,
+            'storyMiddle' => $storyMiddle,
             'storyDown' => $storyDown,
             'infografis' => $infografis,
             'report' => $report,

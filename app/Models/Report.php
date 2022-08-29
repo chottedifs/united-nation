@@ -17,6 +17,7 @@ class Report extends Model
         'image_cover',
         'image',
         'description',
+        'subMenu_image',
     ];
 
     public function RelasiReportPages(): HasOne

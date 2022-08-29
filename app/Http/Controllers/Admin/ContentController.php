@@ -43,7 +43,7 @@ class ContentController extends Controller
             'image_3' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_4' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
             'content_1' => 'required|min:100',
-            'content_2' => 'required|min:100',
+            'content_2' => 'nullable|min:100',
             'content_3' => 'nullable|min:100',
             'content_4' => 'nullable|min:100',
         ]);

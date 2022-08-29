@@ -129,7 +129,33 @@
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($report->Report->image)
-                                                                <img class="img-responsive" id="blah3" src="{{ Storage::url($report->Report->image) }}"/>
+                                                                <img class="img-responsive" id="blah2" src="{{ Storage::url($report->Report->image) }}"/>
+                                                            @else
+                                                                <img class="img-responsive" id="blah2"/>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image</label>
+                                                        <div class="position-relative">
+                                                        <input type="hidden" name="oldImage" value="{{ $report->Report->image }}">
+                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image" id="imgInp2" name="image" value="{{ old("image", $report->Report->image) }}">
+                                                        @error('image')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">SubMenu Preview</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            @if($report->Report->SubMenu_image)
+                                                                <img class="img-responsive" id="blah3" src="{{ Storage::url($report->Report->SubMenu_image) }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah3"/>
                                                             @endif
@@ -140,9 +166,9 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image</label>
                                                         <div class="position-relative">
-                                                        <input type="hidden" name="oldImage" value="{{ $report->Report->image }}">
-                                                        <input type="file" class="form-control @error('image') is-invalid @enderror" placeholder="image" id="imgInp3" name="image" value="{{ old("image", $report->Report->image) }}">
-                                                        @error('image')
+                                                        <input type="hidden" name="oldsubMneuImage" value="{{ $report->Report->SubMenu_image }}">
+                                                        <input type="file" class="form-control @error('subMenu_image') is-invalid @enderror" placeholder="subMenu_image" id="imgInp3" name="subMenu_image" value="{{ old("subMenu_image", $report->Report->subMenu_image) }}">
+                                                        @error('subMenu_image')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
                                                             </div>

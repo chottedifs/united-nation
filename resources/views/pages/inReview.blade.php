@@ -1,42 +1,42 @@
 @extends('layouts.master-app')
 
 @section('content')
-    @foreach ($content as $contents)
         <section class="about">
             <div class="container">
                 <div class="row">
-                    <h3 class="text-title">{{($contents->Pages->title)}}</h3>
+                    <h3 class="text-title">{{($page->title)}}</h3>
                 </div>
                 <div class="row mb-4">
                     <p class="text-content">
-                        <img src="assets/images/img-content-1.webp" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
-                        {!!$contents->Content->content_1!!}
+                        <img src="{{ Storage::url($content->Content->image_1) }}" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
+                        {!!$content->Content->content_1!!}
                     </p>
                 </div>
                 <div class="row mb-2">
                     <p class="text-content">
-                        <img src="assets/images/img-content-2.webp" class="img-fluid ms-4" style="float: right; width: 40%;" alt="img-conten-2">
-                        {!!$contents->Content->content_2!!}
+                        <img src="{{ Storage::url($content->Content->image_2) }}" class="img-fluid ms-4" style="float: right; width: 40%;" alt="img-conten-2">
+                        {!!$content->Content->content_2!!}
                     </p>
                 </div>
-                <div class="row mb-4">
+                <div class="row mb-2">
                     <p class="text-content">
-                        {!!$contents->Content->content_3!!}
+                        {!!$content->Content->content_3!!}
                     </p>
                 </div>
                 <div class="row justify-content-center mb-4">
-                    <div class="card w-50 p-3 shadow-sm border-0">
-                        <div id="chart-review" style="width:100%; height:400px;"></div>
+                    <div class="col-12">
+                        <div class="card p-3 shadow-sm border-0">
+                            <div id="chart-review"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="row mb-2">
                     <p class="text-content">
-                        {!!$contents->Content->content_4!!}
+                        {!!$content->Content->content_4!!}
                     </p>
                 </div>
             </div>
         </section>
-    @endforeach
 @endsection
 
 @push('script')
