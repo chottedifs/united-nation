@@ -5,7 +5,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Infographics</h3>
+                    <h3>Report Infographics</h3>
                     <p class="text-subtitle text-muted">Give textual form controls like input upgrade with custom styles,
                         sizing, focus states, and more.</p>
                 </div>
@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Infographics</li>
+                            <li class="breadcrumb-item active" aria-current="page">Report Infographics</li>
                         </ol>
                     </nav>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Form Create Infographics</h3>
+                                <h3 class="card-title">Form Create Report Infographics</h3>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
@@ -39,7 +39,7 @@
                                                     <div class="form-group has-icon-left">
                                                         <div class="position-relative">
                                                         <fieldset class="form-group">
-                                                            <label for="report_id" class="form-label">Select Page</label>
+                                                            <label for="report_id" class="form-label">Select Report</label>
                                                             <select name="report_id" class="form-select" id="basicSelect">
                                                                 @foreach ($reports as $report)
                                                                     @if(old('report_id') == $report->id)

@@ -5,14 +5,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Content</h3>
+                    <h3>Report Un Reform</h3>
                     <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery required)</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Content</li>
+                            <li class="breadcrumb-item active" aria-current="page">Report Un Reform</li>
                         </ol>
                     </nav>
                 </div>
@@ -26,11 +26,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Form Create Content</h3>
+                                <h3 class="card-title">Form Create Report Un Reform</h3>
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form action="{{ route('content.store') }}" class="form form-vertical" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('reportUn.store') }}" class="form form-vertical" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="form-body">
                                             <div class="row">
@@ -181,6 +181,32 @@
                                                         <div class="position-relative">
                                                             <textarea type="text" class="form-control @error('content_4') is-invalid @enderror" cols="10" rows="10" placeholder="Create a sentence in this text area..." id="content_4" name="content_4">{{ old("content_4") }}</textarea>
                                                             @error('content_4')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="description-id-icon">Paragraph 5</label>
+                                                        <div class="position-relative">
+                                                            <textarea type="text" class="form-control @error('content_5') is-invalid @enderror" cols="10" rows="10" placeholder="Create a sentence in this text area..." id="content_5" name="content_5">{{ old("content_5") }}</textarea>
+                                                            @error('content_5')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="description-id-icon">Paragraph 6</label>
+                                                        <div class="position-relative">
+                                                            <textarea type="text" class="form-control @error('content_6') is-invalid @enderror" cols="10" rows="10" placeholder="Create a sentence in this text area..." id="content_6" name="content_6">{{ old("content_6") }}</textarea>
+                                                            @error('content_6')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
                                                                 </div>

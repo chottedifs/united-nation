@@ -82,11 +82,19 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-item">
-                    <a href="{{ route('report.index') }}" class='sidebar-link'>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Report</span>
                     </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{ route('report.index') }}" class='sidebar-link'>Report Pages</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('reportUn.index') }}" class='sidebar-link'>Report Pages UN Reform</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

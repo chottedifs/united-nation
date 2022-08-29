@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController');
     Route::resource('/reportInfografis', '\App\Http\Controllers\Admin\RelasiReportInfografisController');
     Route::resource('/report', '\App\Http\Controllers\Admin\ReportController');
+    Route::resource('/reportUn', '\App\Http\Controllers\Admin\ReportUnController');
 });
 
 // Route::get('/dashboard', function () {

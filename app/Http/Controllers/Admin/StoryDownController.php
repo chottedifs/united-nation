@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\StoryDown;
 use App\Models\RelasiStoryDownPages;
+use App\Models\RelasiStoryUpPages;
+use App\Models\StoryUp;
+use Illuminate\Support\Facades\Storage;
 
 class StoryDownController extends Controller
 {
