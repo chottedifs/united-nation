@@ -139,27 +139,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label for="first-name-icon" for="title">Image Preview</label>
-                                                        <div class="card shadow-sm p-2 m-0">
-                                                            <img class="img-responsive" id="blah3"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-group">
-                                                        <label for="images-id-icon">SubMenu Image</label>
-                                                        <div class="position-relative">
-                                                        <input type="file" class="form-control @error('subMenu_image') is-invalid @enderror" placeholder="subMenu_image"  id="imgInp3" name="subMenu_image" value="{{ old("subMenu_image") }}">
-                                                        @error('subMenu_image')
-                                                            <div class="invalid-feedback">
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="col-12 d-flex justify-content mt-3">
                                                     <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                                     <button type="reset"
@@ -197,12 +176,6 @@
         const [file] = imgInp2.files
         if (file) {
             blah2.src = URL.createObjectURL(file)
-            }
-        }
-        imgInp3.onchange = evt => {
-        const [file] = imgInp3.files
-        if (file) {
-            blah3.src = URL.createObjectURL(file)
             }
         }
     </script>

@@ -16,6 +16,10 @@ class unReformsController extends Controller
         $page = Pages::where('id', 7)->first();
         $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->first();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
+        $reportHuman = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 3)->get();
+        $reportEconomic = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 4)->get();
+        $reportGreen = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 5)->get();
+        $reportInnovation = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 6)->get();
 
         // ddd($content);
 
@@ -23,6 +27,10 @@ class unReformsController extends Controller
             'page' => $page,
             'content' => $content,
             'report' => $report,
+            'reportHuman' => $reportHuman,
+            'reportEconomic' => $reportEconomic,
+            'reportGreen' => $reportGreen,
+            'reportInnovation' => $reportInnovation
         ]);
     }
 }

@@ -22,6 +22,10 @@ class inclusiveHumanController extends Controller
         $storyDown = relasiStoryDownPages::with('Pages' , 'StoryDown')->where('pages_id', $page->id)->get();
         $infografis = relasiInfografisPages::with('Pages' , 'Infografis')->where('pages_id', $page->id)->get();
         $report = relasiReportPages::with('Pages' , 'Report')->where('pages_id', $page->id)->get();
+        $reportHuman = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 3)->get();
+        $reportEconomic = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 4)->get();
+        $reportGreen = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 5)->get();
+        $reportInnovation = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 6)->get();
 
         // ddd($infografis);
 
@@ -33,6 +37,10 @@ class inclusiveHumanController extends Controller
             'storyDown' => $storyDown,
             'infografis' => $infografis,
             'report' => $report,
+            'reportHuman' => $reportHuman,
+            'reportEconomic' => $reportEconomic,
+            'reportGreen' => $reportGreen,
+            'reportInnovation' => $reportInnovation
         ]);
     }
 }

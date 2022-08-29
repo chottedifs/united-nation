@@ -1,73 +1,68 @@
 <section class="hero">
-    <div class="jumbotron p-4">
-        <div class="container py-5">
-          <p class="text-jumbotron">
-            United Nations In Indonesia <br>
-            <span>Country Results Report 2021</span>
-          </p>
+    <div class="container-fluid p-0">
+        <div class="jumbotron p-4">
+            <div class="py-5">
+              <p class="text-jumbotron">
+                United Nations In Indonesia <br>
+                <span>Country Results Report 2021</span>
+              </p>
+            </div>
+        </div>
+        <div class="navbar-jumbotron">
+            <div class="container-fluid p-0">
+                <nav class="navbar navbar-expand-lg navbar-white bg-white p-0 m-0">
+                    <div id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link menus bg-color-bluelight" href="{{ route('home') }}">A Year in Review</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link menus bg-color-red" href="{{ route('inclusiveHuman') }}" id="navbarDropdown">
+                            Inclusive Human Development
+                            </a>
+                            <ul class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                @foreach ($reportHuman as $reportHumans)
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportHumans->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link menus bg-color-yellow" href="{{ route('economicTransformation') }}" id="navbarDropdown">
+                            Economic Transformation
+                            </a>
+                            <ul class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                @foreach ($reportEconomic as $reportEconomics)
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportEconomics->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link menus bg-color-orange" href="{{ route('greenDevelopment') }}" id="navbarDropdown">
+                            Green Development, Climate Change, and Natural Disasters
+                            </a>
+                            <ul class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                @foreach ($reportGreen as $reportGreens)
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportGreens->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link menus bg-color-greenlight" href="{{ route('innovationAccelerate') }}" id="navbarDropdown">
+                            Innovation to Accelerate Progress Towards the SDGs
+                            </a>
+                            <ul class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                @foreach ($reportInnovation as $reportInnovations)
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportInnovations->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menus bg-color-greendark" href="{{ route('unReforms') }}">UN Reforms in Indonesia</a>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg bg-light m-0 p-0">
-        <div id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item bg-color-bluelight menus">
-                    <a class="nav-link" href="#">A Year in Review</a>
-                </li>
-                <li class="nav-item bg-color-red menus">
-                    <a class="nav-link" href="#">Inclusive Human Development</a>
-                </li>
-                <li class="nav-item bg-color-yellow menus">
-                    <a class="nav-link" href="#">Economic Transformation</a>
-                </li>
-                <li class="nav-item bg-color-orange menus">
-                    <a class="nav-link" href="#">Green Development, Climate Change, and Natural Disasters</a>
-                </li>
-                <li class="nav-item dropdown bg-color-greenlight menus">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Innovation to Accelerate Progress Towards the SDGs</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item bg-color-greendark menus">
-                    <a class="nav-link" href="#">UN Reforms in Indonesia</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-        {{-- <div class="row">
-            <div class="col-md-12 col-lg-2" style="position: relative;">
-                <div >
-                    <a href="{{ route('inReview') }}" class="menus bg-color-bluelight">A Year in Review</a>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-2" style="position: relative;">
-                <div>
-                    <a href="{{ route('inclusiveHuman') }}" class="menus bg-color-red">Inclusive Human Development</a>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-2"  style="position: relative;">
-                <div>
-                    <a href="{{ route('economicTransformation') }}" class="menus bg-color-yellow">Economic Transformation</a>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-2"  style="position: relative;">
-                <div>
-                    <a href="{{ route('greenDevelopment') }}" class="menus bg-color-orange">Green Development, Climate Change, and Natural Disasters</a>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-2"  style="position: relative;">
-                <div>
-                    <a href="{{ route('innovationAccelerate') }}" class="menus bg-color-greenlight">Innovation to Accelerate Progress Towards the SDGs</a>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-2"  style="position: relative;">
-                <div>
-                    <a href="{{ route('unReforms') }}" class="menus bg-color-greendark">UN Reform in Indonesia</a>
-                </div>
-            </div>
-        </div> --}}
 </section>

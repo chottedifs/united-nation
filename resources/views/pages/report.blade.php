@@ -40,22 +40,6 @@
             </div>
         </div>
     </section>
-
-    <section class="read-info">
-        <div class="container">
-            <div class="row mb-5">
-                @foreach ($subReport as $subReports)
-                <div class="col-lg-4">
-                    <a href="{{ route('report',$subReports->slug) }}#title" class="read-info-card" data-aos="fade-in">
-                        <div class="card">
-                            <img src="{{ Storage::url($subReports->subMenu_image) }}" alt="" class="read-info-img shadow-sm">
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 @endsection
 
 @push('style')

@@ -43,13 +43,11 @@ class ReportController extends Controller
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
-            'subMenu_image' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
         ]);
 
         $data['slug'] = Str::slug($request->title);
         $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
         $data['image'] = $request->file('image')->store('public/images/report');
-        $data['subMenu_image'] = $request->file('subMenu_image')->store('public/images/report');
 
         $report = Report::create($data);
         $validatedData1['report_id'] = $report->id;
@@ -101,7 +99,6 @@ class ReportController extends Controller
             'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
-            'subMenu_image' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
         ]);
 
         if ($request->file('image_cover')) {
@@ -111,10 +108,6 @@ class ReportController extends Controller
         if ($request->file('image')) {
             Storage::delete($request->oldImage);
             $data['image'] = $request->file('image')->store('public/images/report');
-        }
-        if ($request->file('subMenu_image')) {
-            Storage::delete($request->oldsubMneuImage);
-            $data['subMenu_image'] = $request->file('subMenu_image')->store('public/images/report');
         }
 
         // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
