@@ -48,7 +48,7 @@
 <style>
     section .jumbotron {
         height: 650px;
-        background-image: url('{{$age->image_cover}}');
+        background-image: url('{{$page->image_cover}}');
         background-repeat: no-repeat;
         background-size: cover;
     }
