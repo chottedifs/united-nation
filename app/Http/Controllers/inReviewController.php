@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pages;
 use App\Models\RelasiContentPages;
+use App\Models\RelasiReportPages;
 
 class inReviewController extends Controller
 {
