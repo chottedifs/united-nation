@@ -12,10 +12,13 @@ class ReportUn extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'title',
+        'slug',
         'image_1',
         'image_2',
         'image_3',
         'image_4',
+        'image_5',
         'content_1',
         'content_2',
         'content_3',

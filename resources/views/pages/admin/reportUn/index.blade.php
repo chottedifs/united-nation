@@ -26,7 +26,9 @@
                     <table class="table" id="table1">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>For Page</th>
+                                <th>Title</th>
                                 <th>Image 1</th>
                                 <th>Content 1</th>
                                 <th>Image 2</th>
@@ -35,6 +37,7 @@
                                 <th>Content 3</th>
                                 <th>Image 4</th>
                                 <th>Content 4</th>
+                                <th>Image 5</th>
                                 <th>Content 5</th>
                                 <th>Content 6</th>
                                 <th>Action</th>
@@ -43,7 +46,9 @@
                         <tbody>
                             @foreach ($contents as $content)
                             <tr>
+                                <td class="serial">{{ $loop->iteration }}</td>
                                 <td>{{$content->Pages->title}}</td>
+                                <td>{{$content->ReportUn->title}}</td>
                                 <td><img src="{{ Storage::url($content->ReportUn->image_1) }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_1,100) }}</td>
                                 <td><img src="{{ Storage::url($content->ReportUn->image_2) }}" alt="" style="width: 50px;"></td>
@@ -52,6 +57,7 @@
                                 <td>{{ Str::limit($content->ReportUn->content_3,100) }}</td>
                                 <td><img src="{{ Storage::url($content->ReportUn->image_4) }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_4,100) }}</td>
+                                <td><img src="{{ Storage::url($content->ReportUn->image_5) }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_5,100) }}</td>
                                 <td>{{ Str::limit($content->ReportUn->content_6,100) }}</td>
                                 <td>

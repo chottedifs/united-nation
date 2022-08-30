@@ -18,6 +18,17 @@
             </div>
         </div>
     </section>
+    <section class="about">
+        <div class="container">
+            <div class="row mb-4">
+                @foreach ($reportUns as $reportUn)
+                    <a href="{{ route('reportUns', $reportUn->ReportUn->slug) }}#title" class="menus-reform shadow-sm">
+                        {{ $reportUn->ReportUn->title}}
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
 @endsection
 
 @push('style')
