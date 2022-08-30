@@ -11,8 +11,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', 1)->get();
-        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', 1)->get();
+        $page = Pages::where('id', 1)->first();
+        $content = relasiContentPages::with('Pages' , 'Content')->where('pages_id', $page->id)->get();
+        $story = relasiStoryPages::with('Pages' , 'Story')->where('pages_id', $page->id)->get();
         $reportHuman = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 3)->get();
         $reportEconomic = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 4)->get();
         $reportGreen = relasiReportPages::with('Pages' , 'Report')->where('pages_id', 5)->get();
