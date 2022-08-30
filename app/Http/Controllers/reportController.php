@@ -11,7 +11,7 @@ class reportController extends Controller
 {
     public function index(Request $request, $slug)
     {
-        $page = Pages::where('pages_id', 3)->first();
+        $page = Pages::where('id', 3)->first();
         $report = Report::where('slug',$slug)->firstOrFail();
         $subReports = Report::inRandomOrder()->take(3)->get();
         $reportHuman = RelasiReportPages::with('Pages' , 'Report')->where('pages_id', 3)->get();
