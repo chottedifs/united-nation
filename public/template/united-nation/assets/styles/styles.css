@@ -195,7 +195,7 @@ body {
 
 .text-nav-footer:hover {
     color: #fff;
-    font-size: 15px;
+    /* font-size: 15px; */
 }
 
 .text-footer {
@@ -206,17 +206,7 @@ body {
 /* End Conponent Font */
 
 /* Component Menus */
-
-
 .menus {
-    position: absolute;
-    height: 100px;
-    width: 100%;
-    left: -12px;
-    right: -12px;
-    bottom: 0;
-    padding-left: 10px;
-    padding-top: 15px;
     background-image: url('../images/nav-motif-1.svg');
     background-repeat: no-repeat;
     background-position: right;
@@ -227,27 +217,25 @@ body {
     font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    justify-items: center;
-    margin: auto;
-    align-content: center;
 }
 
-.menus:hover {
-    padding-top: 25px;
-    height: 120px;
-    background-size: 70%;
-    /* font-weight: 600; */
-    color: #fff;
-    transition: all 0.4s ease-out;
+ul.dropdown-menu {
+    border-radius: 0px;
 }
 
-.menus.active {
-    padding-top: 25px;
-    height: 120px;
-    background-size: 70%;
-    /* font-weight: 600; */
-    color: #fff;
-    
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+
+.offcanvas {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    background-image: url('../images/bg-menu-box.svg');
+    background-repeat: no-repeat;
+    background-size: 130%;
+    height: 530px;
 }
 /* End Component Menus */
 
@@ -276,7 +264,8 @@ header .navbar {
     background-color: #fff;
     background-image: url('../images/nav-motif.svg');
     background-repeat: no-repeat;
-    background-position: right;
+    background-position-x: right;
+    background-size: contain;
 }
 /* End Navigation Bar */
 
@@ -328,6 +317,19 @@ section .jumbotron6 {
     background-size: cover;
 }
 
+section.hero .navbar-jumbotron {
+    margin-top: -40px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+section.hero .navbar-jumbotron .nav-link, section.hero .navbar-jumbotron .nav-link:hover {
+    color: #fff;
+}
+
 section .text-jumbotron {
     padding-top: 300px;
     color: #fff;
@@ -340,6 +342,7 @@ section .text-jumbotron {
 section .text-jumbotron span {
     font-weight: 700;
 }
+
 /* End Jumbotron */
 
 /* Read Info */
@@ -376,7 +379,8 @@ section.carousel-ihd .card {
 /* Foreword */
 section.foreword .card {
     border: 1;
-    max-height: 100%;
+    z-index: -3;
+    /* max-height: 100%; */
 }
 
 section.foreword .card:hover {
@@ -405,6 +409,7 @@ section.foreword .card-body {
 section.story-ihd .card {
     border: 1;
     max-height: 100%;
+    /* z-index: -1; */
 }
 
 section.story-ihd .card:hover {
@@ -589,29 +594,21 @@ section.story-ihd .card-body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Charts */
+.card-chart {
+    z-index:-1;
+}
+/* End Charts */
 
 /* Owl Carousel Infografis */
 .carousel-infografis {
     /* background:#fff; */
     display:none;
-    width:100%;
-    z-index:1;
+    /* width:100%; */
 }
-    
+
 .carousel-infografis .owl-stage {
-    position:relative;
+    /* position:relative; */
     -ms-touch-action:pan-Y;
     touch-action:manipulation;
     /* -moz-backface-visibility:hidden; */
@@ -627,7 +624,7 @@ section.story-ihd .card-body {
 }
 
 .carousel-infografis .owl-stage-outer {
-    position:relative; 
+    position:relative;
     /* overflow:hidden; */
     width:100%;
     transform:scale(1.7);
@@ -685,13 +682,13 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-infografis .owl-nav button.owl-next{ 
+.carousel-infografis .owl-nav button.owl-next{
     right:26%;
     height: 40px;
     width: 40px;
 }
 
-.carousel-infografis .owl-nav button.owl-next:hover{ 
+.carousel-infografis .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -729,13 +726,13 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-card .owl-nav button.owl-next{ 
+.carousel-card .owl-nav button.owl-next{
     right: 0px;
     height: 40px;
     width: 40px;
 }
 
-.carousel-card .owl-nav button.owl-next:hover{ 
+.carousel-card .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -773,14 +770,14 @@ section.story-ihd .card-body {
     justify-content: center;
 }
 
-.carousel-card-infografis .owl-nav button.owl-next{ 
+.carousel-card-infografis .owl-nav button.owl-next{
     top: -18px;
     right: -10px;
     height: 40px;
     width: 40px;
 }
 
-.carousel-card-infografis .owl-nav button.owl-next:hover{ 
+.carousel-card-infografis .owl-nav button.owl-next:hover{
     /* background-color: #19486a; */
     color: #fff;
     transform: scale(0.9);
@@ -800,15 +797,6 @@ section.story-ihd .card-body {
 }
 /* End Carousel Card */
 
-
-@media screen and (max-width:980px){.carousel-card-infografis .owl-stage-outer{transform:scale(1.5)}}
-@media screen and (max-width:768px){.carousel-card-infografis .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
-@media screen and (max-width:980px){.carousel-card .owl-stage-outer{transform:scale(1.5)}}
-@media screen and (max-width:768px){.carousel-card .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
-@media screen and (max-width:980px){.carousel-infografis .owl-stage-outer{transform:scale(1.5)}}
-@media screen and (max-width:768px){.carousel-infografis .owl-stage-outer{transform:scale(1);padding:10px 0}.owl-nav{display:none}}
-/* End Owl Carousel */
-
 /* Scroll Up */
 #scroll-up {
     display: inline-block;
@@ -823,22 +811,14 @@ section.story-ihd .card-body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    transition: background-color .3s, 
+    transition: background-color .3s,
       opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
     text-decoration: none;
   }
-  /* #scroll-up::after {
-    content: "\f077";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2em;
-    line-height: 50px;
-    color: #fff;
-  } */
+
   #scroll-up:hover {
     cursor: pointer;
     background-color:#19486a;
@@ -852,7 +832,7 @@ section.story-ihd .card-body {
     opacity: 1;
     visibility: visible;
   }
-  
+
 /* End Scroll Up */
 
 /* Floating menu */
@@ -863,10 +843,9 @@ section.story-ihd .card-body {
     width: 40px;
     height: 40px;
     background: #fff;
-    cursor: pointer;
-    border-radius: 10px;
+    /* cursor: pointer; */
     padding: 5px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
     transform: rotate(0);
     /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 1); */
 }
@@ -888,6 +867,7 @@ section.story-ihd .card-body {
     align-items: center;
     font-size: 2em;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .action .text-menu {
@@ -905,19 +885,22 @@ section.story-ihd .card-body {
     position: absolute;
     bottom: 55px;
     background: #fff;
-    min-width: 250px;
+    min-width: 600px;
     padding: 20px;
-    border-radius: 10px;
+    border: 2px solid #19486a;
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
+    z-index: 3;
+    background-image: url('../images/motif-menu-float-bg.svg');
+    background-repeat: no-repeat;
 }
 
 .action.active ul {
     bottom: 65px;
     opacity: 1;
     visibility: visible;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .action.active ul li a{
@@ -929,17 +912,19 @@ section.story-ihd .card-body {
     list-style: none;
     display: flex;
     justify-content: flex-start;
+    font-family: 'Montserrat', sans-serif;
     align-items: center;
     /* padding: 10px 0px; */
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    transition: all 0.2s ease;
 }
 
 .action ul li:hover {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .action ul li:not(:last-child){
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 1); */
 }
 /* END Floating menu */
 
@@ -951,42 +936,292 @@ section.footer {
     background-color: #1794D1;
     color: #fff;
 }
+
+section.footer .logo-footer {
+    width: 150px;
+}
 /* End Footer */
 
 
+@media screen and (max-width:980px){
+    .carousel-card-infografis .owl-stage-outer {
+        transform:scale(1.5);
+    }
 
+    .carousel-card .owl-stage-outer {
+        transform:scale(1.5);
+    }
 
+    .carousel-infografis .owl-stage-outer{
+        transform:scale(1.5);
+    }
 
+    section .jumbotron {
+        /* width: fit-content; */
+        background-image: url('../images/img-hero-1.webp');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
 
+    /* Jumbotron */
+    section .jumbotron {
+        background-image: url('../images/img-hero-1.webp');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron1 {
+        background-image: url('../images/img-hero-2.webp');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron2 {
+        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron4 {
+        background-image: url('../images/green-development/foto/img-hero-4.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron5 {
+        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron6 {
+        background-image: url('../images/un-reform/img-hero-6.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .text-jumbotron {
+        padding-top: 250px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+    }
 
+    section .text-jumbotron span {
+        font-weight: 700;
+    }
 
+    section.hero .navbar-jumbotron {
+        margin-top: -220px;
+    }
 
+    section.hero .navbar {
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        display: contents;
+    }
 
+    section.hero .menus {
+        padding-left: 20px;
+        font-size: 16px;
+        background-size: 40%;
+    }
+    /* End Jumbotron */
+}
 
+@media screen and (max-width:768px){
+    .carousel-card-infografis .owl-stage-outer {
+        transform:scale(0.5);
+        padding:10px 0;
+    }
+    .carousel-card .owl-stage-outer {
+        transform:scale(0.5);
+        padding:10px 0;
+    }
+    .carousel-infografis .owl-stage-outer {
+        transform:scale(0.5);
+        padding:10px 0;
+    }
+    .owl-nav {
+        display:none;
+    }
 
+    /* Jumbotron */
+    section .jumbotron {
+        background-image: url('../images/img-hero-1.webp');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron1 {
+        background-image: url('../images/img-hero-2.webp');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron2 {
+        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron4 {
+        background-image: url('../images/green-development/foto/img-hero-4.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron5 {
+        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .jumbotron6 {
+        background-image: url('../images/un-reform/img-hero-6.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 80px;
+    }
 
+    section .text-jumbotron {
+        padding-top: 140px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+    }
 
+    section .text-jumbotron span {
+        font-weight: 700;
+    }
 
+    section.hero .navbar-jumbotron {
+        margin-top: -350px;
+        width: 100%;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
 
+    section.hero .navbar {
+        position: relative;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        display: contents;
+    }
 
+    section.hero .menus {
+        padding-left: 20px;
+        font-size: 16px;
+    }
+    /* End Jumbotron */
 
+    /* Font Component */
+    .text-title {
+        height: 48px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        color: #19486a;
+        margin-bottom: 40px;
+        background-image: none;
+    }
 
+    .text-content {
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 2;
+    }
+    /* End Font Component */
 
+    /* Carousel Infografis */
+    .carousel-infografis {
+        margin-top: 40px;
+        margin-bottom: -60px;
+    }
 
+    .carousel-infografis .owl-item.active.center {
+        opacity:1;
+        transform: scale(1);
+    }
+    /* End Carousel Infografis */
 
+    /* Carousel Card */
+    .carousel-card {
+        margin-bottom: -40px;
+    }
+    /* End Carousel Card */
 
+    /* Card Story */
+    section.story-ihd {
+        margin-top: -40px;
+        margin-bottom: -20px;
+    }
+    section.story-ihd .card {
+        border: 1;
+        max-height: 100%;
+        margin-top: 20px;
+    }
 
+    section.story-ihd .card:hover {
+        transform: scale(1.03);
+    }
 
+    section.story-ihd .img-card-ihd {
+        width: 100%;
+    }
 
+    section.story-ihd .card-body {
+        height: 100%;
+        background-image: url('../images/motif-card.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+    /* End Card Story */
 
+    /* Footer */
+    .text-footer {
+        margin-top: -20px;
+        font-size: 18px;
+    }
+    .text-nav-footer {
+        font-size: 14px;
+    }
+
+    .logo-footer {
+        padding-top: 30px;
+        position: left;
+    }
+    /* End Footer */
+
+    /* Header */
+    header .navbar {
+        background-color: #fff;
+        background-image: url('../images/nav-motif-small.svg');
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: contain;
+    }
+    /* End Header */
+}
