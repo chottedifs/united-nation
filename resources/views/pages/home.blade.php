@@ -78,7 +78,6 @@
             </div>
         </div>
     <!-- Modal Story -->
-
     @endforeach
 @endsection
 
