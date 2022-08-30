@@ -14,7 +14,7 @@
                     <div id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link menus bg-color-bluelight" href="{{ route('home') }}">A Year in Review</a>
+                            <a class="nav-link menus bg-color-bluelight" href="{{ route('inReview') }}">A Year in Review</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link menus bg-color-red" href="{{ route('inclusiveHuman') }}" id="navbarDropdown">
