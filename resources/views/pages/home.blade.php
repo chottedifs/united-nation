@@ -8,8 +8,8 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
-                    <img src="{{ Storage::url($conten->Content->image_1) }}" alt="" class="img-responsive me-4" style="float: left;" width="50%">
-                    {!!$conten->Content->content_1!!}
+                    <img src="{{ Storage::url($content->Content->image_1) }}" alt="" class="img-responsive me-4" style="float: left;" width="50%">
+                    {!!$content->Content->content_1!!}
                 </p>
             </div>
         </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
-                    {!!$conten->Content->content_2!!}
+                    {!!$content->Content->content_2!!}
                 </p>
             </div>
         </div>
@@ -82,5 +82,5 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}"> --}}
 @endpush
