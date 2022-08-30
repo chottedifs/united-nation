@@ -33,7 +33,7 @@ class PagesController extends Controller
         ]);
 
         $image = $request->file('image_cover');
-        $data['image_cover'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        $validatedData['image_cover'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
         // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
 
         Pages::create($validatedData);
@@ -70,7 +70,7 @@ class PagesController extends Controller
 
         if ($request->file('image_cover')) {
             $file = $request->file('image_cover');
-            $data['image_cover'] = CloudinaryStorage::replace($page->image_cover, $file->getRealPath(), $file->getClientOriginalName());
+            $validatedData['image_cover'] = CloudinaryStorage::replace($page->image_cover, $file->getRealPath(), $file->getClientOriginalName());
             // Storage::delete($page->image_cover);
             // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
             $page->update($validatedData);
