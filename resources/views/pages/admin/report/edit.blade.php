@@ -103,7 +103,7 @@
                                                         <label for="first-name-icon" for="title">Image Cover Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($report->Report->image_cover)
-                                                                <img class="img-responsive" id="blah" src="{{ Storage::url($report->Report->image_cover) }}"/>
+                                                                <img class="img-responsive" id="blah" src="{{ $report->Report->image_cover }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah"/>
                                                             @endif
@@ -129,7 +129,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($report->Report->image)
-                                                                <img class="img-responsive" id="blah2" src="{{ Storage::url($report->Report->image) }}"/>
+                                                                <img class="img-responsive" id="blah2" src="{{ $report->Report->image }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah2"/>
                                                             @endif

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\CloudinaryStorage;
 use App\Models\Pages;
 use App\Models\RelasiReportPages;
 use App\Models\Report;
@@ -46,8 +47,12 @@ class ReportController extends Controller
         ]);
 
         $data['slug'] = Str::slug($request->title);
-        $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
-        $data['image'] = $request->file('image')->store('public/images/report');
+        $imageCover = $request->file('image_cover');
+        $image = $request->file('image');
+        $data['image_cover'] = CloudinaryStorage::upload($imageCover->getRealPath(), $imageCover->getClientOriginalName());
+        $data['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
+        // $data['image'] = $request->file('image')->store('public/images/report');
 
         $report = Report::create($data);
         $validatedData1['report_id'] = $report->id;
@@ -78,13 +83,6 @@ class ReportController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $relasiReport = RelasiReportPages::with('Report')->findOrFail($id);
@@ -102,12 +100,16 @@ class ReportController extends Controller
         ]);
 
         if ($request->file('image_cover')) {
-            Storage::delete($request->oldImageCover);
-            $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
+            $fileCover = $request->file('image_cover');
+            $data['image_cover'] = CloudinaryStorage::replace($report->image_cover, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
+            // Storage::delete($request->oldImageCover);
+            // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
         }
         if ($request->file('image')) {
-            Storage::delete($request->oldImage);
-            $data['image'] = $request->file('image')->store('public/images/report');
+            $file = $request->file('image');
+            $data['image'] = CloudinaryStorage::replace($report->image, $file->getRealPath(), $file->getClientOriginalName());
+            // Storage::delete($request->oldImage);
+            // $data['image'] = $request->file('image')->store('public/images/report');
         }
 
         // $data['image_cover'] = $request->file('image_cover')->store('public/images/report');
@@ -127,9 +129,12 @@ class ReportController extends Controller
     {
         $relasiReport = RelasiReportPages::findOrFail($id);
         $report = Report::findOrFail($relasiReport->report_id);
-        Storage::disk('local')->delete($report->image_cover);
-        Storage::disk('local')->delete($report->image);
-        Storage::disk('local')->delete($report->oldsubMneuImage);
+
+        CloudinaryStorage::delete($report->image_cover);
+        CloudinaryStorage::delete($report->image);
+        // Storage::disk('local')->delete($report->image_cover);
+        // Storage::disk('local')->delete($report->image);
+
         Report::destroy($report->id);
         RelasiReportPages::destroy($relasiReport->id);
 

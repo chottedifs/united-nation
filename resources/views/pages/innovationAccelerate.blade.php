@@ -17,7 +17,7 @@
                 <div class="item">
                     <a href="{{ route('report', $reports->Report->slug) }}#title">
                         <div class="card bg-dark text-white">
-                            <img class="card-img" src="{{ Storage::url($reports->Report->image_cover) }}" alt="Card image">
+                            <img class="card-img" src="{{ $reports->Report->image_cover }}" alt="Card image">
                         </div>
                     </a>
                 </div>
@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <p class="text-content">
-                <img src="{{ Storage::url($content->Content->image_1) }}" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
+                <img src="{{ $content->Content->image_1 }}" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
                 {!!$content->Content->content_1!!}
             </p>
         </div>
@@ -46,7 +46,7 @@
                 <a data-bs-toggle="modal" data-bs-target="#story-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                     <div class="card" data-aos="fade-right">
                         <div class="card-body p-0">
-                            <img src="{{ Storage::url($storyUps->StoryUp->image_cover) }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
+                            <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
                             <p class="text-card-story mt-5">
                                 <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyUps->StoryUp->name }}
                             </p>
@@ -61,7 +61,7 @@
                     <div class="modal-body pt-0 pb-0">
                         <div class="row">
                             <div class="col-lg-5 p-0">
-                                <img src="{{ Storage::url($storyUps->StoryUp->image_box) }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
+                                <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
                             </div>
                             <div class="col-lg-7">
                                 <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
@@ -96,7 +96,7 @@
     <div class="container">
         <div class="row">
             <p class="text-content">
-                <img src="{{ Storage::url($content->Content->image_3) }}" class="img-fluid ms-4 shadow-sm" style="float: right; width: 40%;" alt="img-conten-1">
+                <img src="{{ $content->Content->image_3 }}" class="img-fluid ms-4 shadow-sm" style="float: right; width: 40%;" alt="img-conten-1">
                 {!!$content->Content->content_3!!}
             </p>
         </div>

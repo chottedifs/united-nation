@@ -56,7 +56,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($page->image_cover)
-                                                                <img class="img-responsive" id="blah" src="{{ Storage::url($page->image_cover) }}"/>
+                                                                <img class="img-responsive" id="blah" src="{{ $page->image_cover }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah"/>
                                                             @endif

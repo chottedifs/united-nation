@@ -16,7 +16,7 @@
             <!-- START -->
             @foreach ($infografis as $infographics)
             <div class='shadow-sm'>
-                <img alt='Slider' src="{{ Storage::url($infographics->Infografis->image) }}"/>
+                <img alt='Slider' src="{{ $infographics->Infografis->image }}"/>
             </div>
             @endforeach
             <!-- End -->
@@ -33,7 +33,7 @@
                     <div class="item">
                         <a href="{{ route('report', $reports->Report->slug) }}#title">
                             <div class="card bg-dark text-white">
-                                <img class="card-img" src="{{ Storage::url($reports->Report->image_cover) }}" alt="Card image">
+                                <img class="card-img" src="{{ $reports->Report->image_cover }}" alt="Card image">
                             </div>
                         </a>
                     </div>
@@ -61,7 +61,7 @@
                     <a data-bs-toggle="modal" data-bs-target="#story-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
-                                <img src="{{ Storage::url($storyUps->StoryUp->image_cover) }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
+                                <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
                                 <p class="text-card-story mt-5">
                                     <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyUps->StoryUp->name }}
                                 </p>
@@ -76,7 +76,7 @@
                         <div class="modal-body pt-0 pb-0">
                             <div class="row">
                                 <div class="col-lg-5 p-0">
-                                    <img src="{{ Storage::url($storyUps->StoryUp->image_box) }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
+                                    <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
                                 </div>
                                 <div class="col-lg-7">
                                     <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
@@ -115,7 +115,7 @@
                     <a data-bs-toggle="modal" data-bs-target="#story-{{$storyMiddle->StoryMiddle->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
-                                <img src="{{ Storage::url($storyMiddle->StoryMiddle->image_cover) }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
+                                <img src="{{ $storyMiddle->StoryMiddle->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
                                 <p class="text-card-story mt-5">
                                     <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyMiddle->StoryMiddle->name }}
                                 </p>
@@ -130,7 +130,7 @@
                         <div class="modal-body pt-0 pb-0">
                             <div class="row">
                                 <div class="col-lg-5 p-0">
-                                    <img src="{{ Storage::url($storyMiddle->StoryMiddle->image_box) }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
+                                    <img src="{{ $storyMiddle->StoryMiddle->image_box }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
                                 </div>
                                 <div class="col-lg-7">
                                     <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>

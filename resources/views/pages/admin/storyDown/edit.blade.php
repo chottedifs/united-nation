@@ -104,7 +104,7 @@
                                                         <label for="first-name-icon" for="title">Image Cover Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($story->StoryDown->image_cover)
-                                                                <img class="img-responsive" id="blah1" src="{{ Storage::url($story->StoryDown->image_cover) }}"/>
+                                                                <img class="img-responsive" id="blah1" src="{{ $story->StoryDown->image_cover }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah1"/>
                                                             @endif
@@ -130,7 +130,7 @@
                                                         <label for="first-name-icon" for="title">Image Box Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($story->StoryDown->image_box)
-                                                                <img class="img-responsive" id="blah2" src="{{ Storage::url($story->StoryDown->image_box) }}"/>
+                                                                <img class="img-responsive" id="blah2" src="{{ $story->StoryDown->image_box }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah2"/>
                                                             @endif

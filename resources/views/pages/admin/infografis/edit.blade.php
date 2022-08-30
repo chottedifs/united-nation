@@ -59,7 +59,7 @@
                                                     <label for="first-name-icon" for="title">Image Preview</label>
                                                     <div class="card shadow-sm p-2 m-0">
                                                         @if($relasiInfografis->Infografis->image)
-                                                            <img id="blah" src="{{ Storage::url($relasiInfografis->Infografis->image) }}"/>
+                                                            <img id="blah" src="{{ $relasiInfografis->Infografis->image }}"/>
                                                         @else
                                                             <img id="blah"/>
                                                         @endif

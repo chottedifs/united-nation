@@ -41,8 +41,8 @@
                                 <td>{{ $story->Pages->title }}</td>
                                 <td>{{ $story->StoryUp->name }}</td>
                                 <td>{{ Str::limit($story->StoryUp->position, 20) }}</td>
-                                <td><img src="{{ Storage::url($story->StoryUp->image_cover) }}" alt="image" width="90"></td>
-                                <td><img src="{{ Storage::url($story->StoryUp->image_box) }}" alt="image" width="90"></td>
+                                <td><img src="{{ $story->StoryUp->image_cover }}" alt="image" width="90"></td>
+                                <td><img src="{{ $story->StoryUp->image_box }}" alt="image" width="90"></td>
                                 <td>{{ Str::limit($story->StoryUp->description,100) }}</td>
                                 <td>
                                     <div class="d-flex">

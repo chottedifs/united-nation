@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\CloudinaryStorage;
 use App\Models\Pages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -31,7 +32,10 @@ class PagesController extends Controller
             'image_cover' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
         ]);
 
-        $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
+        $image = $request->file('image_cover');
+        $data['image_cover'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
+
         Pages::create($validatedData);
         return redirect(route('pages.index'));
     }
@@ -47,12 +51,6 @@ class PagesController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $page = Pages::findOrFail($id);
@@ -62,13 +60,6 @@ class PagesController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $page = Pages::findOrFail($id);
@@ -78,8 +69,10 @@ class PagesController extends Controller
         ]);
 
         if ($request->file('image_cover')) {
-            Storage::delete($page->image_cover);
-            $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
+            $file = $request->file('image_cover');
+            $data['image_cover'] = CloudinaryStorage::replace($page->image_cover, $file->getRealPath(), $file->getClientOriginalName());
+            // Storage::delete($page->image_cover);
+            // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
             $page->update($validatedData);
         } else {
             $validatedData['image_cover'] = $page->image_cover;
@@ -98,7 +91,10 @@ class PagesController extends Controller
     public function destroy($id)
     {
         $pages = Pages::findOrFail($id);
-        Storage::delete($pages->image_cover);
+
+        CloudinaryStorage::delete($pages->image_cover);
+        // Storage::delete($pages->image_cover);
+
         Pages::destroy($id);
         return redirect(route('pages.index'));
     }
