@@ -13,18 +13,11 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="owl-carousel carousel-card-infografis">
+                    @foreach ($reportInfografis as $reportGraphics)
                     <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-1.svg" alt="Card image">
+                        <img class="card-img" src="{{ $reportGraphics->Infografis->image }}" alt="Card image">
                     </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-2.svg" alt="Card image">
-                    </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-3.svg" alt="Card image">
-                    </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-4.svg" alt="Card image">
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

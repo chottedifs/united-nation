@@ -27,6 +27,7 @@ class inclusiveHumanController extends Controller
         $reportGreen = RelasiReportPages::with('Pages' , 'Report')->where('pages_id', 5)->get();
         $reportInnovation = RelasiReportPages::with('Pages' , 'Report')->where('pages_id', 6)->get();
 
+
         // ddd($infografis);
 
         return view('pages.inclusiveHuman',[

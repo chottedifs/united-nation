@@ -967,24 +967,9 @@ section.footer .logo-footer {
         transform:scale(1.5);
     }
 
-    section .jumbotron {
-        /* width: fit-content; */
-        height: 400px;
-        background-image: url('../images/img-hero-1.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-
     /* Jumbotron */
     section .jumbotron {
         background-image: url('../images/img-hero-1.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron1 {
-        background-image: url('../images/img-hero-2.webp');
         background-repeat: no-repeat;
         background-size: 100%;
         background-position-y: 80px;
