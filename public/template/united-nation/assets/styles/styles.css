@@ -969,6 +969,7 @@ section.footer .logo-footer {
 
     /* Jumbotron */
     section .jumbotron {
+        margin-top: -20px;
         background-image: url('../images/img-hero-1.webp');
         background-repeat: no-repeat;
         background-size: 100%;
@@ -1009,6 +1010,14 @@ section.footer .logo-footer {
     p img.img-content {
         width: 100% !important;
         margin-bottom: 20px;
+    }
+
+    .text-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin-top: -10px;
     }
     /* End Jumbotron */
 }

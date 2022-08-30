@@ -56,7 +56,7 @@
             center: false,
             items: 3,
             margin: 15,
-            // autoplay: true,
+            autoplay: true,
             // dots:true,
             nav:true,
             navText: [
