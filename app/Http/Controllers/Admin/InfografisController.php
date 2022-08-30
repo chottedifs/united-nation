@@ -40,7 +40,7 @@ class InfografisController extends Controller
         ]);
 
         $image = $request->file('image');
-        $data['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
         // $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
@@ -86,7 +86,7 @@ class InfografisController extends Controller
             ]);
 
             $file = $request->file('image');
-            $data['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
+            $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
             // Storage::delete($infografis->image);
             // $validatedData['image'] = $request->file('image')->store('public/images/infografis');
             $relasiInfografis->update($validatedData1);
