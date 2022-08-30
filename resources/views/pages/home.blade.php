@@ -48,7 +48,7 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
-                    <img src="{{ $content->Content->image_2 }}" alt="" class="img-responsive me-4" style="float: left;" width="50%">
+                    <img src="{{ $content->Content->image_2 }}" alt="" class="img-content me-4" style="float: left;" width="50%">
                     {!!$content->Content->content_2!!}
                 </p>
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\CloudinaryStorage;
 use App\Models\Infografis;
 use App\Models\RelasiReportInfografis;
 use App\Models\Report;
@@ -49,7 +50,10 @@ class RelasiReportInfografisController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
         ]);
 
-        $validatedData2['image'] = $request->file('image')->store('public/images/reportInfografis');
+        $image = $request->file('image');
+        $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        // $validatedData2['image'] = $request->file('image')->store('public/images/reportInfografis');
+
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
         RelasiReportInfografis::create($validatedData1);
@@ -104,8 +108,11 @@ class RelasiReportInfografisController extends Controller
             $validatedData = $request->validate([
                 'image' => 'image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
             ]);
-            Storage::delete($infografis->image);
-            $validatedData['image'] = $request->file('image')->store('public/images/reportInfografis');
+
+            $file = $request->file('image');
+            $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
+            // Storage::delete($infografis->image);
+            // $validatedData['image'] = $request->file('image')->store('public/images/reportInfografis');
             $relasiInfografis->update($validatedData1);
             $infografis->update($validatedData);
         } else {
@@ -125,8 +132,11 @@ class RelasiReportInfografisController extends Controller
     {
         $relasiInfografis = RelasiReportInfografis::findOrFail($id);
         $infografis = Infografis::findOrFail($relasiInfografis->infografis_id);
-        Storage::delete($infografis->image);
+
+        CloudinaryStorage::delete($infografis->image);
+        // Storage::delete($infografis->image);
         Infografis::destroy($infografis->id);
+
         RelasiReportInfografis::destroy($id);
         return redirect(route('reportInfografis.index'));
     }

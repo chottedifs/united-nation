@@ -293,7 +293,6 @@ header .navbar {
 }
 
 /* Jumbotron */
-
 section .jumbotron1 {
     height: 650px;
     background-image: url('../images/img-hero-2.webp');
@@ -970,6 +969,7 @@ section.footer .logo-footer {
 
     section .jumbotron {
         /* width: fit-content; */
+        height: 400px;
         background-image: url('../images/img-hero-1.webp');
         background-repeat: no-repeat;
         background-size: 100%;
@@ -990,36 +990,8 @@ section.footer .logo-footer {
         background-position-y: 80px;
     }
 
-    section .jumbotron2 {
-        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron4 {
-        background-image: url('../images/green-development/foto/img-hero-4.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron5 {
-        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron6 {
-        background-image: url('../images/un-reform/img-hero-6.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
     section .text-jumbotron {
-        padding-top: 250px;
+        padding-top: 170px;
         color: #fff;
         font-size: 30px;
         font-weight: 400;
@@ -1032,7 +1004,7 @@ section.footer .logo-footer {
     }
 
     section.hero .navbar-jumbotron {
-        margin-top: -220px;
+        margin-top: -200px;
     }
 
     section.hero .navbar {
@@ -1047,6 +1019,11 @@ section.footer .logo-footer {
         padding-left: 20px;
         font-size: 16px;
         background-size: 40%;
+    }
+
+    p img {
+        width: 100% !important;
+        margin-bottom: 20px;
     }
     /* End Jumbotron */
 }
@@ -1074,76 +1051,6 @@ section.footer .logo-footer {
         background-repeat: no-repeat;
         background-size: 100%;
         background-position-y: 80px;
-    }
-
-    section .jumbotron1 {
-        background-image: url('../images/img-hero-2.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron2 {
-        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron4 {
-        background-image: url('../images/green-development/foto/img-hero-4.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron5 {
-        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron6 {
-        background-image: url('../images/un-reform/img-hero-6.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .text-jumbotron {
-        padding-top: 140px;
-        color: #fff;
-        font-size: 24px;
-        font-weight: 400;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    section .text-jumbotron span {
-        font-weight: 700;
-    }
-
-    section.hero .navbar-jumbotron {
-        margin-top: -350px;
-        width: 100%;
-        color: #fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    section.hero .navbar {
-        position: relative;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        display: contents;
-    }
-
-    section.hero .menus {
-        padding-left: 20px;
-        font-size: 16px;
     }
     /* End Jumbotron */
 
@@ -1234,6 +1141,10 @@ section.footer .logo-footer {
         background-repeat: no-repeat;
         background-position-x: right;
         background-size: contain;
+    }
+
+    header .img-logo {
+        width: 120px;
     }
     /* End Header */
 }
