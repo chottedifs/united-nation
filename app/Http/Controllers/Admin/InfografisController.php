@@ -42,9 +42,11 @@ class InfografisController extends Controller
         $image = $request->file('image');
         $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
         // $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
+
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
         RelasiInfografisPages::create($validatedData1);
+
         return redirect(route('infografis.index'));
     }
 
