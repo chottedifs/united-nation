@@ -166,6 +166,14 @@
     <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/aos-master/dist/aos.css')}}">
+    <style>
+        section .jumbotron {
+        height: 650px;
+        background-image: url({{$page->image_cover}});
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
 @endpush
 
 @push('script')

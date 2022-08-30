@@ -293,12 +293,6 @@ header .navbar {
 }
 
 /* Jumbotron */
-section .jumbotron {
-    height: 650px;
-    background-image: url('../images/img-hero-1.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 section .jumbotron1 {
     height: 650px;

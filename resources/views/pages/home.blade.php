@@ -83,5 +83,12 @@
 @endsection
 
 @push('style')
-    {{-- <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}"> --}}
+    <style>
+    section .jumbotron {
+        height: 650px;
+        background-image: url({{$page->image_cover}});
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
 @endpush
