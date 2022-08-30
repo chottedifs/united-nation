@@ -68,6 +68,24 @@ body {
 }
 /* End Component Color */
 
+/* Border Nav-jumbotron */
+.border-red {
+    border: 1px solid rgba(223, 36, 59, 1) !important;
+}
+
+.border-yellow {
+    border: 1px solid rgba(246, 189, 11, 1) !important;
+}
+
+.border-orange {
+    border: 1px solid rgba(247, 151, 36, 1) !important;
+}
+
+.border-greenlight {
+    border: 1px solid rgba(86, 186, 43, 1) !important;
+}
+/* End Border Nav-jumbotron */
+
 /* Component Motif */
 .motif-title {
     width: 120px;

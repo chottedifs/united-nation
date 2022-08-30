@@ -30,7 +30,7 @@
                                     <p class="text-card-story">
                                         <span class="text-name">{{ ($stories->Story->name) }}</span>
                                     <p class="text-occupation">{{($stories->Story->position)}}</p>
-                                    <span class="read-more"><img src="{{ asset('template/united-nation/assets/images/motif-read.svg')}}" alt="motif-read" class="me-2" width="20">Read more</span>
+                                    <span class="read-more read-more d-none d-sm-block"><img src="{{ asset('template/united-nation/assets/images/motif-read.svg')}}" alt="motif-read" class="me-2" width="20">Read more</span>
                                     </p>
                                 </div>
                             </div>
@@ -48,6 +48,7 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
+                    <img src="{{ $content->Content->image_2 }}" alt="" class="img-responsive me-4" style="float: left;" width="50%">
                     {!!$content->Content->content_2!!}
                 </p>
             </div>
