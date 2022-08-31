@@ -13,6 +13,9 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav flex-column">
                     <li class="nav-item mb-3">
+                        <a class="nav-link" href="{{ route('home')}}"><img src="{{ asset('template/united-nation/assets/images/motif-menu-float.svg') }}" class="me-2" width="30" alt="">About This Report</a>
+                    </li>
+                    <li class="nav-item mb-3">
                         <a class="nav-link" href="{{ route('inReview')}}"><img src="{{ asset('template/united-nation/assets/images/motif-menu-float-1.svg') }}" class="me-2" width="30" alt="">A Year in Review</a>
                     </li>
                     <li class="nav-item mb-3">

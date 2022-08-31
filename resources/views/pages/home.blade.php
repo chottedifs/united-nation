@@ -25,7 +25,7 @@
                     <div class="col-sm-12 col-md-6">
                         <a data-bs-toggle="modal" data-bs-target="#story-{{ $stories->Story->id }}" style="cursor: pointer;">
                             <div class="card" data-aos="fade-right">
-                                <div class="card-body p-0">
+                                <div class="card-body pe-2">
                                     <img src="{{ $stories->Story->image_cover }}" class="img-card-ihd me-3" alt="stories-foreword" style="float: left; width: 50%;">
                                     <p class="text-card-story">
                                         <span class="text-name">{{ ($stories->Story->name) }}</span>

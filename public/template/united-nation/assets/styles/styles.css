@@ -164,7 +164,7 @@ body {
 }
 
 .text-card-story {
-    padding-top: 30px;
+    padding-top: 50px;
     font-family: 'Montserrat', sans-serif;
     color: #19486a;
     font-size: 18px;
@@ -249,11 +249,11 @@ ul.dropdown-menu {
 .offcanvas {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
     background-image: url('../images/bg-menu-box.svg');
     background-repeat: no-repeat;
     background-size: 130%;
-    height: 530px;
+    height: 580px;
 }
 /* End Component Menus */
 
@@ -589,22 +589,6 @@ section.story-ihd .card-body {
 
 /* End UN Reform */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Charts */
 .card-chart {
     z-index:-1;
@@ -645,9 +629,6 @@ section.story-ihd .card-body {
 .carousel-infografis .owl-item {
     min-height:1px;
     float:left;
-    /* height: 10px; */
-    /* -webkit-backface-visibility:hidden; */
-    /* -webkit-touch-callout:none; */
     transition:all .4s ease-in-out;
 }
 
@@ -1012,12 +993,8 @@ section.footer .logo-footer {
         margin-bottom: 20px;
     }
 
-    .text-name {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: #fff;
-        margin-top: -10px;
+    .text-card-story {
+        padding-top: 20px;
     }
     /* End Jumbotron */
 }
