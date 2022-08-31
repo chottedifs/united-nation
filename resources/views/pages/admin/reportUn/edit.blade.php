@@ -230,19 +230,19 @@
                                                         <label for="first-name-icon" for="title">Image Preview 5</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_5)
-                                                                <img class="img-responsive" id="bleh" src="{{ Storage::url($content->ReportUn->image_5) }}"/>
+                                                                <img class="img-responsive" id="bloh" src="{{ Storage::url($content->ReportUn->image_5) }}"/>
                                                             @else
-                                                                <img class="img-responsive" id="bleh"/>
+                                                                <img class="img-responsive" id="bloh"/>
                                                             @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
-                                                        <label for="images-id-icon">Image 4</label>
+                                                        <label for="images-id-icon">Image 5</label>
                                                         <div class="position-relative">
                                                         <input type="hidden" name="oldImage4" value="{{ $content->ReportUn->image_5 }}">
-                                                        <input type="file" class="form-control @error('image_5') is-invalid @enderror" placeholder="image_5"  id="imgInp4" name="image_5" value="{{ old("image_5",$content->ReportUn->image_5) }}">
+                                                        <input type="file" class="form-control @error('image_5') is-invalid @enderror" placeholder="image_5"  id="imgInp5" name="image_5" value="{{ old("image_5",$content->ReportUn->image_5) }}">
                                                         @error('image_5')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
@@ -325,6 +325,12 @@
         const [file] = imgInp4.files
         if (file) {
             bleh.src = URL.createObjectURL(file)
+        }
+    }
+        imgInp5.onchange = evt => {
+        const [file] = imgInp5.files
+        if (file) {
+            bloh.src = URL.createObjectURL(file)
         }
     }
     </script>
