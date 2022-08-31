@@ -415,7 +415,7 @@ section.foreword .card {
 }
 
 section.foreword .card:hover {
-    transform: scale(2.07);
+    transform: scale(1.05);
 }
 
 section.foreword .img-card-ihd {
