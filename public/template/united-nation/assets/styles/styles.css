@@ -239,6 +239,12 @@ body {
 
 ul.dropdown-menu {
     border-radius: 0px;
+    display:block;
+    padding:5px;
+    margin-top:5px;
+    width:450px;
+    height:auto;
+    overflow:auto;
 }
 
 ul.dropdown-menu li:hover {
@@ -251,14 +257,14 @@ ul.dropdown-menu li:hover {
     margin-top: 0;
 }
 
-.auto{
+/* .auto{
      display:block;
      padding:5px;
      margin-top:5px;
      width:450px;
      height:auto;
      overflow:auto;
-}
+} */
 
 .offcanvas {
     font-family: 'Montserrat', sans-serif;
