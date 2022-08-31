@@ -11,6 +11,9 @@
         </div>
     </section>
 
+    @if ($report->slug == 'building-community-resilience-and-ensuring-a-gender-responsive-approach-to-preventing-violent-extremism')
+    @elseif ($report->slug == 'advancing-policies-to-prevent-violent-extremism')
+    @else
     <section class="carousel-ihd">
         <div class="container">
             <div class="row mt-5 mb-5">
@@ -24,6 +27,7 @@
             </div>
         </div>
     </section>
+    @endif
 
     <section class="content-ihd">
         <div class="container">
