@@ -53,6 +53,22 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
+                                                        <label for="first-name-icon">Title</label>
+                                                        <div class="position-relative">
+                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="first-name-icon" name="title" value="{{ old("title", $content->ReportUn->title) }}">
+                                                            @error('title')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            <div class="form-control-icon">
+                                                                <i class="bi bi-textarea-t"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label for="first-name-icon" for="title">Image Preview</label>
@@ -133,7 +149,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-icon" for="title">Image Preview</label>
+                                                        <label for="first-name-icon" for="title">Image Preview 5</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_3)
                                                                 <img class="img-responsive" id="bluh" src="{{ $content->ReportUn->image_3 }}"/>
@@ -172,7 +188,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-icon" for="title">Image Preview</label>
+                                                        <label for="first-name-icon" for="title">Image Preview 4</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_4)
                                                                 <img class="img-responsive" id="bleh" src="{{ $content->ReportUn->image_4 }}"/>
@@ -206,6 +222,32 @@
                                                                     {{ $message }}
                                                                 </div>
                                                             @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Preview 5</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            @if($content->ReportUn->image_4)
+                                                                <img class="img-responsive" id="bleh" src="{{ Storage::url($content->ReportUn->image_4) }}"/>
+                                                            @else
+                                                                <img class="img-responsive" id="bleh"/>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image 4</label>
+                                                        <div class="position-relative">
+                                                        <input type="hidden" name="oldImage4" value="{{ $content->ReportUn->image_4 }}">
+                                                        <input type="file" class="form-control @error('image_4') is-invalid @enderror" placeholder="image_4"  id="imgInp4" name="image_4" value="{{ old("image_4",$content->ReportUn->image_4) }}">
+                                                        @error('image_4')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                         </div>
                                                     </div>
                                                 </div>

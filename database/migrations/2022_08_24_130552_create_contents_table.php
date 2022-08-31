@@ -20,7 +20,7 @@ class CreateContentsTable extends Migration
             $table->string('image_3')->nullable();
             $table->string('image_4')->nullable();
             $table->text('content_1');
-            $table->text('content_2');
+            $table->text('content_2')->nullable();
             $table->text('content_3')->nullable();
             $table->text('content_4')->nullable();
             $table->timestamps();

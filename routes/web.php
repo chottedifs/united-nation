@@ -29,6 +29,7 @@ Route::get('/green-development-and-natural-disasters', [greenDevelopmentControll
 Route::get('/innovation-to-accelerate-progress-towards', [innovationAccelerateController::class, 'index'])->name('innovationAccelerate');
 Route::get('/un-reforms-in-indonesia', [unReformsController::class, 'index'])->name('unReforms');
 Route::get('/reports/{slug}', [reportController::class, 'index'])->name('report');
+Route::get('/reportUns/{slug}', [unReformsController::class, 'detailReport'])->name('reportUns');
 
 
 Route::middleware(['auth'])->group(function () {

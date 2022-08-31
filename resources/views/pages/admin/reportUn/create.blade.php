@@ -38,17 +38,27 @@
                                                     <div class="form-group has-icon-left">
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <label for="pages_id" class="form-label">Select Page</label>
+                                                                <label for="pages_id" class="form-label">For Page</label>
                                                                 <select name="pages_id" class="form-select" id="basicSelect">
-                                                                    @foreach ($pages as $page)
-                                                                        @if(old('pages_id') == $page->id)
-                                                                            <option value="{{ $page->id }}" selected>{{ $page->title }}</option>
-                                                                        @else
-                                                                            <option value="{{ $page->id }}">{{ $page->title }}</option>
-                                                                        @endif
-                                                                    @endforeach
+                                                                    <option value="{{ $pages->id }}" selected>{{ $pages->title }}</option>
                                                                 </select>
                                                             </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group has-icon-left">
+                                                        <label for="first-name-icon">Title</label>
+                                                        <div class="position-relative">
+                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" placeholder="title" id="first-name-icon" name="title" value="{{ old("title") }}">
+                                                            @error('title')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                            <div class="form-control-icon">
+                                                                <i class="bi bi-textarea-t"></i>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -188,6 +198,27 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="first-name-icon" for="title">Image Preview 5</label>
+                                                        <div class="card shadow-sm p-2 m-0">
+                                                            <img class="img-responsive" id="blah5"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="images-id-icon">Image 5</label>
+                                                        <div class="position-relative">
+                                                        <input type="file" class="form-control @error('image_5') is-invalid @enderror" placeholder="image_5"  id="imgInp5" name="image_5" value="{{ old("image_5") }}">
+                                                        @error('image_5')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="description-id-icon">Paragraph 5</label>
@@ -263,6 +294,12 @@
         const [file] = imgInp4.files
         if (file) {
             blah4.src = URL.createObjectURL(file)
+        }
+    }
+        imgInp5.onchange = evt => {
+        const [file] = imgInp5.files
+        if (file) {
+            blah5.src = URL.createObjectURL(file)
         }
     }
     </script>

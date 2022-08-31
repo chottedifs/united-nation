@@ -7,6 +7,7 @@ use App\Models\Pages;
 use App\Models\RelasiUnReportPages;
 use App\Models\ReportUn;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class ReportUnController extends Controller
@@ -33,7 +34,7 @@ class ReportUnController extends Controller
      */
     public function create()
     {
-        $pages = Pages::all();
+        $pages = Pages::all()->last();
         return view('pages.admin.reportUn.create', [
             'pages' => $pages
         ]);
@@ -52,18 +53,20 @@ class ReportUnController extends Controller
         ]);
 
         $data = $request->validate([
+            'title' => 'required|max:255',
             'image_1' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_2' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_3' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_4' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
-            'content_1' => 'required|min:100',
-            'content_2' => 'nullable|min:100',
-            'content_3' => 'nullable|min:100',
-            'content_4' => 'nullable|min:100',
-            'content_5' => 'nullable|min:100',
-            'content_6' => 'nullable|min:100',
+            'image_5' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'content_1' => 'required|min:50',
+            'content_2' => 'nullable|min:50',
+            'content_3' => 'nullable|min:50',
+            'content_4' => 'nullable|min:50',
+            'content_5' => 'nullable|min:50',
+            'content_6' => 'nullable|min:50',
         ]);
-
+        $data['slug'] = Str::slug($request->title);
         if ($request->file('image_1')) {
             $data['image_1'] = $request->file('image_1')->store('public/images/reportUn');
         }
@@ -75,6 +78,9 @@ class ReportUnController extends Controller
         }
         if ($request->file('image_4')) {
             $data['image_4'] = $request->file('image_4')->store('public/images/reportUn');
+        }
+        if ($request->file('image_5')) {
+            $data['image_5'] = $request->file('image_5')->store('public/images/reportUn');
         }
         $reportUn = ReportUn::create($data);
         $validatedData1['reportun_id'] = $reportUn->id;
@@ -127,16 +133,18 @@ class ReportUnController extends Controller
         ]);
 
         $data = $request->validate([
-            'content_1' => 'required|min:100',
+            'title' => 'required|max:255',
+            'content_1' => 'required|min:50',
             'image_1' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_2' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_3' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'image_4' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
-            'content_2' => 'nullable|min:100',
-            'content_3' => 'nullable|min:100',
-            'content_4' => 'nullable|min:100',
-            'content_5' => 'nullable|min:100',
-            'content_6' => 'nullable|min:100',
+            'image_5' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'content_2' => 'nullable|min:50',
+            'content_3' => 'nullable|min:50',
+            'content_4' => 'nullable|min:50',
+            'content_5' => 'nullable|min:50',
+            'content_6' => 'nullable|min:50',
         ]);
         if ($request->file('image_1')) {
             Storage::delete($request->oldImage1);
@@ -154,7 +162,12 @@ class ReportUnController extends Controller
             Storage::delete($request->oldImage4);
             $data['image_4'] = $request->file('image_4')->store('public/images/reportUn');
         }
+        if ($request->file('image_5')) {
+            Storage::delete($request->oldImage5);
+            $data['image_5'] = $request->file('image_5')->store('public/images/reportUn');
+        }
 
+        $data['slug'] = Str::slug($request->title);
         $content->update($data);
         $relasiReportUn->update($validatedData1);
         return redirect(route('reportUn.index'));
@@ -175,6 +188,7 @@ class ReportUnController extends Controller
         Storage::disk('local')->delete($content->image_2);
         Storage::disk('local')->delete($content->image_3);
         Storage::disk('local')->delete($content->image_4);
+        Storage::disk('local')->delete($content->image_5);
 
         RelasiUnReportPages::destroy($relasiContent->id);
         ReportUn::destroy($content->id);

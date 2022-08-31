@@ -1152,3 +1152,7 @@ section.footer .logo-footer {
     }
     /* End Header */
 }
+
+@media screen and (max-width:768px){
+    .img-responsiv {width: 100%;}
+}
