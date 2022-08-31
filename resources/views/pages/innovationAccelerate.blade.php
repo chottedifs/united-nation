@@ -4,7 +4,9 @@
 <section class="carousel-ihd">
     <div class="container">
         <div class="row mt-5">
-            <h3 class="text-title">{{$page->title}}</h3>
+            <div class="motif-title">
+                <h3 class="text-title w-75">{{$page->title}}</h3>
+            </div>
         </div>
     </div>
 </section>
@@ -154,7 +156,7 @@ $('.carousel-card').owlCarousel({
                 items: 2
             },
             1170: {
-                items: 4
+                items: 3
             }
         }
     });
