@@ -55,7 +55,7 @@
                                 <td>{{ Str::limit($content->ReportUn->content_3,100) }}</td>
                                 <td><img src="{{ $content->ReportUn->image_4 }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_4,100) }}</td>
-                                <td><img src="{{ Storage::url($content->ReportUn->image_5) }}" alt="" style="width: 50px;"></td>
+                                <td><img src="{{ $content->ReportUn->image_5 }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_5,100) }}</td>
                                 <td>{{ Str::limit($content->ReportUn->content_6,100) }}</td>
                                 <td>
