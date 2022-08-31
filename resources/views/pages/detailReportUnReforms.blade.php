@@ -4,7 +4,9 @@
     <section class="carousel-ihd">
         <div class="container">
             <div class="row mt-5">
-                <h3 class="text-title">{{$unReports->title}}</h3>
+                <div class="motif-title">
+                    <h3 class="text-title w-75">{{$unReports->title}}</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -88,17 +90,11 @@
                     @endif
 
                     @if($unReports->slug == "data-driven-interventions")
-                        <section class="content-ihd">
-                            <div class="container">
-                                <div class="row">
-                                    <p class="text-content">
                                         {!!$unReports->content_1!!}
                                         {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> SDG Data</span> <br><br>  --}}
                                         {!!$unReports->content_2!!}
                                         {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Data on Disabilities in Indonesia and Leaving No One Behind</span><br><br>  --}}
                                         {!!$unReports->content_3!!}
-                                    </p>
-                                </div>
                                 <div class="row py-0">
                                     <p class="text-content">
                                         <span class="list-text"><img src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg" alt="motif" width="40" class="me-3"> DOMES</span> <br><br>
@@ -113,32 +109,18 @@
                                         {!!$unReports->content_5!!}
                                     </p>
                                 </div>
-                            </div>
-                        </section>
                     @endif
 
                     @if($unReports->slug == "the-un-efficiency-agenda")
-                        <section class="content-ihd">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <p class="text-content">
                                         {!!$unReports->content_1!!}
                                         {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Business Operations Strategy</span> <br><br>  --}}
                                         {!!$unReports->content_2!!}
                                         {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Operations Management Team</span><br><br>  --}}
                                         {!!$unReports->content_3!!}
                                         <img src="{{ $unReports->image_3 }}" alt="" width="100%" class="shadow-sm">
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
                     @endif
 
                     @if($unReports->slug == "mutual-support-through-the-pandemic")
-                        <section class="content-ihd">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <p class="text-content">
                                         {!!$unReports->content_1!!}
                                         <ul class="text-content">
                                             <div class="card shadow-sm" style="padding: 10px;" data-aos="fade-right">
@@ -157,21 +139,13 @@
                                                 </li>
                                             </div>
                                         </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
                     @endif
 
                     @if($unReports->slug == "un-volunteers-in-2021")
                         {!!$unReports->content_1!!}
                     @endif
 
-                    @if($unReports->slug == "resources-and-expertise-to-guard-against-sexual-exploitation-abuse-and-harassment")
-                        <section class="content-ihd">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <p class="text-content">
+                    @if($unReports->slug == "funding-frameworks-and-resources-mobilization")
                                         {!!$unReports->content_1!!}
                                         <ul class="text-content">
                                             <div class="card" class="card-list" style="padding: 10px;"  data-aos="fade-right">
@@ -200,20 +174,10 @@
                                                 </li>
                                             </div>
                                         </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
                     @endif
 
-                    @if($unReports->slug == "funding-frameworks-and-resources-mobilization")
-                        <section class="content-ihd">
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <p class="text-content">
+                    @if($unReports->slug == "climate-change-adaptation-and-mitigation-reduced-environmental-degradation-and-improved-early-warning-systems-for-disaster-risk-reduction")
                                         {!!$unReports->content_1!!}
-                                    </p>
-                                </div>
                                 <div class="row justify-content-center mb-4">
                                     <div class="card w-75 p-3 shadow-sm border-0 highcharts-figure">
                                         <div id="chart-funding" style="width:100%; height:400px;"></div>
@@ -226,8 +190,6 @@
                                         {!!$unReports->content_3!!}
                                     </p>
                                 </div>
-                            </div>
-                        </section>
                     @endif
 
                     @if($unReports->slug == "key-challenges-and-lessons-learned-in-2021")
