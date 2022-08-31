@@ -99,6 +99,7 @@ body {
     background-repeat: no-repeat;
     background-position: right;
     background-position-y: center;
+    margin-bottom: 40px;
 }
 
 .text-title {
@@ -106,7 +107,6 @@ body {
     font-weight: 700;
     font-size: 40px;
     color: #19486a;
-    margin-bottom: 40px;
 }
 
 .text-content {
