@@ -1041,6 +1041,7 @@ section.footer .logo-footer {
 
     /* Jumbotron */
     section .jumbotron {
+        height: 200px;
         background-image: url('../images/img-hero-1.webp');
         background-repeat: no-repeat;
         background-size: 100%;
