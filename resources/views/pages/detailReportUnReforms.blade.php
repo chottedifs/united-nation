@@ -176,7 +176,7 @@
                                         </ul>
                     @endif
 
-                    @if($unReports->slug == "climate-change-adaptation-and-mitigation-reduced-environmental-degradation-and-improved-early-warning-systems-for-disaster-risk-reduction")
+                    @if($unReports->slug == "funding-frameworks-and-resources-mobilization")
                                         {!!$unReports->content_1!!}
                                 <div class="row justify-content-center mb-4">
                                     <div class="card w-75 p-3 shadow-sm border-0 highcharts-figure">
