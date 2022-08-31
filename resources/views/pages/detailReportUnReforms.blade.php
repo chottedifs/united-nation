@@ -16,8 +16,8 @@
 
                     @if($unReports->slug == "our-common-agenda")
                         @if($unReports->image_1)
-                        <img src="{{ Storage::url($unReports->image_1) }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
-                    @endif
+                        <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
+                        @endif
                     {!!$unReports->content_1!!}
                     @endif
 
@@ -39,7 +39,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Work Plans</span> <br><br>
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Work Plans</span> <br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -51,7 +51,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -63,7 +63,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -75,7 +75,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -102,14 +102,14 @@
                                 <div class="row py-0">
                                     <p class="text-content">
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> DOMES</span><br><br>
-                                        <img src="{{ Storage::url($unReports->image_4) }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
+                                        <img src="{{ $unReports->image_4 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_4!!}
                                     </p>
                                 </div>
                                 <div class="row mb-5">
                                     <p class="text-content">
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>
-                                        <img src="{{ Storage::url($unReports->image_5) }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
+                                        <img src="{{ $unReports->image_5 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_5!!}
                                     </p>
                                 </div>
@@ -127,7 +127,7 @@
                                         {!!$unReports->content_2!!}
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Operations Management Team</span><br><br>
                                         {!!$unReports->content_3!!}
-                                        <img src="{{ Storage::url($unReports->image_3) }}" alt="" width="100%" class="shadow-sm">
+                                        <img src="{{ $unReports->image_3 }}" alt="" width="100%" class="shadow-sm">
                                     </p>
                                 </div>
                             </div>
@@ -336,6 +336,14 @@
 
 
 @push('style')
+    <style>
+    section .jumbotron {
+        height: 650px;
+        background-image: url('{{$page->image_cover}}');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
     <link rel="stylesheet" href={{ asset('template/united-nation/assets/library/aos-master/dist/aos.css')}}">
 @endpush
 
