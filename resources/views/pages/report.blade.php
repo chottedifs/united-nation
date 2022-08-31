@@ -27,6 +27,33 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
+                    @if ($report->slug = 'stronger-health-systems')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'training-skill-development-and-public-educaction')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'agriculture-and-food-systems-development')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'local-firms-equipped-for-the-global-market')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'building-gender-equal-child-friendly-workplaces-and-protecting-workers-rights')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'policy-making-and-institutional-capacity-building-for-inclusive-and-non-discriminatory-workplaces')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'climate-change-adaptation-and-mitigation-reduced-environmental-degradation-and-improved-early-warning-systems-for-disaster-risk-reduction')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'land-and-marine-ecosystems-habitats-and-species-protected')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
+                    @if ($report->slug = 'evidence-based-land-management-and-planning')
+                        <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="100%">
+                    @endif
                     <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="50%">
                     {!!$report->description!!}
                 </p>
