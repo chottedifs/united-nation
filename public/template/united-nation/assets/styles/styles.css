@@ -410,12 +410,12 @@ section.carousel-ihd .card {
 /* Foreword */
 section.foreword .card {
     border: 1;
-    z-index: -3;
+    /* z-index: -3; */
     /* max-height: 100%; */
 }
 
 section.foreword .card:hover {
-    transform: scale(1.07);
+    transform: scale(2.07);
 }
 
 section.foreword .img-card-ihd {
