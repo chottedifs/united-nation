@@ -13,7 +13,7 @@ class reportController extends Controller
     public function index(Request $request, $slug)
     {
         // $page = Pages::where('id', 3)->first();
-        $report = Report::where('slug', $slug)->with('Pages')->firstOrFail();
+        $report = Report::where('slug', $slug)->with('RelasiReportPages')->firstOrFail();
         $reportHuman = RelasiReportPages::with('Pages', 'Report')->where('pages_id', 3)->get();
         $reportEconomic = RelasiReportPages::with('Pages', 'Report')->where('pages_id', 4)->get();
         $reportGreen = RelasiReportPages::with('Pages', 'Report')->where('pages_id', 5)->get();
