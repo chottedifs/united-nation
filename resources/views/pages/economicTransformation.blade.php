@@ -60,7 +60,7 @@
             <div class="row mb-5">
                 @foreach ($storyUp as $storyUps)
                 <div class="col-sm-12 col-md-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#storyUp-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
                                 <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
@@ -72,7 +72,7 @@
                     </a>
                 </div>
                 {{-- Modal --}}
-                <div class="modal fade" id="story-{{$storyUps->StoryUp->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                <div class="modal fade" id="storyUp-{{$storyUps->StoryUp->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                         <div class="modal-body pt-0 pb-0">
@@ -114,7 +114,7 @@
             <div class="row mb-5">
                 @foreach ($storyMiddle as $storyMiddle)
                 <div class="col-sm-12 col-md-6">
-                    <a data-bs-toggle="modal" data-bs-target="#story-{{$storyMiddle->StoryMiddle->id}}" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#storyMiddle-{{$storyMiddle->StoryMiddle->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
                                 <img src="{{ $storyMiddle->StoryMiddle->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
@@ -126,7 +126,7 @@
                     </a>
                 </div>
                 {{-- Modal --}}
-                <div class="modal fade" id="story-{{$storyMiddle->StoryMiddle->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                <div class="modal fade" id="storyMiddle-{{$storyMiddle->StoryMiddle->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                         <div class="modal-body pt-0 pb-0">
