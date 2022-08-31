@@ -277,7 +277,7 @@
               <button type="button" class="btn-close ms-auto mb-3" data-bs-dismiss="modal" aria-label="Close"></button>
             <div class="modal-body bg-box-scorecard">
                 <div class="row">
-                    <span class="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg" alt="motif-read" class="me-2" width="40">The Disability Scorecard</span><br>
+                    <span class="text-modal-story"><img src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg" alt="motif-read" class="me-2" width="40">The Disability Scorecard</span><br>
                 </div>
                 <div class="row mt-4 mb-4">
                     <div id="scoredcard-disability"></div>
