@@ -16,7 +16,7 @@
 
                     @if($unReports->slug == "our-common-agenda")
                         @if($unReports->image_1)
-                        {{--  <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">  --}}
+                        <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
                         @endif
                     {!!$unReports->content_1!!}
                     @endif
@@ -101,14 +101,14 @@
                                 </div>
                                 <div class="row py-0">
                                     <p class="text-content">
-                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> DOMES</span><br><br>  --}}
+                                        <span class="list-text"><img src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg" alt="motif" width="40" class="me-3"> DOMES</span> <br><br>
                                         <img src="{{ $unReports->image_4 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_4!!}
                                     </p>
                                 </div>
                                 <div class="row mb-5">
                                     <p class="text-content">
-                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>  --}}
+                                        <span class="list-text"><img src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg" alt="motif" width="40" class="me-3"> OURS</span> <br><br>
                                         <img src="{{ $unReports->image_5 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_5!!}
                                     </p>
@@ -204,6 +204,34 @@
                                 </div>
                             </div>
                         </section>
+                    @endif
+
+                    @if($unReports->slug == "funding-frameworks-and-resources-mobilization")
+                        <section class="content-ihd">
+                            <div class="container">
+                                <div class="row mb-5">
+                                    <p class="text-content">
+                                        {!!$unReports->content_1!!}
+                                    </p>
+                                </div>
+                                <div class="row justify-content-center mb-4">
+                                    <div class="card w-75 p-3 shadow-sm border-0 highcharts-figure">
+                                        <div id="chart-funding" style="width:100%; height:400px;"></div>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <p class="text-content">
+                                        {!!$unReports->content_2!!}
+                                        <img src="{{ $unReports->image_2 }}" alt="funding-infografis-1" width="100%" class="shadow-sm" data-aos="fade-in" style="margin-left: auto; margin-right: auto;"> <br><br>
+                                        {!!$unReports->content_3!!}
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    @endif
+
+                    @if($unReports->slug == "key-challenges-and-lessons-learned-in-2021")
+                        {!!$unReports->content_1!!}
                     @endif
 
                 </p>
@@ -348,6 +376,9 @@
 @endpush
 
 @push('script')
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="{{ asset('template/united-nation/assets/script/script.js') }}"></script>
 <script>
@@ -430,6 +461,62 @@
             name: '2020',
             data: [4]
         }]
+        });
+    </script>
+
+<script>
+        Highcharts.chart('chart-funding', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Multi Year Funding Framework - UNSDCF 2021-2025'
+        },
+        // subtitle: {
+        //     text: 'Source: WorldClimate.com'
+        // },
+        // xAxis: {
+        //     categories: [
+        //     'Jan',
+        //     ],
+        //     // crosshair: true
+        // },
+        // yAxis: {
+        //     min: 0,
+        //     title: {
+        //     text: 'Rainfall (mm)'
+        //     }
+        // },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            // shared: true,
+            // useHTML: true
+        },
+        series: [{
+            name: 'Estimated Total Resources Required (USD)',
+            data: [990.2]
+
+        }, {
+            name: 'Estimated Available Resources (USD)',
+            data: [83.6]
+
+        }],
+
+        yAxis: {
+            visible: false,
+        },
+
+        xAxis: {
+            visible: false,
+            // tickWidth: 1
+        },
+
+        credits: {
+            enabled: false
+        },
         });
     </script>
 
