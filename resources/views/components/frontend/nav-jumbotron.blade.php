@@ -22,7 +22,7 @@
                             </a>
                             <ul class="dropdown-menu m-0 border-red" width="300" aria-labelledby="navbarDropdown">
                                 @foreach ($reportHuman as $reportHumans)
-                                    <li><a class="dropdown-item" width="20px" href="{{ route('report',$reportHumans->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
+                                    <li><a class="dropdown-item" width="20px" href="{{ route('report',$reportHumans->Report->slug) }}#title">{{ Str::limit($reportHumans->Report->title,20) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -32,7 +32,7 @@
                             </a>
                             <ul class="dropdown-menu m-0 border-yellow" aria-labelledby="navbarDropdown">
                                 @foreach ($reportEconomic as $reportEconomics)
-                                    <li><a class="dropdown-item" href="{{ route('report',$reportEconomics->Report->slug) }}#title">{{ $reportEconomics->Report->title }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportEconomics->Report->slug) }}#title">{{ Str::limit($reportEconomics->Report->title,20) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -42,7 +42,7 @@
                             </a>
                             <ul class="dropdown-menu m-0 border-orange" aria-labelledby="navbarDropdown">
                                 @foreach ($reportGreen as $reportGreens)
-                                    <li><a class="dropdown-item" href="{{ route('report',$reportGreens->Report->slug) }}#title">{{ $reportGreens->Report->title }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportGreens->Report->slug) }}#title">{{ Str::limit($reportGreens->Report->title,20) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -52,7 +52,7 @@
                             </a>
                             <ul class="dropdown-menu m-0 border-greenlight" aria-labelledby="navbarDropdown">
                                 @foreach ($reportInnovation as $reportInnovations)
-                                    <li><a class="dropdown-item" href="{{ route('report',$reportInnovations->Report->slug) }}#title">{{ $reportInnovations->Report->title }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('report',$reportInnovations->Report->slug) }}#title">{{ Str::limit($reportInnovations->Report->title,20) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
