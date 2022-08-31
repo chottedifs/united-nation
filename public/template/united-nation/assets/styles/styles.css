@@ -239,12 +239,12 @@ body {
 
 ul.dropdown-menu {
     border-radius: 0px;
-    display:block;
-    padding:5px;
-    margin-top:5px;
-    width:450px;
-    height:auto;
-    overflow:auto;
+    display:block !important;
+    padding:5px !important;
+    margin-top:5px !important;
+    width:450px !important;
+    height:auto !important;
+    overflow:auto !important;
 }
 
 ul.dropdown-menu li:hover {
