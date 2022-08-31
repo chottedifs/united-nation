@@ -149,7 +149,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="first-name-icon" for="title">Image Preview 5</label>
+                                                        <label for="first-name-icon" for="title">Image Preview 3</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_3)
                                                                 <img class="img-responsive" id="bluh" src="{{ $content->ReportUn->image_3 }}"/>
@@ -229,8 +229,8 @@
                                                     <div class="form-group">
                                                         <label for="first-name-icon" for="title">Image Preview 5</label>
                                                         <div class="card shadow-sm p-2 m-0">
-                                                            @if($content->ReportUn->image_4)
-                                                                <img class="img-responsive" id="bleh" src="{{ Storage::url($content->ReportUn->image_4) }}"/>
+                                                            @if($content->ReportUn->image_5)
+                                                                <img class="img-responsive" id="bleh" src="{{ Storage::url($content->ReportUn->image_5) }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="bleh"/>
                                                             @endif
@@ -241,9 +241,9 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image 4</label>
                                                         <div class="position-relative">
-                                                        <input type="hidden" name="oldImage4" value="{{ $content->ReportUn->image_4 }}">
-                                                        <input type="file" class="form-control @error('image_4') is-invalid @enderror" placeholder="image_4"  id="imgInp4" name="image_4" value="{{ old("image_4",$content->ReportUn->image_4) }}">
-                                                        @error('image_4')
+                                                        <input type="hidden" name="oldImage4" value="{{ $content->ReportUn->image_5 }}">
+                                                        <input type="file" class="form-control @error('image_5') is-invalid @enderror" placeholder="image_5"  id="imgInp4" name="image_5" value="{{ old("image_5",$content->ReportUn->image_5) }}">
+                                                        @error('image_5')
                                                             <div class="invalid-feedback">
                                                                 {{ $message }}
                                                             </div>

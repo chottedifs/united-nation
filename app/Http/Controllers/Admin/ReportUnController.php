@@ -172,10 +172,10 @@ class ReportUnController extends Controller
         $relasiContent = RelasiUnReportPages::findOrFail($id);
         $content = ReportUn::findOrFail($id);
 
-        CloudinaryStorage::delete($ontent->image_1);
-        CloudinaryStorage::delete($ontent->image_2);
-        CloudinaryStorage::delete($ontent->image_3);
-        CloudinaryStorage::delete($ontent->image_4);
+        CloudinaryStorage::delete($content->image_1);
+        CloudinaryStorage::delete($content->image_2);
+        CloudinaryStorage::delete($content->image_3);
+        CloudinaryStorage::delete($content->image_4);
         // Storage::disk('local')->delete($content->image_1);
         // Storage::disk('local')->delete($content->image_2);
         // Storage::disk('local')->delete($content->image_3);
