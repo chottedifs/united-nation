@@ -60,7 +60,7 @@
             <div class="row mb-5">
                 @foreach ($storyUp as $storyUps)
                 <div class="col-sm-12 col-md-6">
-                    <a data-bs-toggle="modal" data-bs-target="#{{$storyUps->StoryUp->name}}" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#storyUp-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
                                 <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
@@ -72,7 +72,7 @@
                     </a>
                 </div>
                 {{-- Modal --}}
-                <div class="modal fade" id="{{$storyUps->StoryUp->name}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                <div class="modal fade" id="storyUp-{{$storyUps->StoryUp->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen">
                       <div class="modal-content">
                         <div class="modal-body pt-0 pb-0">
@@ -114,7 +114,7 @@
             <div class="row mb-5">
                 @foreach ($storyMiddle as $storyMiddle)
                 <div class="col-sm-12 col-md-6">
-                    <a data-bs-toggle="modal" data-bs-target="#{{$storyMiddle->StoryMiddle->name}}" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#storyMiddle-{{$storyMiddle->StoryMiddle->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
                                 <img src="{{ $storyMiddle->StoryMiddle->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
@@ -126,7 +126,7 @@
                     </a>
                 </div>
                 {{-- Modal --}}
-                <div class="modal fade" id="{{$storyMiddle->StoryMiddle->name}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                <div class="modal fade" id="storyMiddle-{{$storyMiddle->StoryMiddle->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen">
                       <div class="modal-content">
                         <div class="modal-body pt-0 pb-0">
@@ -168,7 +168,7 @@
             <div class="row mb-5 justify-content-center">
                 @foreach ($storyDown as $storyDowns)
                 <div class="col-sm-12 col-md-6">
-                    <a data-bs-toggle="modal" data-bs-target="#{{$storyDowns->StoryDown->name}}" style="cursor: pointer;">
+                    <a data-bs-toggle="modal" data-bs-target="#storyDown-{{$storyDowns->StoryDown->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
                                 <img src="{{ $storyDowns->StoryDown->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
@@ -180,7 +180,7 @@
                     </a>
                 </div>
                 {{-- Modal --}}
-                <div class="modal fade" id="{{$storyDowns->StoryDown->name}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
+                <div class="modal fade" id="storyDown-{{$storyDowns->StoryDown->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
                     <div class="modal-dialog modal-fullscreen">
                       <div class="modal-content">
                         <div class="modal-body pt-0 pb-0">
