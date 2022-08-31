@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <p class="text-content">
-                <img src="{{ $content->Content->image_1 }}" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
+                <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;" alt="img-conten-1">
                 {!!$content->Content->content_1!!}
             </p>
         </div>
@@ -86,7 +86,7 @@
     <div class="container">
         <div class="row">
             <p class="text-content">
-                <img src="{{ $content->Content->image_2 }}" class="img-fluid ms-4 shadow-sm" style="float: right; width: 40%;" alt="img-conten-1">
+                <img src="{{ $content->Content->image_2 }}" class="img-content ms-4 shadow-sm" style="float: right; width: 40%;" alt="img-content">
                 {!!$content->Content->content_2!!}
             </p>
         </div>
