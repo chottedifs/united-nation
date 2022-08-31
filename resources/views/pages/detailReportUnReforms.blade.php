@@ -16,18 +16,18 @@
 
                     @if($unReports->slug == "our-common-agenda")
                         @if($unReports->image_1)
-                        <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
+                        {{--  <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">  --}}
                         @endif
                     {!!$unReports->content_1!!}
                     @endif
 
                     @if($unReports->slug == "how-we-walk-the-talk-on-leaving-no-one-behind")
                         {!!$unReports->content_1!!}
-                            <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The No Manel Pledge</span> <br><br>
+                            {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The No Manel Pledge</span> <br><br>  --}}
                         @if($unReports->content_2)
                         {!!$unReports->content_2!!}
                         @endif
-                            <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Scorecards to Measure Our Progress on Leaving No One Behind</span> <br><br>
+                            {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Scorecards to Measure Our Progress on Leaving No One Behind</span> <br><br>  --}}
                         @if($unReports->content_3)
                         {!!$unReports->content_3!!}
                         @endif
@@ -51,7 +51,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>  --}}
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -63,7 +63,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>  --}}
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -75,7 +75,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>  --}}
                                     </button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -93,22 +93,22 @@
                                 <div class="row">
                                     <p class="text-content">
                                         {!!$unReports->content_1!!}
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> SDG Data</span> <br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> SDG Data</span> <br><br>  --}}
                                         {!!$unReports->content_2!!}
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Data on Disabilities in Indonesia and Leaving No One Behind</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Data on Disabilities in Indonesia and Leaving No One Behind</span><br><br>  --}}
                                         {!!$unReports->content_3!!}
                                     </p>
                                 </div>
                                 <div class="row py-0">
                                     <p class="text-content">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> DOMES</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> DOMES</span><br><br>  --}}
                                         <img src="{{ $unReports->image_4 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_4!!}
                                     </p>
                                 </div>
                                 <div class="row mb-5">
                                     <p class="text-content">
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>  --}}
                                         <img src="{{ $unReports->image_5 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_5!!}
                                     </p>
@@ -123,9 +123,9 @@
                                 <div class="row mb-5">
                                     <p class="text-content">
                                         {!!$unReports->content_1!!}
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Business Operations Strategy</span> <br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Business Operations Strategy</span> <br><br>  --}}
                                         {!!$unReports->content_2!!}
-                                        <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Operations Management Team</span><br><br>
+                                        {{--  <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Operations Management Team</span><br><br>  --}}
                                         {!!$unReports->content_3!!}
                                         <img src="{{ $unReports->image_3 }}" alt="" width="100%" class="shadow-sm">
                                     </p>
