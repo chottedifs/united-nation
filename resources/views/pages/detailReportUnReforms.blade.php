@@ -51,7 +51,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>  --}}
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Monitoring and Evaluation</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -63,7 +63,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>  --}}
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> UN INFO</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -75,7 +75,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        {{--  <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>  --}}
+                                        <span class="list-text"><img src="{{ asset('template/united-nation/assets/images/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> Joint Evaluations</span><br><br>
                                     </button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
