@@ -75,10 +75,10 @@
                 <div class="modal-content">
                     <div class="modal-body pt-0 pb-0">
                         <div class="row">
-                            <div class="col-lg-5 p-0 order-last">
+                            <div class="col-lg-5 p-0">
                                 <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
                             </div>
-                            <div class="col-lg-7 order-first">
+                            <div class="col-lg-7">
                                 <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
                                 <p class="text-content" style="font-size: 18px; padding: 40px 20px 40px 20px;">
                                     <span class="text-modal-story"><img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{$storyUps->StoryUp->name}}</span> <br>
