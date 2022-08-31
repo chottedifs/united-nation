@@ -17,7 +17,7 @@
                     @if($unReports->slug == "our-common-agenda")
                         @if($unReports->image_1)
                         <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
-                    @endif
+                        @endif
                     {!!$unReports->content_1!!}
                     @endif
 
@@ -109,7 +109,7 @@
                                 <div class="row mb-5">
                                     <p class="text-content">
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>
-                                        <img src="{{ $unReports->image_5)}}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
+                                        <img src="{{ $unReports->image_5 }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_5!!}
                                     </p>
                                 </div>
