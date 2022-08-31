@@ -230,7 +230,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview 5</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_5)
-                                                                <img class="img-responsive" id="bloh" src="{{ Storage::url($content->ReportUn->image_5) }}"/>
+                                                                <img class="img-responsive" id="bloh" src="{{ $content->ReportUn->image_5 }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="bloh"/>
                                                             @endif
