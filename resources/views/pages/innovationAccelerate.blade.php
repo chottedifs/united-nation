@@ -136,7 +136,7 @@ window.onscroll = function(){
 $('.carousel-card').owlCarousel({
         loop: true,
         center: false,
-        items: 4,
+        items: 3,
         margin: 15,
         // autoplay: true,
         // dots:true,
