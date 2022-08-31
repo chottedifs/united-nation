@@ -16,7 +16,7 @@
 
                     @if($unReports->slug == "our-common-agenda")
                         @if($unReports->image_1)
-                        <img src="{{ Storage::url($unReports->image_1) }}" alt="our-common" class="img-fluid ms-5" style="float: right;" width="40%">
+                        <img src="{{ Storage::url($unReports->image_1) }}" alt="our-common" class="img-fluid ms-5 img-responsiv" style="float: right;" width="40%">
                     @endif
                     {!!$unReports->content_1!!}
                     @endif
@@ -102,14 +102,14 @@
                                 <div class="row py-0">
                                     <p class="text-content">
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> DOMES</span><br><br>
-                                        <img src="{{ Storage::url($unReports->image_4) }}" alt="" class="img-fluid me-4" style="float: left;" width="45%">
+                                        <img src="{{ Storage::url($unReports->image_4) }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_4!!}
                                     </p>
                                 </div>
                                 <div class="row mb-5">
                                     <p class="text-content">
                                         <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> OURS</span><br><br>
-                                        <img src="{{ Storage::url($unReports->image_5) }}" alt="" class="img-fluid me-4" style="float: left;" width="45%">
+                                        <img src="{{ Storage::url($unReports->image_5) }}" alt="" class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                         {!!$unReports->content_5!!}
                                     </p>
                                 </div>
