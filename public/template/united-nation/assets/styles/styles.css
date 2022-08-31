@@ -241,10 +241,25 @@ ul.dropdown-menu {
     border-radius: 0px;
 }
 
+ul.dropdown-menu li:hover {
+    background-color: #19486a;
+    color: #fff;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
- }
+}
+
+.auto{
+     display:block;
+     /* border: 1px solid red; */
+     padding:5px;
+     margin-top:5px;
+     width:450px;
+     height:auto;
+     overflow:auto;
+}
 
 .offcanvas {
     font-family: 'Montserrat', sans-serif;
@@ -254,6 +269,8 @@ ul.dropdown-menu {
     background-repeat: no-repeat;
     background-size: 130%;
     height: 580px;
+    border-top: 4px solid rgba(25, 72, 106, 1);
+    border-bottom: 4px solid rgba(25, 72, 106, 1);
 }
 /* End Component Menus */
 

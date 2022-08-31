@@ -20,7 +20,7 @@
                             <a class="nav-link menus bg-color-red" href="{{ route('inclusiveHuman') }}" id="navbarDropdown">
                             Inclusive Human Development
                             </a>
-                            <ul class="dropdown-menu m-0 border-red" width="300" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu m-0 border-red auto" width="300" aria-labelledby="navbarDropdown">
                                 @foreach ($reportHuman as $reportHumans)
                                     <li><a class="dropdown-item" width="20px" href="{{ route('report',$reportHumans->Report->slug) }}#title">{{ $reportHumans->Report->title }}</a></li>
                                 @endforeach
