@@ -54,7 +54,7 @@ class ReportUnController extends Controller
         $data['slug'] = Str::slug($request->title);
         if ($request->file('image_1')) {
             $image = $request->file('image_1');
-            $data['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+            $data['image_1'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             // $data['image_1'] = $request->file('image_1')->store('public/images/reportUn');
         }
         if ($request->file('image_2')) {
