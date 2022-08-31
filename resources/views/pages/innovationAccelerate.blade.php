@@ -154,7 +154,7 @@ $('.carousel-card').owlCarousel({
                 items: 2
             },
             1170: {
-                items: 4
+                items: 3
             }
         }
     });

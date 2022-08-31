@@ -93,16 +93,19 @@ body {
 /* End Component Motif */
 
 /* Conponent Font */
+.motif-title {
+    background-image: url('../images/motif-title.svg');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
 .text-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 40px;
     color: #19486a;
     margin-bottom: 40px;
-    background-image: url('../images/motif-title.svg');
-    background-size: 150px;
-    background-repeat: no-repeat;
-    background-position: right;
 }
 
 .text-content {
