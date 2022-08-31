@@ -98,6 +98,7 @@ body {
     background-size: 150px;
     background-repeat: no-repeat;
     background-position: right;
+    background-position-y: center;
 }
 
 .text-title {
