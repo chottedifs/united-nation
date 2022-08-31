@@ -8,13 +8,13 @@
                 </div>
                 <div class="row mb-4">
                     <p class="text-content">
-                        <img src="{{ $content->Content->image_1 }}" class="img-fluid me-4" style="float: left; width: 40%;" alt="img-conten-1">
+                        <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;" alt="img-conten-1">
                         {!!$content->Content->content_1!!}
                     </p>
                 </div>
                 <div class="row mb-2">
                     <p class="text-content">
-                        <img src="{{ $content->Content->image_2 }}" class="img-fluid ms-4" style="float: right; width: 40%;" alt="img-conten-2">
+                        <img src="{{ $content->Content->image_2 }}" class="img-content ms-4" style="float: right; width: 40%;" alt="img-conten-2">
                         {!!$content->Content->content_2!!}
                     </p>
                 </div>

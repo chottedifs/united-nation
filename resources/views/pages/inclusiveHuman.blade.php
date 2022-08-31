@@ -57,7 +57,7 @@
         <div class="container">
             <div class="row mb-5">
                 @foreach ($storyUp as $storyUps)
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-6">
                     <a data-bs-toggle="modal" data-bs-target="#story-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
@@ -111,7 +111,7 @@
         <div class="container">
             <div class="row mb-5">
                 @foreach ($storyMiddle as $storyMiddle)
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-6">
                     <a data-bs-toggle="modal" data-bs-target="#story-{{$storyMiddle->StoryMiddle->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">
@@ -165,7 +165,7 @@
         <div class="container">
             <div class="row mb-5 justify-content-center">
                 @foreach ($storyDown as $storyDowns)
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-md-6">
                     <a data-bs-toggle="modal" data-bs-target="#story-{{$storyDowns->StoryDown->id}}" style="cursor: pointer;">
                         <div class="card" data-aos="fade-right">
                             <div class="card-body p-0">

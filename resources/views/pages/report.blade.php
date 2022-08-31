@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    <img src="{{ $report->image }}" alt="" class="img-fluid me-4" style="float: left;" width="50%">
+                    <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="50%">
                     {!!$report->description!!}
                 </p>
             </div>
