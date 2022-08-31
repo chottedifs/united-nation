@@ -48,6 +48,7 @@
                             <tr>
                                 <td class="serial">{{ $loop->iteration }}</td>
                                 <td>{{$content->Pages->title}}</td>
+                                <td>{{$content->ReportUn->title}}</td>
                                 <td>{{ Str::limit($content->ReportUn->content_1,100) }}</td>
                                 <td><img src="{{ $content->ReportUn->image_1 }}" alt="" style="width: 50px;"></td>
                                 <td>{{ Str::limit($content->ReportUn->content_2,100) }}</td>
