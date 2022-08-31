@@ -13,18 +13,11 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="owl-carousel carousel-card-infografis">
+                    @foreach ($reportInfografis as $reportGraphics)
                     <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-1.svg" alt="Card image">
+                        <img class="card-img" src="{{ $reportGraphics->Infografis->image }}" alt="Card image">
                     </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-2.svg" alt="Card image">
-                    </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-3.svg" alt="Card image">
-                    </div>
-                    <div class="item">
-                        <img class="card-img" src="../assets/images/social-protection/social-infografis-4.svg" alt="Card image">
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -34,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    <img src="{{ Storage::url($report->image) }}" alt="" class="img-fluid me-4" style="float: left;" width="50%">
+                    <img src="{{ $report->image }}" alt="" class="img-content me-4" style="float: left;" width="50%">
                     {!!$report->description!!}
                 </p>
             </div>
@@ -45,6 +38,14 @@
 @push('style')
 <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.theme.default.min.css') }}">
+<style>
+    section .jumbotron {
+        height: 650px;
+        background-image: url('{{$page->image_cover}}');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 @endpush
 
 @push('script')
@@ -55,7 +56,7 @@
             center: false,
             items: 3,
             margin: 15,
-            // autoplay: true,
+            autoplay: true,
             // dots:true,
             nav:true,
             navText: [

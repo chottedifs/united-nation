@@ -68,6 +68,24 @@ body {
 }
 /* End Component Color */
 
+/* Border Nav-jumbotron */
+.border-red {
+    border: 1px solid rgba(223, 36, 59, 1) !important;
+}
+
+.border-yellow {
+    border: 1px solid rgba(246, 189, 11, 1) !important;
+}
+
+.border-orange {
+    border: 1px solid rgba(247, 151, 36, 1) !important;
+}
+
+.border-greenlight {
+    border: 1px solid rgba(86, 186, 43, 1) !important;
+}
+/* End Border Nav-jumbotron */
+
 /* Component Motif */
 .motif-title {
     width: 120px;
@@ -223,19 +241,35 @@ ul.dropdown-menu {
     border-radius: 0px;
 }
 
+ul.dropdown-menu li:hover {
+    background-color: #19486a;
+    color: #fff;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
- }
+}
+
+.auto{
+     display:block;
+     padding:5px;
+     margin-top:5px;
+     width:450px;
+     height:auto;
+     overflow:auto;
+}
 
 .offcanvas {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 700;
     background-image: url('../images/bg-menu-box.svg');
     background-repeat: no-repeat;
     background-size: 130%;
-    height: 530px;
+    height: 580px;
+    border-top: 4px solid rgba(25, 72, 106, 1);
+    border-bottom: 4px solid rgba(25, 72, 106, 1);
 }
 /* End Component Menus */
 
@@ -275,13 +309,6 @@ header .navbar {
 }
 
 /* Jumbotron */
-section .jumbotron {
-    height: 650px;
-    background-image: url('../images/img-hero-1.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 section .jumbotron1 {
     height: 650px;
     background-image: url('../images/img-hero-2.webp');
@@ -578,22 +605,6 @@ section.story-ihd .card-body {
 
 /* End UN Reform */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Charts */
 .card-chart {
     z-index:-1;
@@ -634,9 +645,6 @@ section.story-ihd .card-body {
 .carousel-infografis .owl-item {
     min-height:1px;
     float:left;
-    /* height: 10px; */
-    /* -webkit-backface-visibility:hidden; */
-    /* -webkit-touch-callout:none; */
     transition:all .4s ease-in-out;
 }
 
@@ -956,58 +964,26 @@ section.footer .logo-footer {
         transform:scale(1.5);
     }
 
-    section .jumbotron {
-        /* width: fit-content; */
-        background-image: url('../images/img-hero-1.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
+    .auto{
+        display:block;
+        padding:5px;
+        margin-top:5px;
+        width:100%;
+        height:auto;
+        overflow:auto;
     }
 
     /* Jumbotron */
     section .jumbotron {
+        margin-top: -20px;
         background-image: url('../images/img-hero-1.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron1 {
-        background-image: url('../images/img-hero-2.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron2 {
-        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron4 {
-        background-image: url('../images/green-development/foto/img-hero-4.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron5 {
-        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron6 {
-        background-image: url('../images/un-reform/img-hero-6.jpg');
         background-repeat: no-repeat;
         background-size: 100%;
         background-position-y: 80px;
     }
 
     section .text-jumbotron {
-        padding-top: 250px;
+        padding-top: 170px;
         color: #fff;
         font-size: 30px;
         font-weight: 400;
@@ -1020,7 +996,7 @@ section.footer .logo-footer {
     }
 
     section.hero .navbar-jumbotron {
-        margin-top: -220px;
+        margin-top: -200px;
     }
 
     section.hero .navbar {
@@ -1035,6 +1011,15 @@ section.footer .logo-footer {
         padding-left: 20px;
         font-size: 16px;
         background-size: 40%;
+    }
+
+    p img.img-content {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    .text-card-story {
+        padding-top: 20px;
     }
     /* End Jumbotron */
 }
@@ -1058,80 +1043,11 @@ section.footer .logo-footer {
 
     /* Jumbotron */
     section .jumbotron {
+        height: 200px;
         background-image: url('../images/img-hero-1.webp');
         background-repeat: no-repeat;
         background-size: 100%;
         background-position-y: 80px;
-    }
-
-    section .jumbotron1 {
-        background-image: url('../images/img-hero-2.webp');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron2 {
-        background-image: url('../images/economic-transformation/foto/img-hero-3.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron4 {
-        background-image: url('../images/green-development/foto/img-hero-4.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron5 {
-        background-image: url('../images/innovation-to-accelerate/foto/img-hero-5.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .jumbotron6 {
-        background-image: url('../images/un-reform/img-hero-6.jpg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position-y: 80px;
-    }
-
-    section .text-jumbotron {
-        padding-top: 140px;
-        color: #fff;
-        font-size: 24px;
-        font-weight: 400;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    section .text-jumbotron span {
-        font-weight: 700;
-    }
-
-    section.hero .navbar-jumbotron {
-        margin-top: -350px;
-        width: 100%;
-        color: #fff;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    section.hero .navbar {
-        position: relative;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        display: contents;
-    }
-
-    section.hero .menus {
-        padding-left: 20px;
-        font-size: 16px;
     }
     /* End Jumbotron */
 
@@ -1177,6 +1093,13 @@ section.footer .logo-footer {
         margin-top: -40px;
         margin-bottom: -20px;
     }
+
+    section.foreword .card {
+        border: 1;
+        max-height: 100%;
+        margin-top: 20px;
+    }
+
     section.story-ihd .card {
         border: 1;
         max-height: 100%;
@@ -1222,6 +1145,10 @@ section.footer .logo-footer {
         background-repeat: no-repeat;
         background-position-x: right;
         background-size: contain;
+    }
+
+    header .img-logo {
+        width: 120px;
     }
     /* End Header */
 }

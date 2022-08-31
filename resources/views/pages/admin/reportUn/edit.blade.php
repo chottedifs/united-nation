@@ -74,7 +74,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_1)
-                                                                <img class="img-responsive" id="blah" src="{{ Storage::url($content->ReportUn->image_1) }}"/>
+                                                                <img class="img-responsive" id="blah" src="{{ $content->ReportUn->image_1 }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blah"/>
                                                             @endif
@@ -113,7 +113,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_2)
-                                                                <img class="img-responsive" id="blih" src="{{ Storage::url($content->ReportUn->image_2) }}"/>
+                                                                <img class="img-responsive" id="blih" src="{{ $content->ReportUn->image_2 }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="blih"/>
                                                             @endif
@@ -152,7 +152,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview 5</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_3)
-                                                                <img class="img-responsive" id="bluh" src="{{ Storage::url($content->ReportUn->image_3) }}"/>
+                                                                <img class="img-responsive" id="bluh" src="{{ $content->ReportUn->image_3 }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="bluh"/>
                                                             @endif
@@ -191,7 +191,7 @@
                                                         <label for="first-name-icon" for="title">Image Preview 4</label>
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if($content->ReportUn->image_4)
-                                                                <img class="img-responsive" id="bleh" src="{{ Storage::url($content->ReportUn->image_4) }}"/>
+                                                                <img class="img-responsive" id="bleh" src="{{ $content->ReportUn->image_4 }}"/>
                                                             @else
                                                                 <img class="img-responsive" id="bleh"/>
                                                             @endif

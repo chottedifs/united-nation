@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\CloudinaryStorage;
 use App\Models\Infografis;
 use App\Models\Pages;
 use App\Models\RelasiInfografisPages;
@@ -20,11 +21,6 @@ class InfografisController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $pages = Pages::all();
@@ -33,12 +29,6 @@ class InfografisController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData1 = $request->validate([
@@ -49,10 +39,14 @@ class InfografisController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
         ]);
 
-        $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
+        $image = $request->file('image');
+        $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        // $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
+
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
         RelasiInfografisPages::create($validatedData1);
+
         return redirect(route('infografis.index'));
     }
 
@@ -67,12 +61,6 @@ class InfografisController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $relasiInfografis = RelasiInfografisPages::with('Pages', 'Infografis')->findOrFail($id);
@@ -84,13 +72,7 @@ class InfografisController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $relasiInfografis = RelasiInfografisPages::with('Infografis')->findOrFail($id);
@@ -104,8 +86,11 @@ class InfografisController extends Controller
             $validatedData = $request->validate([
                 'image' => 'image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
             ]);
-            Storage::delete($infografis->image);
-            $validatedData['image'] = $request->file('image')->store('public/images/infografis');
+
+            $file = $request->file('image');
+            $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
+            // Storage::delete($infografis->image);
+            // $validatedData['image'] = $request->file('image')->store('public/images/infografis');
             $relasiInfografis->update($validatedData1);
             $infografis->update($validatedData);
         } else {
@@ -125,9 +110,13 @@ class InfografisController extends Controller
     {
         $relasiInfografis = RelasiInfografisPages::findOrFail($id);
         $infografis = Infografis::findOrFail($relasiInfografis->infografis_id);
-        Storage::delete($infografis->image);
+
+        CloudinaryStorage::delete($infografis->image);
+        // Storage::delete($infografis->image);
+
         Infografis::destroy($infografis->id);
         RelasiInfografisPages::destroy($id);
+
         return redirect(route('infografis.index'));
     }
 }

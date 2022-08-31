@@ -37,7 +37,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $page->title }}</td>
-                                <td><img src="{{ Storage::url($page->image_cover) }}" alt="" style="width: 150px;"></td>
+                                <td><img src="{{ $page->image_cover }}" alt="" style="width: 150px;"></td>
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>

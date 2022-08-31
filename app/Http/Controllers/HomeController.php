@@ -23,6 +23,7 @@ class HomeController extends Controller
         // ddd($content);
 
         return view('pages.home',[
+            'page' => $page,
             'content' => $content,
             'story' => $story,
             'reportHuman' => $reportHuman,

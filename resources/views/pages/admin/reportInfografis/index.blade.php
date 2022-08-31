@@ -35,7 +35,7 @@
                             @foreach ($infografis as $infographics)
                             <tr>
                                 <td>{{$infographics->Report->title}}</td>
-                                <td><img src="{{ Storage::url($infographics->Infografis->image) }}" alt="image" width="90"></td>
+                                <td><img src="{{ $infographics->Infografis->image }}" alt="image" width="90"></td>
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('reportInfografis.edit', $infographics->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
