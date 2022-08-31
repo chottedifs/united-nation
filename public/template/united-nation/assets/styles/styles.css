@@ -964,6 +964,15 @@ section.footer .logo-footer {
         transform:scale(1.5);
     }
 
+    .auto{
+        display:block;
+        padding:5px;
+        margin-top:5px;
+        width:100%;
+        height:auto;
+        overflow:auto;
+    }
+
     /* Jumbotron */
     section .jumbotron {
         margin-top: -20px;
