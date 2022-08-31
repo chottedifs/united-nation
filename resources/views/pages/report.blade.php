@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="motif-title">
-                    <h3 class="text-title w-75">{{$report->title}}</h3>
+                    <h3 class="text-title w-75" id="title">{{$report->title}}</h3>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
 <style>
     section .jumbotron {
         height: 650px;
-        background-image: url('{{$page->image_cover}}');
+        background-image: url('{{$report->RelasiReportPages->Pages->image_cover}}');
         background-repeat: no-repeat;
         background-size: cover;
     }

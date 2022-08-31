@@ -410,12 +410,12 @@ section.carousel-ihd .card {
 /* Foreword */
 section.foreword .card {
     border: 1;
-    z-index: -3;
+    /* z-index: -3; */
     /* max-height: 100%; */
 }
 
 section.foreword .card:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
 section.foreword .img-card-ihd {
@@ -956,6 +956,12 @@ section.footer .logo-footer {
 
 
 @media screen and (max-width:980px){
+    .text-occupation {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 9px;
+        font-weight: 400;
+        color: #fff;
+    }
     .carousel-card-infografis .owl-stage-outer {
         transform:scale(1.5);
     }
@@ -1188,6 +1194,11 @@ section.footer .logo-footer {
     section.hero .navbar-jumbotron {
         margin-top: -350px;
         width: 100%;
+    }
+
+    .motif-title {
+        background-image: none;
+        width: 100% !important;
     }
 }
 
