@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="motif-title">
-                    <h3 class="text-title w-75">{{$unReports->title}}</h3>
+                    <h3 class="text-title w-75" id="title">{{$unReports->title}}</h3>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                         {!!$unReports->content_1!!}
                     @endif
 
-                    @if($unReports->slug == "funding-frameworks-and-resources-mobilization")
+                    @if($unReports->slug == "resources-and-expertise-to-guard-against-sexual-exploitation-abuse-and-harassment")
                                         {!!$unReports->content_1!!}
                                         <ul class="text-content">
                                             <div class="card" class="card-list" style="padding: 10px;"  data-aos="fade-right">
