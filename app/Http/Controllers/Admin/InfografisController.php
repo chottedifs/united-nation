@@ -84,7 +84,7 @@ class InfografisController extends Controller
 
         if ($request->file('image')) {
             $validatedData = $request->validate([
-                'image' => 'image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
+                'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
             ]);
 
             $file = $request->file('image');

@@ -93,9 +93,9 @@ class ReportController extends Controller
         ]);
         $data = $request->validate([
             'title' => 'required|max:255',
-            // 'slug' => 'required|max:255',
-            'image_cover' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
-            'image' => 'required|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'slug' => 'required|max:255',
+            'image_cover' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
             'description' => 'required|min:100',
         ]);
 

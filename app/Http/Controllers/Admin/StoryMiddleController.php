@@ -92,8 +92,8 @@ class StoryMiddleController extends Controller
             'name' => 'required|max:255',
             'position' => 'required',
             'description' => 'required',
-            'image_cover' => 'mimes:jpg,jpeg,png,webp,svg|max:200',
-            'image_box' => 'mimes:jpg,jpeg,png,webp,svg|max:200'
+            'image_cover' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200',
+            'image_box' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
         if ($request->file('image_cover')) {

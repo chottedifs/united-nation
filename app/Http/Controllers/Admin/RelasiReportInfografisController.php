@@ -106,7 +106,7 @@ class RelasiReportInfografisController extends Controller
 
         if ($request->file('image')) {
             $validatedData = $request->validate([
-                'image' => 'image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
+                'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|file|max:200',
             ]);
 
             $file = $request->file('image');
