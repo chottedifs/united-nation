@@ -21,7 +21,8 @@
                     <div class="owl-carousel carousel-card-infografis">
                         @foreach ($reportInfografis as $reportGraphics)
                             <div class="item">
-                                <img class="card-img" src="{{ $reportGraphics->Infografis->image }}" alt="Card image">
+                                <img class="card-img" src="{{ Storage::url($reportGraphics->Infografis->image) }}"
+                                    alt="Card image">
                             </div>
                         @endforeach
                     </div>
@@ -35,37 +36,46 @@
             <div class="row">
                 <p class="text-content">
                     @if ($report->slug == 'stronger-health-systems')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'training-skill-development-and-public-educaction')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'agriculture-and-food-systems-development')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'local-firms-equipped-for-the-global-market')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'building-gender-equal-child-friendly-workplaces-and-protecting-workers-rights')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug ==
                         'policy-making-and-institutional-capacity-building-for-inclusive-and-non-discriminatory-workplaces')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug ==
                         'climate-change-adaptation-and-mitigation-reduced-environmental-degradation-and-improved-early-warning-systems-for-disaster-risk-reduction')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'land-and-marine-ecosystems-habitats-and-species-protected')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @elseif ($report->slug == 'evidence-based-land-management-and-planning')
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2" width="100%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content mb-2"
+                            width="100%">
                         {!! $report->description !!}
                     @else
-                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content me-4" style="float: left;"
-                            width="50%">
+                        <img src="{{ Storage::url($report->image) }}" alt="" class="img-content me-4"
+                            style="float: left;" width="50%">
                         {!! $report->description !!}
                     @endif
                 </p>

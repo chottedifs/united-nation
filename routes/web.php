@@ -34,6 +34,7 @@ Route::get('/reportUns/{slug}', [unReformsController::class, 'detailReport'])->n
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');
+    Route::resource('/user', '\App\Http\Controllers\Admin\UserController');
     Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController');
     Route::resource('/story', '\App\Http\Controllers\Admin\StoryController');
     Route::resource('/storyUp', '\App\Http\Controllers\Admin\StoryUpController');

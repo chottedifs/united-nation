@@ -97,15 +97,13 @@ class StoryController extends Controller
         ]);
 
         if ($request->file('image_cover')) {
-            Storage::delete($request->oldImageCover);
             // $data['image_cover'] = CloudinaryStorage::replace($story->image_cover, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            $fileCover = $request->file('image_cover');
+            Storage::delete($story->image_cover);
             $data['image_cover'] = $request->file('image_cover')->store('images/story', 'public');
         }
         if ($request->file('image_box')) {
-            $fileBox = $request->file('image_box');
             // $data['image_box'] = CloudinaryStorage::replace($story->image_box, $fileBox->getRealPath(), $fileBox->getClientOriginalName());
-            Storage::delete($request->oldImageBox);
+            Storage::delete($story->image_box);
             $data['image_box'] = $request->file('image_box')->store('images/story', 'public');
         }
         $relasiStory->update($validatedData1);
