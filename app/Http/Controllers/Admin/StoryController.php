@@ -96,14 +96,18 @@ class StoryController extends Controller
             'image_box' => 'nullable|mimes:jpg,jpeg,png,webp,svg|max:200'
         ]);
 
-        if ($request->file('image_cover')) {
-            // $data['image_cover'] = CloudinaryStorage::replace($story->image_cover, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($story->image_cover);
+        if ($request->hasFile('image_cover')) {
+            if($request->oldImageCover) {
+                Storage::disk('public')->delete($request->oldImageCover);
+            }
+            // ddd($request->oldImageCover);
             $data['image_cover'] = $request->file('image_cover')->store('images/story', 'public');
         }
+
         if ($request->file('image_box')) {
-            // $data['image_box'] = CloudinaryStorage::replace($story->image_box, $fileBox->getRealPath(), $fileBox->getClientOriginalName());
-            Storage::delete($story->image_box);
+            if($request->oldImageBox) {
+                Storage::disk('public')->delete($request->oldImageBox);
+            }
             $data['image_box'] = $request->file('image_box')->store('images/story', 'public');
         }
         $relasiStory->update($validatedData1);
@@ -120,8 +124,8 @@ class StoryController extends Controller
 
         // CloudinaryStorage::delete($story->image_cover);
         // CloudinaryStorage::delete($story->image_box);
-        Storage::disk('local')->delete($story->image_cover);
-        Storage::disk('local')->delete($story->image_box);
+        Storage::disk('public')->delete($story->image_cover);
+        Storage::disk('public')->delete($story->image_box);
 
         Story::destroy($story->id);
         RelasiStoryPages::destroy($relasiStory->id);

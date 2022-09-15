@@ -73,6 +73,8 @@
                                                     <div class="form-group">
                                                         <label for="images-id-icon">Image</label>
                                                         <div class="position-relative">
+                                                            <input type="hidden" name="oldImage"
+                                                                value="{{ $relasiInfografis->Infografis->image }}">
                                                             <input type="file"
                                                                 class="form-control @error('image') is-invalid @enderror"
                                                                 placeholder="image" id="imgInp" name="image"

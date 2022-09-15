@@ -34,7 +34,7 @@
                         <a class="nav-link" href="{{ route('unReforms')}}"><img src="{{ asset('template/united-nation/assets/images/motif-menu-float-2.svg') }}" class="me-2" width="30" alt="">UN Reform in Indonesia</a>
                     </li>
                     <li class="nav-item mt-4">
-                        <a class="nav-link" href="#"><i class="bi bi-download me-2"></i>Download Report in PDF</a>
+                        <a class="nav-link" href="{{ asset('download/UNITED NATIONS IN INDONESIA_COUNTRY RESULTS REPORT_2021.pdf') }}" download><i class="bi bi-download me-2"></i>Download Report in PDF</a>
                     </li>
                 </ul>
             </div>

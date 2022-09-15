@@ -7,7 +7,7 @@
                 <h3 class="text-title">About This Report</h3>
             </div>
             <div class="row mb-4">
-                <p class="text-content" style="font-size: 18px;">
+                <p class="text-content" style="font-size: 16px;">
                     <img src="{{ Storage::url($content->Content->image_1) }}" alt="" class="img-content me-4" style="float: left;"
                         width="50%">
                     {!! $content->Content->content_1 !!}
@@ -52,7 +52,7 @@
                 <h3 class="text-title">The Ulap Doyo Pattern</h3>
             </div>
             <div class="row mb-4">
-                <p class="text-content" style="font-size: 18px;">
+                <p class="text-content" style="font-size: 16px;">
                     <img src="{{ Storage::url($content->Content->image_2) }}" alt="" class="img-content me-4" style="float: left;"
                         width="50%">
                     {!! $content->Content->content_2 !!}

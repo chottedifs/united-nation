@@ -40,7 +40,7 @@ class InfografisController extends Controller
         ]);
 
         $image = $request->file('image');
-        // $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+
         $validatedData2['image'] = $request->file('image')->store('images/infografis', 'public');
 
         $infografis = Infografis::create($validatedData2);
@@ -87,9 +87,10 @@ class InfografisController extends Controller
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg|file|max:1024',
             ]);
 
-            $file = $request->file('image');
-            // $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
-            Storage::delete($infografis->image);
+            if($request->oldImage){
+                Storage::disk('public')->delete($request->oldImage);
+            }
+
             $validatedData['image'] = $request->file('image')->store('images/infografis', 'public');
             $relasiInfografis->update($validatedData1);
             $infografis->update($validatedData);
@@ -111,8 +112,8 @@ class InfografisController extends Controller
         $relasiInfografis = RelasiInfografisPages::findOrFail($id);
         $infografis = Infografis::findOrFail($relasiInfografis->infografis_id);
 
-        // CloudinaryStorage::delete($infografis->image);
-        Storage::delete($infografis->image);
+
+        Storage::disk('public')->delete($infografis->image);
 
         Infografis::destroy($infografis->id);
         RelasiInfografisPages::destroy($id);

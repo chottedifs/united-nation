@@ -33,18 +33,18 @@ Route::get('/reportUns/{slug}', [unReformsController::class, 'detailReport'])->n
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController');
-    Route::resource('/user', '\App\Http\Controllers\Admin\UserController');
-    Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController');
-    Route::resource('/story', '\App\Http\Controllers\Admin\StoryController');
-    Route::resource('/storyUp', '\App\Http\Controllers\Admin\StoryUpController');
-    Route::resource('/storyMiddle', '\App\Http\Controllers\Admin\StoryMiddleController');
-    Route::resource('/storyDown', '\App\Http\Controllers\Admin\StoryDownController');
-    Route::resource('/content', '\App\Http\Controllers\Admin\ContentController');
-    Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController');
-    Route::resource('/reportInfografis', '\App\Http\Controllers\Admin\RelasiReportInfografisController');
-    Route::resource('/report', '\App\Http\Controllers\Admin\ReportController');
-    Route::resource('/reportUn', '\App\Http\Controllers\Admin\ReportUnController');
+    Route::resource('/dashboard', '\App\Http\Controllers\Admin\DashboardController')->except('show');
+    Route::resource('/user', '\App\Http\Controllers\Admin\UserController')->except('show');
+    Route::resource('/pages', '\App\Http\Controllers\Admin\PagesController')->except('show');
+    Route::resource('/story', '\App\Http\Controllers\Admin\StoryController')->except('show');
+    Route::resource('/storyUp', '\App\Http\Controllers\Admin\StoryUpController')->except('show');
+    Route::resource('/storyMiddle', '\App\Http\Controllers\Admin\StoryMiddleController')->except('show');
+    Route::resource('/storyDown', '\App\Http\Controllers\Admin\StoryDownController')->except('show');
+    Route::resource('/content', '\App\Http\Controllers\Admin\ContentController')->except('show');
+    Route::resource('/infografis', '\App\Http\Controllers\Admin\InfografisController')->except('show');
+    Route::resource('/reportInfografis', '\App\Http\Controllers\Admin\RelasiReportInfografisController')->except('show');
+    Route::resource('/report', '\App\Http\Controllers\Admin\ReportController')->except('show');
+    Route::resource('/reportUn', '\App\Http\Controllers\Admin\ReportUnController')->except('show');
 });
 
 // Route::get('/dashboard', function () {

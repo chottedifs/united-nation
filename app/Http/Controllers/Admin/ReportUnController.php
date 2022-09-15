@@ -53,28 +53,18 @@ class ReportUnController extends Controller
         ]);
         $data['slug'] = Str::slug($request->title);
         if ($request->file('image_1')) {
-            $image = $request->file('image_1');
-            // $data['image_1'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             $data['image_1'] = $request->file('image_1')->store('images/reportUn', 'public');
         }
         if ($request->file('image_2')) {
-            $image = $request->file('image_2');
-            // $data['image_2'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             $data['image_2'] = $request->file('image_2')->store('images/reportUn', 'public');
         }
         if ($request->file('image_3')) {
-            $image = $request->file('image_3');
-            // $data['image_3'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             $data['image_3'] = $request->file('image_3')->store('images/reportUn', 'public');
         }
         if ($request->file('image_4')) {
-            $image = $request->file('image_4');
-            // $data['image_4'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             $data['image_4'] = $request->file('image_4')->store('images/reportUn', 'public');
         }
         if ($request->file('image_5')) {
-            $image = $request->file('image_5');
-            // $data['image_5'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
             $data['image_5'] = $request->file('image_5')->store('images/reportUn', 'public');
         }
         $reportUn = ReportUn::create($data);
@@ -130,33 +120,33 @@ class ReportUnController extends Controller
             'content_6' => 'nullable|min:50',
         ]);
         if ($request->file('image_1')) {
-            $fileCover = $request->file('image_1');
-            // $data['image_1'] = CloudinaryStorage::replace($content->image_1, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImage1);
+            if($request->oldImage1){
+                Storage::disk('public')->delete($request->oldImage1);
+            }
             $data['image_1'] = $request->file('image_1')->store('images/reportUn', 'public');
         }
         if ($request->file('image_2')) {
-            $fileCover = $request->file('image_2');
-            // $data['image_2'] = CloudinaryStorage::replace($content->image_2, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImage2);
+            if($request->oldImage2){
+                Storage::disk('public')->delete($request->oldImage2);
+            }
             $data['image_2'] = $request->file('image_2')->store('images/reportUn', 'public');
         }
         if ($request->file('image_3')) {
-            $fileCover = $request->file('image_3');
-            // $data['image_3'] = CloudinaryStorage::replace($content->image_3, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImage3);
+            if($request->oldImage3){
+                Storage::disk('public')->delete($request->oldImage3);
+            }
             $data['image_3'] = $request->file('image_3')->store('images/reportUn', 'public');
         }
         if ($request->file('image_4')) {
-            $fileCover = $request->file('image_4');
-            // $data['image_4'] = CloudinaryStorage::replace($content->image_4, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImage4);
+            if($request->oldImage4){
+                Storage::disk('public')->delete($request->oldImage4);
+            }
             $data['image_4'] = $request->file('image_4')->store('images/reportUn', 'public');
         }
         if ($request->file('image_5')) {
-            $fileCover = $request->file('image_5');
-            // $data['image_5'] = CloudinaryStorage::replace($content->image_5, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImage5);
+            if($request->oldImage5){
+                Storage::disk('public')->delete($request->oldImage5);
+            }
             $data['image_5'] = $request->file('image_5')->store('images/reportUn', 'public');
         }
 
@@ -172,15 +162,11 @@ class ReportUnController extends Controller
         $relasiContent = RelasiUnReportPages::findOrFail($id);
         $content = ReportUn::findOrFail($id);
 
-        // CloudinaryStorage::delete($content->image_1);
-        // CloudinaryStorage::delete($content->image_2);
-        // CloudinaryStorage::delete($content->image_3);
-        // CloudinaryStorage::delete($content->image_4);
-        Storage::disk('local')->delete($content->image_1);
-        Storage::disk('local')->delete($content->image_2);
-        Storage::disk('local')->delete($content->image_3);
-        Storage::disk('local')->delete($content->image_4);
-        Storage::disk('local')->delete($content->image_5);
+        Storage::disk('public')->delete($content->image_1);
+        Storage::disk('public')->delete($content->image_2);
+        Storage::disk('public')->delete($content->image_3);
+        Storage::disk('public')->delete($content->image_4);
+        Storage::disk('public')->delete($content->image_5);
 
         RelasiUnReportPages::destroy($relasiContent->id);
         ReportUn::destroy($content->id);

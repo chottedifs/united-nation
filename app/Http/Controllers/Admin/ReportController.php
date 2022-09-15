@@ -47,10 +47,10 @@ class ReportController extends Controller
         ]);
 
         $data['slug'] = Str::slug($request->title);
+
         $imageCover = $request->file('image_cover');
         $image = $request->file('image');
-        // $data['image_cover'] = CloudinaryStorage::upload($imageCover->getRealPath(), $imageCover->getClientOriginalName());
-        // $data['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+
         $data['image_cover'] = $request->file('image_cover')->store('images/report', 'public');
         $data['image'] = $request->file('image')->store('images/report', 'public');
 
@@ -99,15 +99,15 @@ class ReportController extends Controller
         ]);
 
         if ($request->file('image_cover')) {
-            $fileCover = $request->file('image_cover');
-            // $data['image_cover'] = CloudinaryStorage::replace($report->image_cover, $fileCover->getRealPath(), $fileCover->getClientOriginalName());
-            Storage::delete($request->oldImageCover);
+            if($request->oldImageCover){
+                Storage::disk('public')->delete($request->oldImageCover);
+            }
             $data['image_cover'] = $request->file('image_cover')->store('images/report', 'public');
         }
         if ($request->file('image')) {
-            $file = $request->file('image');
-            // $data['image'] = CloudinaryStorage::replace($report->image, $file->getRealPath(), $file->getClientOriginalName());
-            Storage::delete($request->oldImage);
+            if($request->oldImage){
+                Storage::disk('public')->delete($request->oldImage);
+            }
             $data['image'] = $request->file('image')->store('images/report', 'public');
         }
 
@@ -129,10 +129,8 @@ class ReportController extends Controller
         $relasiReport = RelasiReportPages::findOrFail($id);
         $report = Report::findOrFail($relasiReport->report_id);
 
-        // CloudinaryStorage::delete($report->image_cover);
-        // CloudinaryStorage::delete($report->image);
-        Storage::disk('local')->delete($report->image_cover);
-        Storage::disk('local')->delete($report->image);
+        Storage::disk('public')->delete($report->image_cover);
+        Storage::disk('public')->delete($report->image);
 
         Report::destroy($report->id);
         RelasiReportPages::destroy($relasiReport->id);

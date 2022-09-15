@@ -71,6 +71,8 @@
                                                     <div class="form-group">
                                                         <label class="first-name-icon" for="image_cover">Image Cover</label>
                                                         <div class="position-relative">
+                                                            <input type="hidden" name="oldImage"
+                                                                value="{{ $page->image_cover }}">
                                                             <input
                                                                 class="form-control @error('image_cover') is-invalid @enderror"
                                                                 id="imgInp" name="image_cover" type="file"
