@@ -19,7 +19,7 @@
                         <div class="item">
                             <a href="{{ route('report', $reports->Report->slug) }}#title">
                                 <div class="card bg-dark text-white">
-                                    <img class="card-img" src="{{ $reports->Report->image_cover }}" alt="Card image">
+                                    <img class="card-img" src="{{ Storage::url($reports->Report->image_cover) }}" alt="Card image">
                                 </div>
                             </a>
                         </div>
@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;"
+                    <img src="{{ Storage::url($content->Content->image_1) }}" class="img-content me-4" style="float: left; width: 40%;"
                         alt="img-conten-1">
                     {!! $content->Content->content_1 !!}
                 </p>
@@ -50,7 +50,7 @@
                             style="cursor: pointer;">
                             <div class="card" data-aos="fade-right">
                                 <div class="card-body p-0">
-                                    <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3"
+                                    <img src="{{ Storage::url($storyUps->StoryUp->image_cover) }}" class="img-card-ihd me-3"
                                         alt="..." style="float: left; width: 45%;">
                                     <p class="text-card-story mt-5">
                                         <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg') }}"
@@ -68,7 +68,7 @@
                                 <div class="modal-body pt-0 pb-0">
                                     <div class="row">
                                         <div class="col-lg-5 p-0">
-                                            <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3"
+                                            <img src="{{ Storage::url($storyUps->StoryUp->image_box) }}" class="img-responsive me-3"
                                                 height="100%" width="100%" alt="...">
                                         </div>
                                         <div class="col-lg-7">
@@ -99,7 +99,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    <img src="{{ $content->Content->image_2 }}" class="img-content ms-4 shadow-sm"
+                    <img src="{{ Storage::url($content->Content->image_2) }}" class="img-content ms-4 shadow-sm"
                         style="float: right; width: 40%;" alt="img-content">
                     {!! $content->Content->content_2 !!}
                 </p>
@@ -127,7 +127,7 @@
     <style>
         section .jumbotron {
             height: 650px;
-            background-image: url('{{ $page->image_cover }}');
+            background-image: url('{{ Storage::url($page->image_cover) }}');
             background-repeat: no-repeat;
             background-size: cover;
         }

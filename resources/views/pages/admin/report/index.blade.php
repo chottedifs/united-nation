@@ -39,8 +39,8 @@
                                 <tr>
                                     <td>{{ $report->Pages->title }}</td>
                                     <td>{{ $report->Report->title }}</td>
-                                    <td><img src="{{ $report->Report->image_cover }}" alt="image" width="90"></td>
-                                    <td><img src="{{ $report->Report->image }}" alt="image" width="90"></td>
+                                    <td><img src="{{ Storage::url($report->Report->image_cover) }}" alt="image" width="90"></td>
+                                    <td><img src="{{ Storage::url($report->Report->image) }}" alt="image" width="90"></td>
                                     <td>{!! Str::limit($report->Report->description, 100) !!}</td>
                                     <td>
                                         <div class="d-flex">

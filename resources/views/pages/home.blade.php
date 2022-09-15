@@ -8,7 +8,7 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
-                    <img src="{{ $content->Content->image_1 }}" alt="" class="img-content me-4" style="float: left;"
+                    <img src="{{ Storage::url($content->Content->image_1) }}" alt="" class="img-content me-4" style="float: left;"
                         width="50%">
                     {!! $content->Content->content_1 !!}
                 </p>
@@ -28,7 +28,7 @@
                             style="cursor: pointer;">
                             <div class="card" data-aos="fade-right">
                                 <div class="card-body p-0">
-                                    <img src="{{ $stories->Story->image_cover }}" class="img-card-ihd me-3"
+                                    <img src="{{ Storage::url($stories->Story->image_cover) }}" class="img-card-ihd me-3"
                                         alt="stories-foreword" style="float: left; width: 50%;">
                                     <p class="text-card-story">
                                         <span class="text-name">{{ $stories->Story->name }}</span>
@@ -53,7 +53,7 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content" style="font-size: 18px;">
-                    <img src="{{ $content->Content->image_2 }}" alt="" class="img-content me-4" style="float: left;"
+                    <img src="{{ Storage::url($content->Content->image_2) }}" alt="" class="img-content me-4" style="float: left;"
                         width="50%">
                     {!! $content->Content->content_2 !!}
                 </p>
@@ -70,7 +70,7 @@
                     <div class="modal-body pt-0 pb-0">
                         <div class="row">
                             <div class="col-lg-5 p-0">
-                                <img src="{{ $stories->Story->image_box }}" class="img-responsive me-3" alt="valerie"
+                                <img src="{{ Storage::url($stories->Story->image_box) }}" class="img-responsive me-3" alt="valerie"
                                     width="100%" height="100%">
                             </div>
                             <div class="col-lg-7 bg-color-bluedark bg-box-story">
@@ -95,7 +95,7 @@
     <style>
         section .jumbotron {
             height: 650px;
-            background-image: url('{{ $page->image_cover }}');
+            background-image: url('{{ Storage::url($page->image_cover) }}');
             background-repeat: no-repeat;
             background-size: cover;
             max-width: 100%;

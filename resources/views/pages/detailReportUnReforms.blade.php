@@ -18,7 +18,7 @@
 
                     @if ($unReports->slug == 'our-common-agenda')
                         @if ($unReports->image_1)
-                            <img src="{{ $unReports->image_1 }}" alt="our-common" class="img-fluid ms-5 img-responsiv"
+                            <img src="{{ Storage::url($unReports->image_1) }}" alt="our-common" class="img-fluid ms-5 img-responsiv"
                                 style="float: right;" width="40%">
                         @endif
                         {!! $unReports->content_1 !!}
@@ -120,7 +120,7 @@
                                 <span class="list-text"><img
                                         src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg"
                                         alt="motif" width="40" class="me-3"> DOMES</span> <br><br>
-                                <img src="{{ $unReports->image_4 }}" alt=""
+                                <img src="{{ Storage::url($unReports->image_4) }}" alt=""
                                     class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                 {!! $unReports->content_4 !!}
                             </p>
@@ -130,7 +130,7 @@
                                 <span class="list-text"><img
                                         src="http://united-nation-indonesia.herokuapp.com/template/united-nation/assets/images/motif-title-story.svg"
                                         alt="motif" width="40" class="me-3"> OURS</span> <br><br>
-                                <img src="{{ $unReports->image_5 }}" alt=""
+                                <img src="{{ Storage::url($unReports->image_5) }}" alt=""
                                     class="img-fluid me-4 img-content img-responsiv" style="float: left;" width="45%">
                                 {!! $unReports->content_5 !!}
                             </p>
@@ -143,7 +143,7 @@
                         {!! $unReports->content_2 !!}
                         {{-- <span class="list-text"><img src="{{ Storage::url('public/images/united-nation/motif-title-story.svg') }}" alt="motif" width="40" class="me-3"> The Operations Management Team</span><br><br> --}}
                         {!! $unReports->content_3 !!}
-                        <img src="{{ $unReports->image_3 }}" alt="" width="100%" class="shadow-sm">
+                        <img src="{{ Storage::url($unReports->image_3) }}" alt="" width="100%" class="shadow-sm">
                     @endif
 
                     @if ($unReports->slug == 'mutual-support-through-the-pandemic')
@@ -213,7 +213,7 @@
                         <div class="row mb-5">
                             <p class="text-content">
                                 {!! $unReports->content_2 !!}
-                                <img src="{{ $unReports->image_2 }}" alt="funding-infografis-1" width="100%"
+                                <img src="{{ Storage::url($unReports->image_2) }}" alt="funding-infografis-1" width="100%"
                                     class="shadow-sm" data-aos="fade-in" style="margin-left: auto; margin-right: auto;">
                                 <br><br>
                                 {!! $unReports->content_3 !!}
@@ -407,7 +407,7 @@
     <style>
         section .jumbotron {
             height: 650px;
-            background-image: url('{{ $page->image_cover }}');
+            background-image: url('{{ Storage::url($page->image_cover) }}');
             background-repeat: no-repeat;
             background-size: cover;
         }

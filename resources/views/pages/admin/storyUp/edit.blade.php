@@ -6,7 +6,6 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Story Top</h3>
-                    <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery required)</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -118,7 +117,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($story->StoryUp->image_cover)
                                                                 <img class="img-responsive" id="blah1"
-                                                                    src="{{ $story->StoryUp->image_cover }}" />
+                                                                    src="{{ Storage::url($story->StoryUp->image_cover) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="blah1" />
                                                             @endif
@@ -150,7 +149,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($story->StoryUp->image_box)
                                                                 <img class="img-responsive" id="blah2"
-                                                                    src="{{ $story->StoryUp->image_box }}" />
+                                                                    src="{{ Storage::url($story->StoryUp->image_box) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="blah2" />
                                                             @endif

@@ -43,16 +43,16 @@
                             @foreach ($contents as $content)
                                 <tr>
                                     <td>{{ $content->Pages->title }}</td>
-                                    <td><img src="{{ Storage::url($content->Content->image_1) }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->Content->image_1 ) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->Content->content_1, 100) }}</td>
-                                    <td><img src="{{ $content->Content->image_2 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->Content->image_2 ) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->Content->content_2, 100) }}</td>
-                                    <td><img src="{{ $content->Content->image_3 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->Content->image_3 ) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->Content->content_3, 100) }}</td>
-                                    <td><img src="{{ $content->Content->image_4 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->Content->image_4 ) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->Content->content_4, 100) }}</td>
                                     <td>

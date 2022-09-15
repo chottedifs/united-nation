@@ -8,14 +8,14 @@
             </div>
             <div class="row mb-4">
                 <p class="text-content">
-                    <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;"
+                    <img src="{{ Storage::url($content->Content->image_1) }}" class="img-content me-4" style="float: left; width: 40%;"
                         alt="img-conten-1">
                     {!! $content->Content->content_1 !!}
                 </p>
             </div>
             <div class="row mb-2">
                 <p class="text-content">
-                    <img src="{{ $content->Content->image_2 }}" class="img-content ms-4" style="float: right; width: 40%;"
+                    <img src="{{ Storage::url($content->Content->image_2) }}" class="img-content ms-4" style="float: right; width: 40%;"
                         alt="img-conten-2">
                     {!! $content->Content->content_2 !!}
                 </p>
@@ -45,7 +45,7 @@
     <style>
         section .jumbotron {
             height: 650px;
-            background-image: url('{{ $page->image_cover }}');
+            background-image: url('{{ Storage::url($page->image_cover) }}');
             background-repeat: no-repeat;
             background-size: cover;
         }

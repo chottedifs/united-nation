@@ -36,7 +36,7 @@
                             @foreach ($infografis as $infographics)
                                 <tr>
                                     <td>{{ $infographics->Pages->title }}</td>
-                                    <td><img src="{{ $infographics->Infografis->image }}" alt="image" width="90">
+                                    <td><img src="{{ Storage::url($infographics->Infografis->image) }}" alt="image" width="90">
                                     </td>
                                     <td>
                                         <div class="d-flex">

@@ -6,7 +6,6 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Report Un Reform</h3>
-                    <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery required)</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -82,7 +81,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($content->ReportUn->image_1)
                                                                 <img class="img-responsive" id="blah"
-                                                                    src="{{ $content->ReportUn->image_1 }}" />
+                                                                    src="{{ Storage::url($content->ReportUn->image_1) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="blah" />
                                                             @endif
@@ -127,7 +126,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($content->ReportUn->image_2)
                                                                 <img class="img-responsive" id="blih"
-                                                                    src="{{ $content->ReportUn->image_2 }}" />
+                                                                    src="{{ Storage::url($content->ReportUn->image_2) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="blih" />
                                                             @endif
@@ -173,7 +172,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($content->ReportUn->image_3)
                                                                 <img class="img-responsive" id="bluh"
-                                                                    src="{{ $content->ReportUn->image_3 }}" />
+                                                                    src="{{ Storage::url($content->ReportUn->image_3) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="bluh" />
                                                             @endif
@@ -219,7 +218,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($content->ReportUn->image_4)
                                                                 <img class="img-responsive" id="bleh"
-                                                                    src="{{ $content->ReportUn->image_4 }}" />
+                                                                    src="{{ Storage::url($content->ReportUn->image_4) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="bleh" />
                                                             @endif
@@ -265,7 +264,7 @@
                                                         <div class="card shadow-sm p-2 m-0">
                                                             @if ($content->ReportUn->image_5)
                                                                 <img class="img-responsive" id="bloh"
-                                                                    src="{{ $content->ReportUn->image_5 }}" />
+                                                                    src="{{ Storage::url($content->ReportUn->image_5) }}" />
                                                             @else
                                                                 <img class="img-responsive" id="bloh" />
                                                             @endif

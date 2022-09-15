@@ -42,9 +42,9 @@
                                     <td>{{ $story->Pages->title }}</td>
                                     <td>{{ $story->StoryMiddle->name }}</td>
                                     <td>{{ Str::limit($story->StoryMiddle->position, 20) }}</td>
-                                    <td><img src="{{ $story->StoryMiddle->image_cover }}" alt="image" width="90">
+                                    <td><img src="{{ Storage::url($story->StoryMiddle->image_cover ) }}" alt="image" width="90">
                                     </td>
-                                    <td><img src="{{ $story->StoryMiddle->image_box }}" alt="image" width="90"></td>
+                                    <td><img src="{{ Storage::url($story->StoryMiddle->image_box) }}" alt="image" width="90"></td>
                                     <td>{{ Str::limit($story->StoryMiddle->description, 100) }}</td>
                                     <td>
                                         <div class="d-flex">

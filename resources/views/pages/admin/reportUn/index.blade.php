@@ -51,19 +51,19 @@
                                     <td>{{ $content->Pages->title }}</td>
                                     <td>{{ $content->ReportUn->title }}</td>
                                     <td>{{ Str::limit($content->ReportUn->content_1, 100) }}</td>
-                                    <td><img src="{{ $content->ReportUn->image_1 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->ReportUn->image_1) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->ReportUn->content_2, 100) }}</td>
-                                    <td><img src="{{ $content->ReportUn->image_2 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->ReportUn->image_2) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->ReportUn->content_3, 100) }}</td>
-                                    <td><img src="{{ $content->ReportUn->image_3 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->ReportUn->image_3) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->ReportUn->content_4, 100) }}</td>
-                                    <td><img src="{{ $content->ReportUn->image_4 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->ReportUn->image_4) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->ReportUn->content_5, 100) }}</td>
-                                    <td><img src="{{ $content->ReportUn->image_5 }}" alt="" style="width: 50px;">
+                                    <td><img src="{{ Storage::url($content->ReportUn->image_5) }}" alt="" style="width: 50px;">
                                     </td>
                                     <td>{{ Str::limit($content->ReportUn->content_6, 100) }}</td>
                                     <td>
