@@ -30,7 +30,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form action="{{ route('pages.update', $page->id) }}" class="form form-vertical" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('pages.update', $page->id) }}" class="form form-vertical"
+                                        method="post" enctype="multipart/form-data">
                                         @method('PUT')
                                         @csrf
                                         <div class="form-body">
@@ -39,12 +40,15 @@
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon" for="title">Title</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Add Title" value="{{ old("title", $page->title) }}">
-                                                                @error('title')
-                                                                    <div class="invalid-feedback">
-                                                                        {{ $message }}
-                                                                    </div>
-                                                                @enderror
+                                                            <input type="text"
+                                                                class="form-control @error('title') is-invalid @enderror"
+                                                                name="title" id="title" placeholder="Add Title"
+                                                                value="{{ old('title', $page->title) }}">
+                                                            @error('title')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             <div class="form-control-icon">
                                                                 <i class="bi bi-textarea-t"></i>
                                                             </div>
@@ -55,10 +59,11 @@
                                                     <div class="form-group">
                                                         <label for="first-name-icon" for="title">Image Preview</label>
                                                         <div class="card shadow-sm p-2 m-0">
-                                                            @if($page->image_cover)
-                                                                <img class="img-responsive" id="blah" src="{{ $page->image_cover }}"/>
+                                                            @if ($page->image_cover)
+                                                                <img class="img-responsive" id="blah"
+                                                                    src="{{ $page->image_cover }}" />
                                                             @else
-                                                                <img class="img-responsive" id="blah"/>
+                                                                <img class="img-responsive" id="blah" />
                                                             @endif
                                                         </div>
                                                     </div>
@@ -67,7 +72,11 @@
                                                     <div class="form-group">
                                                         <label class="first-name-icon" for="image_cover">Image Cover</label>
                                                         <div class="position-relative">
-                                                            <input class="form-control @error('image_cover') is-invalid @enderror" id="imgInp" name="image_cover" type="file" id="formFileMultiple" value="{{ old("title", $page->image_cover) }}" multiple>
+                                                            <input
+                                                                class="form-control @error('image_cover') is-invalid @enderror"
+                                                                id="imgInp" name="image_cover" type="file"
+                                                                id="formFileMultiple"
+                                                                value="{{ old('title', $page->image_cover) }}" multiple>
                                                             @error('image_cover')
                                                                 <div class="invalid-feedback">
                                                                     {{ $message }}
@@ -95,18 +104,14 @@
     </div>
 @endsection
 
-@push('style')
-    {{-- <link rel="stylesheet" href="{{ asset('library/summernote/summernote.min.css') }}"> --}}
-@endpush
-
 @push('script')
     <script src="{{ asset('template/admin/dist/assets/extensions/jquery/jquery.min.js') }}"></script>
     <script>
-    imgInp.onchange = evt => {
-        const [file] = imgInp.files
-        if (file) {
-            blah.src = URL.createObjectURL(file)
+        imgInp.onchange = evt => {
+            const [file] = imgInp.files
+            if (file) {
+                blah.src = URL.createObjectURL(file)
+            }
         }
-    }
     </script>
 @endpush

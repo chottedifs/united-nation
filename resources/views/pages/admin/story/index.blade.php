@@ -37,24 +37,28 @@
                         </thead>
                         <tbody>
                             @foreach ($stories as $story)
-                            <tr>
-                                <td>{{ $story->Pages->title }}</td>
-                                <td>{{ $story->Story->name }}</td>
-                                <td>{{ Str::limit($story->Story->position, 20) }}</td>
-                                <td><img src="{{ $story->Story->image_cover }}" alt="image" width="90"></td>
-                                <td><img src="{{ $story->Story->image_box }}" alt="image" width="90"></td>
-                                <td>{{ Str::limit($story->Story->description,100) }}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('story.edit', $story->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('story.destroy', $story->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $story->Pages->title }}</td>
+                                    <td>{{ $story->Story->name }}</td>
+                                    <td>{{ Str::limit($story->Story->position, 20) }}</td>
+                                    <td><img src="{{ Storage::url($story->Story->image_cover) }}" alt="image" width="90"></td>
+                                    <td><img src="{{ Storage::url($story->Story->image_box) }}" alt="image" width="90"></td>
+                                    <td>{{ Str::limit($story->Story->description, 100) }}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('story.edit', $story->id) }}"
+                                                class="btn btn-outline-warning .icon-left me-2"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form onsubmit="return confirm('Are you sure ?');"
+                                                action="{{ route('story.destroy', $story->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger .icon-left"><i
+                                                        class="bi bi-trash3-fill"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -66,7 +70,8 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
 @endpush
 

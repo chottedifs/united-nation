@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="motif-title">
-                    <h3 class="text-title w-75">{{$page->title}}</h3>
+                    <h3 class="text-title w-75">{{ $page->title }}</h3>
                 </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <p class="text-content">
-                    {!!$content->Content->content_1!!}
+                    {!! $content->Content->content_1 !!}
                 </p>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <div class="row mb-4">
                 @foreach ($reportUns as $reportUn)
                     <a href="{{ route('reportUns', $reportUn->ReportUn->slug) }}#title" class="menus-reform shadow-sm">
-                        {{ $reportUn->ReportUn->title}}
+                        {{ $reportUn->ReportUn->title }}
                     </a>
                 @endforeach
             </div>
@@ -34,11 +34,11 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/aos-master/dist/aos.css')}}">
+    <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/aos-master/dist/aos.css') }}">
     <style>
         section .jumbotron {
             height: 650px;
-            background-image: url('{{$page->image_cover}}');
+            background-image: url('{{ $page->image_cover }}');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -46,5 +46,5 @@
 @endpush
 
 @push('script')
-<script src="{{ asset('template/united-nation/assets/script/script.js') }}"></script>
+    <script src="{{ asset('template/united-nation/assets/script/script.js') }}"></script>
 @endpush

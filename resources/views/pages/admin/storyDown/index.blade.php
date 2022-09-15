@@ -6,7 +6,8 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Story Down</h3>
-                    <a href="{{ route('storyDown.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Story Down</a>
+                    <a href="{{ route('storyDown.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Story
+                        Down</a>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -37,24 +38,28 @@
                         </thead>
                         <tbody>
                             @foreach ($stories as $story)
-                            <tr>
-                                <td>{{ $story->Pages->title }}</td>
-                                <td>{{ $story->StoryDown->name }}</td>
-                                <td>{{ Str::limit($story->StoryDown->position, 20) }}</td>
-                                <td><img src="{{ $story->StoryDown->image_cover }}" alt="image" width="90"></td>
-                                <td><img src="{{ $story->StoryDown->image_box }}" alt="image" width="90"></td>
-                                <td>{{ Str::limit($story->StoryDown->description,100) }}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('storyDown.edit', $story->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('storyDown.destroy', $story->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $story->Pages->title }}</td>
+                                    <td>{{ $story->StoryDown->name }}</td>
+                                    <td>{{ Str::limit($story->StoryDown->position, 20) }}</td>
+                                    <td><img src="{{ $story->StoryDown->image_cover }}" alt="image" width="90"></td>
+                                    <td><img src="{{ $story->StoryDown->image_box }}" alt="image" width="90"></td>
+                                    <td>{{ Str::limit($story->StoryDown->description, 100) }}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('storyDown.edit', $story->id) }}"
+                                                class="btn btn-outline-warning .icon-left me-2"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form onsubmit="return confirm('Are you sure ?');"
+                                                action="{{ route('storyDown.destroy', $story->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger .icon-left"><i
+                                                        class="bi bi-trash3-fill"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -66,7 +71,8 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
 @endpush
 

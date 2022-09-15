@@ -6,7 +6,8 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Content</h3>
-                    <a href="{{ route('content.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add Content</a>
+                    <a href="{{ route('content.create') }}" class="btn btn-outline-primary icon-left mt-3 mb-3">Add
+                        Content</a>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -40,27 +41,35 @@
                         </thead>
                         <tbody>
                             @foreach ($contents as $content)
-                            <tr>
-                                <td>{{$content->Pages->title}}</td>
-                                <td><img src="{{ $content->Content->image_1 }}" alt="" style="width: 50px;"></td>
-                                <td>{{ Str::limit($content->Content->content_1,100) }}</td>
-                                <td><img src="{{ $content->Content->image_2 }}" alt="" style="width: 50px;"></td>
-                                <td>{{ Str::limit($content->Content->content_2,100) }}</td>
-                                <td><img src="{{ $content->Content->image_3 }}" alt="" style="width: 50px;"></td>
-                                <td>{{ Str::limit($content->Content->content_3,100) }}</td>
-                                <td><img src="{{ $content->Content->image_4 }}" alt="" style="width: 50px;"></td>
-                                <td>{{ Str::limit($content->Content->content_4,100) }}</td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('content.edit', $content->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('content.destroy', $content->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $content->Pages->title }}</td>
+                                    <td><img src="{{ Storage::url($content->Content->image_1) }}" alt="" style="width: 50px;">
+                                    </td>
+                                    <td>{{ Str::limit($content->Content->content_1, 100) }}</td>
+                                    <td><img src="{{ $content->Content->image_2 }}" alt="" style="width: 50px;">
+                                    </td>
+                                    <td>{{ Str::limit($content->Content->content_2, 100) }}</td>
+                                    <td><img src="{{ $content->Content->image_3 }}" alt="" style="width: 50px;">
+                                    </td>
+                                    <td>{{ Str::limit($content->Content->content_3, 100) }}</td>
+                                    <td><img src="{{ $content->Content->image_4 }}" alt="" style="width: 50px;">
+                                    </td>
+                                    <td>{{ Str::limit($content->Content->content_4, 100) }}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('content.edit', $content->id) }}"
+                                                class="btn btn-outline-warning .icon-left me-2"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form onsubmit="return confirm('Are you sure ?');"
+                                                action="{{ route('content.destroy', $content->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger .icon-left"><i
+                                                        class="bi bi-trash3-fill"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -72,7 +81,8 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
 @endpush
 

@@ -34,21 +34,25 @@
                         </thead>
                         <tbody>
                             @foreach ($pages as $page)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $page->title }}</td>
-                                <td><img src="{{ $page->image_cover }}" alt="" style="width: 150px;"></td>
-                                <td>
-                                    <div class="d-flex">
-                                        <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-outline-warning .icon-left me-2"><i class="bi bi-pencil-square"></i></a>
-                                        <form onsubmit="return confirm('Are you sure ?');" action="{{ route('pages.destroy', $page->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger .icon-left"><i class="bi bi-trash3-fill"></i></button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $page->title }}</td>
+                                    <td><img src="{{ Storage::url($page->image_cover) }}" alt="" style="width: 150px;"></td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('pages.edit', $page->id) }}"
+                                                class="btn btn-outline-warning .icon-left me-2"><i
+                                                    class="bi bi-pencil-square"></i></a>
+                                            <form onsubmit="return confirm('Are you sure ?');"
+                                                action="{{ route('pages.destroy', $page->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger .icon-left"><i
+                                                        class="bi bi-trash3-fill"></i></button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -60,7 +64,8 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/admin/dist/assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/admin/dist/assets/css/pages/datatables.css') }}">
 @endpush
 

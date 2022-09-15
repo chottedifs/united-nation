@@ -1,192 +1,207 @@
 @extends('layouts.master-app')
 
 @section('content')
-<section class="carousel-ihd">
-    <div class="container">
-        <div class="row mt-5">
-            <div class="motif-title">
-                <h3 class="text-title w-75">{{$page->title}}</h3>
+    <section class="carousel-ihd">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="motif-title">
+                    <h3 class="text-title w-75">{{ $page->title }}</h3>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="carousel-ihd">
-    <div class="container">
-        <div class="row mt-5 mb-5">
-            <div class="owl-carousel carousel-card">
-                @foreach ($report as $reports)
-                <div class="item">
-                    <a href="{{ route('report', $reports->Report->slug) }}#title">
-                        <div class="card bg-dark text-white">
-                            <img class="card-img" src="{{ $reports->Report->image_cover }}" alt="Card image">
+    <section class="carousel-ihd">
+        <div class="container">
+            <div class="row mt-5 mb-5">
+                <div class="owl-carousel carousel-card">
+                    @foreach ($report as $reports)
+                        <div class="item">
+                            <a href="{{ route('report', $reports->Report->slug) }}#title">
+                                <div class="card bg-dark text-white">
+                                    <img class="card-img" src="{{ $reports->Report->image_cover }}" alt="Card image">
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    @endforeach
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-ihd">
+        <div class="container">
+            <div class="row">
+                <p class="text-content">
+                    <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;"
+                        alt="img-conten-1">
+                    {!! $content->Content->content_1 !!}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-ihd">
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($storyUp as $storyUps)
+                    <div class="col-sm-12 col-md-6">
+                        <a data-bs-toggle="modal" data-bs-target="#storyUp-{{ $storyUps->StoryUp->id }}"
+                            style="cursor: pointer;">
+                            <div class="card" data-aos="fade-right">
+                                <div class="card-body p-0">
+                                    <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3"
+                                        alt="..." style="float: left; width: 45%;">
+                                    <p class="text-card-story mt-5">
+                                        <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg') }}"
+                                            alt="motif-read" class="me-2" width="40">{{ $storyUps->StoryUp->name }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {{-- Modal --}}
+                    <div class="modal fade" id="storyUp-{{ $storyUps->StoryUp->id }}" aria-hidden="true"
+                        aria-labelledby="story-1" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-body pt-0 pb-0">
+                                    <div class="row">
+                                        <div class="col-lg-5 p-0">
+                                            <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3"
+                                                height="100%" width="100%" alt="...">
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <button type="button" class="btn-close me-3 mb-3 my-3 bg-white"
+                                                data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
+                                            <p class="text-content" style="font-size: 18px; padding: 40px 20px 40px 20px;">
+                                                <span class="text-modal-story"><img
+                                                        src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg') }}"
+                                                        alt="motif-read" class="me-2"
+                                                        width="40">{{ $storyUps->StoryUp->name }}</span> <br>
+                                                <span
+                                                    class="text-submodal-story">{{ $storyUps->StoryUp->position }}</span><br><br>
+                                                {!! $storyUps->StoryUp->description !!}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- End Modal --}}
                 @endforeach
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="content-ihd">
-    <div class="container">
-        <div class="row">
-            <p class="text-content">
-                <img src="{{ $content->Content->image_1 }}" class="img-content me-4" style="float: left; width: 40%;" alt="img-conten-1">
-                {!!$content->Content->content_1!!}
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="story-ihd">
-    <div class="container">
-        <div class="row mb-5">
-            @foreach ($storyUp as $storyUps)
-            <div class="col-sm-12 col-md-6">
-                <a data-bs-toggle="modal" data-bs-target="#storyUp-{{$storyUps->StoryUp->id}}" style="cursor: pointer;">
-                    <div class="card" data-aos="fade-right">
-                        <div class="card-body p-0">
-                            <img src="{{ $storyUps->StoryUp->image_cover }}" class="img-card-ihd me-3" alt="..." style="float: left; width: 45%;">
-                            <p class="text-card-story mt-5">
-                                <img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{ $storyUps->StoryUp->name }}
-                            </p>
-                        </div>
-                    </div>
-                </a>
+    <section class="content-ihd">
+        <div class="container">
+            <div class="row">
+                <p class="text-content">
+                    <img src="{{ $content->Content->image_2 }}" class="img-content ms-4 shadow-sm"
+                        style="float: right; width: 40%;" alt="img-content">
+                    {!! $content->Content->content_2 !!}
+                </p>
             </div>
-            {{-- Modal --}}
-            <div class="modal fade" id="storyUp-{{$storyUps->StoryUp->id}}" aria-hidden="true" aria-labelledby="story-1" tabindex="-1">
-                <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                    <div class="modal-body pt-0 pb-0">
-                        <div class="row">
-                            <div class="col-lg-5 p-0">
-                                <img src="{{ $storyUps->StoryUp->image_box }}" class="img-responsive me-3" height="100%" width="100%" alt="...">
-                            </div>
-                            <div class="col-lg-7">
-                                <button type="button" class="btn-close me-3 mb-3 my-3 bg-white" data-bs-dismiss="modal" aria-label="Close" style="float: right;"></button>
-                                <p class="text-content" style="font-size: 18px; padding: 40px 20px 40px 20px;">
-                                    <span class="text-modal-story"><img src="{{ asset('template/united-nation/assets/images/motif-read-blue.svg')}}" alt="motif-read" class="me-2" width="40">{{$storyUps->StoryUp->name}}</span> <br>
-                                    <span class="text-submodal-story">{{$storyUps->StoryUp->position}}</span><br><br>
-                                    {!!$storyUps->StoryUp->description!!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+        </div>
+    </section>
+
+    <section class="content-ihd">
+        <div class="container">
+            <div class="row">
+                <p class="text-content">
+                    {!! $content->Content->content_3 !!}
+                </p>
             </div>
-            {{-- End Modal --}}
-            @endforeach
         </div>
-    </div>
-</section>
-
-<section class="content-ihd">
-    <div class="container">
-        <div class="row">
-            <p class="text-content">
-                <img src="{{ $content->Content->image_2 }}" class="img-content ms-4 shadow-sm" style="float: right; width: 40%;" alt="img-content">
-                {!!$content->Content->content_2!!}
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="content-ihd">
-    <div class="container">
-        <div class="row">
-            <p class="text-content">
-                {!!$content->Content->content_3!!}
-            </p>
-        </div>
-    </div>
-</section>
+    </section>
 @endsection
 
 @push('style')
-<link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.theme.default.min.css') }}">
-<link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/aos-master/dist/aos.css')}}">
-<style>
-    section .jumbotron {
-        height: 650px;
-        background-image: url('{{$page->image_cover}}');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
+    <link rel="stylesheet"
+        href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/united-nation/assets/library/aos-master/dist/aos.css') }}">
+    <style>
+        section .jumbotron {
+            height: 650px;
+            background-image: url('{{ $page->image_cover }}');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 @endpush
 
 @push('script')
-<script src="{{ asset('template/united-nation/assets/script/script.js') }}"></script>
-<script src="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/js/owl.carousel.js')}}"></script>
-<script type="text/javascript">
-function actionToggle() {
-    var action = document.querySelector('.action');
-    action.classList.toggle('active')
-}
+    <script src="{{ asset('template/united-nation/assets/script/script.js') }}"></script>
+    <script src="{{ asset('template/united-nation/assets/library/OwlCarousel2-2.3.4/js/owl.carousel.js') }}"></script>
+    <script type="text/javascript">
+        function actionToggle() {
+            var action = document.querySelector('.action');
+            action.classList.toggle('active')
+        }
 
-var action = document.querySelector('.action');
-window.onscroll = function(){
-    action.classList.toggle('show', window.scrollY >= 600);
-}
-</script>
-<script>
-$('.carousel-card').owlCarousel({
-        loop: true,
-        center: false,
-        items: 3,
-        margin: 15,
-        // autoplay: true,
-        // dots:true,
-        nav:true,
-        navText: [
-            "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/prev-btn.svg')}}'/>",
-            "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/next-btn.svg')}}'/>"],
-        autoplayTimeout: 8500,
-        smartSpeed: 450,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            1170: {
-                items: 3
+        var action = document.querySelector('.action');
+        window.onscroll = function() {
+            action.classList.toggle('show', window.scrollY >= 600);
+        }
+    </script>
+    <script>
+        $('.carousel-card').owlCarousel({
+            loop: true,
+            center: false,
+            items: 3,
+            margin: 15,
+            // autoplay: true,
+            // dots:true,
+            nav: true,
+            navText: [
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/prev-btn.svg') }}'/>",
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/next-btn.svg') }}'/>"
+            ],
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1170: {
+                    items: 3
+                }
             }
-        }
-    });
-</script>
-<script>
-$('.carousel-infografis').owlCarousel({
-loop: true,
-center: true,
-items: 3,
-margin: 150,
-// autoplay: true,
-// dots:true,
-nav:true,
-navText: [
-    "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/prev-btn.svg')}}'/>",
-    "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/next-btn.svg')}}'/>"],
-autoplayTimeout: 8500,
-smartSpeed: 450,
-responsive: {
-        0: {
-            items: 1
-        },
-        768: {
-            items: 2
-        },
-        1170: {
-            items: 3
-        }
-    }
-});
-</script>
-
+        });
+    </script>
+    <script>
+        $('.carousel-infografis').owlCarousel({
+            loop: true,
+            center: true,
+            items: 3,
+            margin: 150,
+            // autoplay: true,
+            // dots:true,
+            nav: true,
+            navText: [
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/prev-btn.svg') }}'/>",
+                "<img alt='Slider' src='{{ asset('template/united-nation/assets/images/next-btn.svg') }}'/>"
+            ],
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1170: {
+                    items: 3
+                }
+            }
+        });
+    </script>
 @endpush

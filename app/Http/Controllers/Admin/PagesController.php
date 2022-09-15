@@ -33,8 +33,8 @@ class PagesController extends Controller
         ]);
 
         $image = $request->file('image_cover');
-        $validatedData['image_cover'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
-        // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
+        // $validatedData['image_cover'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        $validatedData['image_cover'] = $request->file('image_cover')->store('images/pages', 'public');
 
         Pages::create($validatedData);
         return redirect(route('pages.index'));
@@ -70,9 +70,9 @@ class PagesController extends Controller
 
         if ($request->file('image_cover')) {
             $file = $request->file('image_cover');
-            $validatedData['image_cover'] = CloudinaryStorage::replace($page->image_cover, $file->getRealPath(), $file->getClientOriginalName());
-            // Storage::delete($page->image_cover);
-            // $validatedData['image_cover'] = $request->file('image_cover')->store('public/images/pages');
+            // $validatedData['image_cover'] = CloudinaryStorage::replace($page->image_cover, $file->getRealPath(), $file->getClientOriginalName());
+            Storage::delete($page->image_cover);
+            $validatedData['image_cover'] = $request->file('image_cover')->store('images/pages', 'public');
             $page->update($validatedData);
         } else {
             $validatedData['image_cover'] = $page->image_cover;
@@ -92,8 +92,8 @@ class PagesController extends Controller
     {
         $pages = Pages::findOrFail($id);
 
-        CloudinaryStorage::delete($pages->image_cover);
-        // Storage::delete($pages->image_cover);
+        // CloudinaryStorage::delete($pages->image_cover);
+        Storage::delete($pages->image_cover);
 
         Pages::destroy($id);
         return redirect(route('pages.index'));

@@ -40,8 +40,8 @@ class InfografisController extends Controller
         ]);
 
         $image = $request->file('image');
-        $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
-        // $validatedData2['image'] = $request->file('image')->store('public/images/infografis');
+        // $validatedData2['image'] = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName());
+        $validatedData2['image'] = $request->file('image')->store('images/infografis', 'public');
 
         $infografis = Infografis::create($validatedData2);
         $validatedData1['infografis_id'] = $infografis->id;
@@ -88,9 +88,9 @@ class InfografisController extends Controller
             ]);
 
             $file = $request->file('image');
-            $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
-            // Storage::delete($infografis->image);
-            // $validatedData['image'] = $request->file('image')->store('public/images/infografis');
+            // $validatedData['image'] = CloudinaryStorage::replace($infografis->image, $file->getRealPath(), $file->getClientOriginalName());
+            Storage::delete($infografis->image);
+            $validatedData['image'] = $request->file('image')->store('images/infografis', 'public');
             $relasiInfografis->update($validatedData1);
             $infografis->update($validatedData);
         } else {
@@ -111,8 +111,8 @@ class InfografisController extends Controller
         $relasiInfografis = RelasiInfografisPages::findOrFail($id);
         $infografis = Infografis::findOrFail($relasiInfografis->infografis_id);
 
-        CloudinaryStorage::delete($infografis->image);
-        // Storage::delete($infografis->image);
+        // CloudinaryStorage::delete($infografis->image);
+        Storage::delete($infografis->image);
 
         Infografis::destroy($infografis->id);
         RelasiInfografisPages::destroy($id);
